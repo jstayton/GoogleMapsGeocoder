@@ -1,60 +1,212 @@
 <?php
 
   /**
-   * A PHP 5 object-oriented interface to the Google Maps Geocoding Service.
+   * A PHP 5 object-oriented interface to the Google Maps Geocoding API v3.
    *
-   * @author  Justin Stayton <justin.stayton@gmail.com>
-   * @link    http://code.google.com/apis/maps/documentation/geocoding/index.html
-   * @version 1.0 1/16/2010
+   * @author    Justin Stayton <justin.stayton@gmail.com>
+   * @copyright Copyright 2011 by Justin Stayton
+   * @license   http://en.wikipedia.org/wiki/MIT_License MIT License
+   * @link      http://code.google.com/apis/maps/documentation/geocoding/
+   * @package   GoogleMapsGeocoder
+   * @version   2.0.0
    */
   class GoogleMapsGeocoder {
 
     /**
-     * Response format codes.
-     *
-     * @link http://code.google.com/apis/maps/documentation/geocoding/index.html#GeocodingResponses
-     * @see  GoogleMapsGeocoder::getOutputFormat()
-     * @see  GoogleMapsGeocoder::setOutputFormat()
+     * HTTP URL of the Google Geocoding API.
      */
-    const OUTPUT_FORMAT_JSON = "json";
-    const OUTPUT_FORMAT_KML = "kml";
-    const OUTPUT_FORMAT_XML = "xml";
-    const OUTPUT_FORMAT_CSV = "csv";
+    const URL_HTTP = "http://maps.googleapis.com/maps/api/geocode/";
 
     /**
-     * Status codes used in Google's response.
-     *
-     * @link http://code.google.com/apis/maps/documentation/geocoding/index.html#StatusCodes
+     * HTTPS URL of the Google Geocoding API.
      */
-    const STATUS_SUCCESS = 200;
-    const STATUS_SERVER_ERROR = 500;
-    const STATUS_MISSING_QUERY = 601;
-    const STATUS_UNKNOWN_ADDRESS = 602;
-    const STATUS_UNAVAILABLE_ADDRESS = 603;
-    const STATUS_BAD_KEY = 610;
-    const STATUS_TOO_MANY_QUERIES = 620;
+    const URL_HTTPS = "https://maps.googleapis.com/maps/api/geocode/";
 
     /**
-     * Accuracy codes used in Google's response.
-     *
-     * @link http://code.google.com/apis/maps/documentation/geocoding/index.html#GeocodingAccuracy
+     * JSON response format.
      */
-    const ACCURACY_UNKNOWN = 0;
-    const ACCURACY_COUNTRY = 1;
-    const ACCURACY_REGION = 2;
-    const ACCURACY_SUB_REGION = 3;
-    const ACCURACY_TOWN = 4;
-    const ACCURACY_POST_CODE = 5;
-    const ACCURACY_STREET = 6;
-    const ACCURACY_INTERSECTION = 7;
-    const ACCURACY_ADDRESS = 8;
-    const ACCURACY_PREMISE = 9;
+    const FORMAT_JSON = "json";
+
+    /**
+     * XML response format.
+     */
+    const FORMAT_XML = "xml";
+
+    /**
+     * No errors occurred, the address was successfully parsed and at least one
+     * geocode was returned.
+     */
+    const STATUS_SUCCESS = "OK";
+
+    /**
+     * Geocode was successful, but returned no results.
+     */
+    const STATUS_NO_RESULTS = "ZERO_RESULTS";
+
+    /**
+     * Over limit of 2,500 (100,000 if premier) requests per day.
+     */
+    const STATUS_OVER_LIMIT = "OVER_QUERY_LIMIT";
+
+    /**
+     * Request denied, usually because of missing sensor parameter.
+     */
+    const STATUS_REQUEST_DENIED = "REQUEST_DENIED";
+
+    /**
+     * Invalid request, usually because of missing parameter that's required.
+     */
+    const STATUS_INVALID_REQUEST = "INVALID_REQUEST";
+
+    /**
+     * Returned result is a precise street address.
+     */
+    const LOCATION_TYPE_ROOFTOP = "ROOFTOP";
+
+    /**
+     * Returned result is between two precise points (usually on a road).
+     */
+    const LOCATION_TYPE_RANGE = "RANGE_INTERPOLATED";
+
+    /**
+     * Returned result is the geometric center of a polyline (i.e., a street)
+     * or polygon (i.e., a region).
+     */
+    const LOCATION_TYPE_CENTER = "GEOMETRIC_CENTER";
+
+    /**
+     * Returned result is approximate.
+     */
+    const LOCATION_TYPE_APPROXIMATE = "APPROXIMATE";
+
+    /**
+     * A precise street address.
+     */
+    const TYPE_STREET_ADDRESS = "street_address";
+
+    /**
+     * A named route (such as "US 101").
+     */
+    const TYPE_ROUTE = "route";
+
+    /**
+     * A major intersection, usually of two major roads.
+     */
+    const TYPE_INTERSECTION = "intersection";
+
+    /**
+     * A political entity, usually of some civil administration.
+     */
+    const TYPE_POLITICAL = "political";
+
+    /**
+     * A national political entity (country). The highest order type returned.
+     */
+    const TYPE_COUNTRY = "country";
+
+    /**
+     * A first-order civil entity below country (states within the US).
+     */
+    const TYPE_ADMIN_AREA_1 = "administrative_area_level_1";
+
+    /**
+     * A second-order civil entity below country (counties within the US).
+     */
+    const TYPE_ADMIN_AREA_2 = "administrative_area_level_2";
+
+    /**
+     * A third-order civil entity below country.
+     */
+    const TYPE_ADMIN_AREA_3 = "administrative_area_level_3";
+
+    /**
+     * A commonly-used alternative name for the entity.
+     */
+    const TYPE_COLLOQUIAL_AREA = "colloquial_area";
+
+    /**
+     * An incorporated city or town.
+     */
+    const TYPE_LOCALITY = "locality";
+
+    /**
+     * A first-order civil entity below a locality.
+     */
+    const TYPE_SUB_LOCALITY = "sublocality";
+
+    /**
+     * A named neighborhood.
+     */
+    const TYPE_NEIGHBORHOOD = "neighborhood";
+
+    /**
+     * A named location, usually a building or collection of buildings.
+     */
+    const TYPE_PREMISE = "premise";
+
+    /**
+     * A first-order entity below a named location, usually a single building
+     * within a collection of building with a common name.
+     */
+    const TYPE_SUB_PREMISE = "subpremise";
+
+    /**
+     * A postal code as used to address mail within the country.
+     */
+    const TYPE_POSTAL_CODE = "postal_code";
+
+    /**
+     * A prominent natural feature.
+     */
+    const TYPE_NATURAL_FEATURE = "natural_feature";
+
+    /**
+     * An airport.
+     */
+    const TYPE_AIRPORT = "airport";
+
+    /**
+     * A named park.
+     */
+    const TYPE_PARK = "park";
+
+    /**
+     * A named point of interest that doesn't fit within another category.
+     */
+    const TYPE_POINT_OF_INTEREST = "point_of_interest";
+
+    /**
+     * A specific postal box.
+     */
+    const TYPE_POST_BOX = "post_box";
+
+    /**
+     * A precise street number.
+     */
+    const TYPE_STREET_NUMBER = "street_number";
+
+    /**
+     * A floor of a building address.
+     */
+    const TYPE_FLOOR = "floor";
+
+    /**
+     * A room of a building address.
+     */
+    const TYPE_ROOM = "room";
 
     /**
      * Helps calculate a more realistic bounding box by taking into account the
      * curvature of the earth's surface.
      */
     const EQUATOR_LAT_DEGREE_IN_MILES = 69.172;
+
+    /**
+     * Response format.
+     *
+     * @var string
+     */
+    private $format;
 
     /**
      * Address to geocode.
@@ -64,89 +216,136 @@
     private $address;
 
     /**
-     * Google Maps API key.
+     * Latitude to reverse geocode to the closest address.
+     *
+     * @var float|string
+     */
+    private $latitude;
+
+    /**
+     * Longitude to reverse geocode to the closest address.
+     *
+     * @var float|string
+     */
+    private $longitude;
+
+    /**
+     * Southwest latitude of the bounding box within which to bias geocode
+     * results.
+     *
+     * @var float|string
+     */
+    private $boundsSouthwestLatitude;
+
+    /**
+     * Southwest longitude of the bounding box within which to bias geocode
+     * results.
+     *
+     * @var float|string
+     */
+    private $boundsSouthwestLongitude;
+
+    /**
+     * Northeast latitude of the bounding box within which to bias geocode
+     * results.
+     *
+     * @var float|string
+     */
+    private $boundsNortheastLatitude;
+
+    /**
+     * Northeast longitude of the bounding box within which to bias geocode
+     * results.
+     *
+     * @var float|string
+     */
+    private $boundsNortheastLongitude;
+
+    /**
+     * Two-character, top-level domain (ccTLD) within which to bias geocode
+     * results.
      *
      * @var string
      */
-    private $apiKey;
+    private $region;
 
     /**
-     * Whether the geocoding request is from a device with a location sensor.
-     *
-     * @var bool
-     */
-    private $isFromLocationSensor;
-
-    /**
-     * Requested response format from Google.
+     * Language code in which to return results.
      *
      * @var string
      */
-    private $outputFormat;
+    private $language;
 
     /**
-     * Viewport center latitude for influencing results.
-     *
-     * @var float|int|string
-     */
-    private $viewportCenterLatitude;
-
-    /**
-     * Viewport center longitude for influencing results.
-     *
-     * @var float|int|string
-     */
-    private $viewportCenterLongitude;
-
-    /**
-     * Viewport perimeter latitude for influencing results.
-     *
-     * @var float|int|string
-     */
-    private $viewportPerimeterLatitude;
-
-    /**
-     * Viewport perimeter longitude for influencing results.
-     *
-     * @var float|int|string
-     */
-    private $viewportPerimeterLongitude;
-
-    /**
-     * Country-code top-level domain for influencing results.
+     * Whether the request is from a device with a location sensor.
      *
      * @var string
      */
-    private $viewportCountryCodeTld;
+    private $sensor;
 
     /**
      * Constructor. The request is not executed until
      * {@link GoogleMapsGeocoder::geocode()} is called.
      *
-     * @param  string $apiKey Google Maps API key
-     * @param  string $address address to geocode
-     * @param  string $outputFormat optional response format (JSON default)
+     * @param  string $address optional address to geocode
+     * @param  string $format optional response format (JSON default)
+     * @param  bool|string $sensor optional whether device has location sensor
      * @return GoogleMapsGeocoder
-     * @uses   GoogleMapsGeocoder::setApiKey()
-     * @uses   GoogleMapsGeocoder::setAddress()
-     * @uses   GoogleMapsGeocoder::setOutputFormat()
-     * @uses   GoogleMapsGeocoder::setIsFromLocationSensor()
-     * @uses   GoogleMapsGeocoder::OUTPUT_FORMAT_JSON
      */
-    public function __construct($apiKey, $address, $outputFormat = self::OUTPUT_FORMAT_JSON) {
-      $this->setApiKey($apiKey)
-           ->setAddress($address)
-           ->setOutputFormat($outputFormat)
-           ->setIsFromLocationSensor('false');
+    public function __construct($address = null, $format = self::FORMAT_JSON, $sensor = false) {
+      $this->setAddress($address)
+           ->setFormat($format)
+           ->setSensor($sensor);
     }
 
     /**
-     * Sets the address to geocode. A latitude/longitude value can be specified
-     * for reverse geocoding.
+     * Set the response format.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#GeocodingResponses
+     * @param  string $format response format
+     * @return GoogleMapsGeocoder
+     */
+    public function setFormat($format) {
+      $this->format = $format;
+
+      return $this;
+    }
+
+    /**
+     * Get the response format.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#GeocodingResponses
+     * @return string response format
+     */
+    public function getFormat() {
+      return $this->format;
+    }
+
+    /**
+     * Whether the response format is JSON.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#JSON
+     * @return bool whether JSON
+     */
+    public function isFormatJson() {
+      return $this->getFormat() == self::FORMAT_JSON;
+    }
+
+    /**
+     * Whether the response format is XML.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#XML
+     * @return bool whether XML
+     */
+    public function isFormatXml() {
+      return $this->getFormat() == self::FORMAT_XML;
+    }
+
+    /**
+     * Set the address to geocode.
      *
      * @param  string $address address to geocode
      * @return GoogleMapsGeocoder
-     * @uses   GoogleMapsGeocoder::$address
      */
     public function setAddress($address) {
       $this->address = $address;
@@ -155,242 +354,395 @@
     }
 
     /**
-     * Sets your Google Maps API key.
-     *
-     * @param  string $apiKey Google Maps API key
-     * @return GoogleMapsGeocoder
-     * @uses   GoogleMapsGeocoder::$apiKey
-     */
-    public function setApiKey($apiKey) {
-      $this->apiKey = $apiKey;
-
-      return $this;
-    }
-
-    /**
-     * Sets whether the geocoding request is from a device with a location
-     * sensor.
-     *
-     * @param  bool $isFromLocationSensor has location sensor?
-     * @return GoogleMapsGeocoder
-     * @uses   GoogleMapsGeocoder::$isFromLocationSensor
-     */
-    public function setIsFromLocationSensor($isFromLocationSensor) {
-      $this->isFromLocationSensor = $isFromLocationSensor;
-
-      return $this;
-    }
-
-    /**
-     * Sets the requested response format from Google. Use one of the
-     * OUTPUT_FORMAT_* class constants when specifying.
-     *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#GeocodingResponses
-     * @param  string $outputFormat response format
-     * @return GoogleMapsGeocoder
-     * @uses   GoogleMapsGeocoder::$outputFormat
-     */
-    public function setOutputFormat($outputFormat) {
-      $this->outputFormat = $outputFormat;
-
-      return $this;
-    }
-
-    /**
-     * Sets the viewport center for influencing results.
-     * {@link GoogleMapsGeocoder::setViewportPerimeter()} must also be set.
-     *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#Viewports
-     * @param  float|int|string $viewportCenterLatitude center latitude
-     * @param  float|int|string $viewportCenterLongitude center longitude
-     * @return GoogleMapsGeocoder
-     * @uses   GoogleMapsGeocoder::$viewportCenterLatitude
-     * @uses   GoogleMapsGeocoder::$viewportCenterLongitude
-     */
-    public function setViewportCenter($viewportCenterLatitude, $viewportCenterLongitude) {
-      $this->viewportCenterLatitude = $viewportCenterLatitude;
-      $this->viewportCenterLongitude = $viewportCenterLongitude;
-
-      return $this;
-    }
-
-    /**
-     * Sets the viewport perimeter (or span) for influencing results.
-     * {@link GoogleMapsGeocoder::setViewportCenter()} must also be set.
-     *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#Viewports
-     * @param  float|int|string $viewportPerimeterLatitude perimeter latitude
-     * @param  float|int|string $viewportPerimeterLongitude perimeter longitude
-     * @return GoogleMapsGeocoder
-     * @uses   GoogleMapsGeocoder::$viewportPerimeterLatitude
-     * @uses   GoogleMapsGeocoder::$viewportPerimeterLongitude
-     */
-    public function setViewportPerimeter($viewportPerimeterLatitude, $viewportPerimeterLongitude) {
-      $this->viewportPerimeterLatitude = $viewportPerimeterLatitude;
-      $this->viewportPerimeterLongitude = $viewportPerimeterLongitude;
-
-      return $this;
-    }
-
-    /**
-     * Sets the country-code top-level domain for influencing results.
-     *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#CountryCodes
-     * @param  string $viewportCountryCodeTld top-level domain
-     * @return GoogleMapsGeocoder
-     * @uses   GoogleMapsGeocoder::$viewportCountryCodeTld
-     */
-    public function setViewportCountryCodeTld($viewportCountryCodeTld) {
-      $this->viewportCountryCodeTld = $viewportCountryCodeTld;
-
-      return $this;
-    }
-
-    /**
-     * Returns the address to geocode.
+     * Get the address to geocode.
      *
      * @return string
-     * @uses   GoogleMapsGeocoder::$address
      */
     public function getAddress() {
       return $this->address;
     }
 
     /**
-     * Returns your Google Maps API key.
+     * Set the latitude/longitude to reverse geocode to the closest address.
      *
-     * @return string
-     * @uses   GoogleMapsGeocoder::$apiKey
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding
+     * @param  float|string $latitude latitude to reverse geocode
+     * @param  float|string $longitude longitude to reverse geocode
+     * @return GoogleMapsGeocoder
      */
-    public function getApiKey() {
-      return $this->apiKey;
+    public function setLatitudeLongitude($latitude, $longitude) {
+      $this->setLatitude($latitude)
+           ->setLongitude($longitude);
+
+      return $this;
     }
 
     /**
-     * Returns whether the geocoding request is from a device with a location
-     * sensor.
+     * Get the latitude/longitude to reverse geocode to the closest address
+     * in comma-separated format.
      *
-     * @return bool
-     * @uses   GoogleMapsGeocoder::$isFromLocationSensor
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding
+     * @return string|false comma-separated coordinates, or false if not set
      */
-    public function getIsFromLocationSensor() {
-      return $this->isFromLocationSensor;
+    public function getLatitudeLongitude() {
+      $latitude = $this->getLatitude();
+      $longitude = $this->getLongitude();
+
+      if ($latitude && $longitude) {
+        return $latitude . "," . $longitude;
+      }
+      else {
+        return false;
+      }
     }
 
     /**
-     * Returns the requested response format from Google. Should correspond to
-     * one of the OUTPUT_FORMAT_* class constants.
+     * Set the latitude to reverse geocode to the closest address.
      *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#GeocodingResponses
-     * @return string
-     * @uses   GoogleMapsGeocoder::$outputFormat
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding
+     * @param  float|string $latitude latitude to reverse geocode
+     * @return GoogleMapsGeocoder
      */
-    public function getOutputFormat() {
-      return $this->outputFormat;
+    public function setLatitude($latitude) {
+      $this->latitude = $latitude;
+
+      return $this;
     }
 
     /**
-     * Returns the viewport center latitude for influencing results.
+     * Get the latitude to reverse geocode to the closest address.
      *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#Viewports
-     * @return float|int|string
-     * @uses   GoogleMapsGeocoder::$viewportCenterLatitude
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding
+     * @return float|string latitude to reverse geocode
      */
-    public function getViewportCenterLatitude() {
-      return $this->viewportCenterLatitude;
+    public function getLatitude() {
+      return $this->latitude;
     }
 
     /**
-     * Returns the viewport center longitude for influencing results.
+     * Set the longitude to reverse geocode to the closest address.
      *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#Viewports
-     * @return float|int|string
-     * @uses   GoogleMapsGeocoder::$viewportCenterLongitude
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding
+     * @param  float|string $longitude longitude to reverse geocode
+     * @return GoogleMapsGeocoder
      */
-    public function getViewportCenterLongitude() {
-      return $this->viewportCenterLongitude;
+    public function setLongitude($longitude) {
+      $this->longitude = $longitude;
+
+      return $this;
     }
 
     /**
-     * Returns the viewport perimeter latitude for influencing results.
+     * Get the longitude to reverse geocode to the closest address.
      *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#Viewports
-     * @return float|int|string
-     * @uses   GoogleMapsGeocoder::$viewportPerimeterLatitude
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding
+     * @return float|string longitude to reverse geocode
      */
-    public function getViewportPerimeterLatitude() {
-      return $this->viewportPerimeterLatitude;
+    public function getLongitude() {
+      return $this->longitude;
     }
 
     /**
-     * Returns the viewport perimeter longitude for influencing results.
+     * Set the bounding box coordinates within which to bias geocode results.
      *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#Viewports
-     * @return float|int|string
-     * @uses   GoogleMapsGeocoder::$viewportPerimeterLongitude
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#Viewports
+     * @param  float|string $southwestLatitude southwest latitude boundary
+     * @param  float|string $southwestLongitude southwest longitude boundary
+     * @param  float|string $northeastLatitude northeast latitude boundary
+     * @param  float|string $northeastLongitude northeasy longitude boundary
+     * @return GoogleMapsGeocoder
      */
-    public function getViewportPerimeterLongitude() {
-      return $this->viewportPerimeterLongitude;
+    public function setBounds($southwestLatitude, $southwestLongitude, $northeastLatitude, $northeastLongitude) {
+      $this->setBoundsSouthwest($southwestLatitude, $southwestLongitude)
+           ->setBoundsNortheast($northeastLatitude, $northeastLatitude);
+
+      return $this;
     }
 
     /**
-     * Returns the country-code top-level domain for influencing results.
+     * Get the bounding box coordinates within which to bias geocode results
+     * in comma-separated, pipe-delimited format.
      *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#CountryCodes
-     * @return string
-     * @uses   GoogleMapsGeocoder::$viewportCountryCodeTld
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#Viewports
+     * @return string|false comma-separated, pipe-delimited coordinates, or
+     *                      false if not set
      */
-    public function getViewportCountryCodeTld() {
-      return $this->viewportCountryCodeTld;
+    public function getBounds() {
+      $southwest = $this->getBoundsSouthwest();
+      $northeast = $this->getBoundsNortheast();
+
+      if ($southwest && $northeast) {
+        return $southwest . "|" . $northeast;
+      }
+      else {
+        return false;
+      }
     }
 
     /**
-     * Builds the URL (with full query string) to request from Google.
+     * Set the southwest coordinates of the bounding box within which to bias
+     * geocode results.
      *
-     * @return string|false false returned if all required values not set
-     * @uses   GoogleMapsGeocoder::getAddress()
-     * @uses   GoogleMapsGeocoder::getApiKey()
-     * @uses   GoogleMapsGeocoder::getIsFromLocationSensor()
-     * @uses   GoogleMapsGeocoder::getOutputFormat()
-     * @uses   GoogleMapsGeocoder::getViewportCenterLatitude()
-     * @uses   GoogleMapsGeocoder::getViewportCenterLongitude()
-     * @uses   GoogleMapsGeocoder::getViewportPerimeterLatitude()
-     * @uses   GoogleMapsGeocoder::getViewportPerimeterLongitude()
-     * @uses   GoogleMapsGeocoder::getViewportCountryCodeTld()
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#Viewports
+     * @param  float|string $latitude southwest latitude boundary
+     * @param  float|string $longitude southwest longitude boundary
+     * @return GoogleMapsGeocoder
      */
-    private function buildGeocodeUrl() {
-      $geocodeUrl  = "http://maps.google.com/maps/geo?";
+    public function setBoundsSouthwest($latitude, $longitude) {
+      $this->boundsSouthwestLatitude = $latitude;
+      $this->boundsSouthwestLongitude = $longitude;
 
-      // The following four parameters are all required by Google.
-      $geocodeUrl .= "q=" . urlencode($this->getAddress());
-      $geocodeUrl .= "&key=" . $this->getApiKey();
-      $geocodeUrl .= "&sensor=" . $this->getIsFromLocationSensor();
-      $geocodeUrl .= "&output=" . $this->getOutputFormat();
+      return $this;
+    }
 
-      // All four coordinates must be specified for viewport to work. Optional.
-      if ($this->getViewportCenterLatitude() && $this->getViewportCenterLongitude() &&
-          $this->getViewportPerimeterLatitude() && $this->getViewportPerimeterLongitude()) {
-        $geocodeUrl .= "&ll=" . $this->getViewportCenterLatitude() . "," . $this->getViewportCenterLongitude();
-        $geocodeUrl .= "&spn=" . $this->getViewportPerimeterLatitude() . "," . $this->getViewportPerimeterLongitude();
+    /**
+     * Get the southwest coordinates of the bounding box within which to bias
+     * geocode results in comma-separated format.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#Viewports
+     * @return string|false comma-separated coordinates, or false if not set
+     */
+    public function getBoundsSouthwest() {
+      $latitude = $this->getBoundsSouthwestLatitude();
+      $longitude = $this->getBoundsSouthwestLongitude();
+
+      if ($latitude && $longitude) {
+        return $latitude . "," . $longitude;
+      }
+      else {
+        return false;
+      }
+    }
+
+    /**
+     * Get the southwest latitude of the bounding box within which to bias
+     * geocode results.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#Viewports
+     * @return float|string southwest latitude boundary
+     */
+    public function getBoundsSouthwestLatitude() {
+      return $this->boundsSouthwestLatitude;
+    }
+
+    /**
+     * Get the southwest longitude of the bounding box within which to bias
+     * geocode results.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#Viewports
+     * @return float|string southwest longitude boundary
+     */
+    public function getBoundsSouthwestLongitude() {
+      return $this->boundsSouthwestLongitude;
+    }
+
+    /**
+     * Set the northeast coordinates of the bounding box within which to bias
+     * geocode results.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#Viewports
+     * @param  float|string $latitude northeast latitude boundary
+     * @param  float|string $longitude northeast longitude boundary
+     * @return GoogleMapsGeocoder
+     */
+    public function setBoundsNortheast($latitude, $longitude) {
+      $this->boundsNortheastLatitude = $latitude;
+      $this->boundsNortheastLongitude = $longitude;
+
+      return $this;
+    }
+
+    /**
+     * Get the northeast coordinates of the bounding box within which to bias
+     * geocode results in comma-separated format.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#Viewports
+     * @return string|false comma-separated coordinates, or false if not set
+     */
+    public function getBoundsNortheast() {
+      $latitude = $this->getBoundsNortheastLatitude();
+      $longitude = $this->getBoundsNortheastLongitude();
+
+      if ($latitude && $longitude) {
+        return $latitude . "," . $longitude;
+      }
+      else {
+        return false;
+      }
+    }
+
+    /**
+     * Get the northeast latitude of the bounding box within which to bias
+     * geocode results.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#Viewports
+     * @return float|string northeast latitude boundary
+     */
+    public function getBoundsNortheastLatitude() {
+      return $this->boundsNortheastLatitude;
+    }
+
+    /**
+     * Get the northeast longitude of the bounding box within which to bias
+     * geocode results.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#Viewports
+     * @return float|string northeast longitude boundary
+     */
+    public function getBoundsNortheastLongitude() {
+      return $this->boundsNortheastLongitude;
+    }
+
+    /**
+     * Set the two-character, top-level domain (ccTLD) within which to bias
+     * geocode results.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#RegionCodes
+     * @param  string $region two-character, top-level domain (ccTLD)
+     * @return GoogleMapsGeocoder
+     */
+    public function setRegion($region) {
+      $this->region = $region;
+
+      return $this;
+    }
+
+    /**
+     * Get the two-character, top-level domain (ccTLD) within which to bias
+     * geocode results.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#RegionCodes
+     * @return string two-character, top-level domain (ccTLD)
+     */
+    public function getRegion() {
+      return $this->region;
+    }
+
+    /**
+     * Set the language code in which to return results.
+     *
+     * @link   https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&gid=1
+     * @param  string $language language code
+     * @return GoogleMapsGeocoder
+     */
+    public function setLanguage($language) {
+      $this->language = $language;
+
+      return $this;
+    }
+
+    /**
+     * Get the language code in which to return results.
+     *
+     * @link   https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&gid=1
+     * @return string language code
+     */
+    public function getLanguage() {
+      return $this->language;
+    }
+
+    /**
+     * Set whether the request is from a device with a location sensor.
+     *
+     * @param  bool|string $sensor boolean or 'true'/'false' string
+     * @return GoogleMapsGeocoder
+     */
+    public function setSensor($sensor) {
+      if ($sensor == 'true' || $sensor == 'false') {
+        $this->sensor = $sensor;
+      }
+      elseif ($sensor) {
+        $this->sensor = "true";
+      }
+      else {
+        $this->sensor = "false";
       }
 
-      // Optional.
-      if ($this->getViewportCountryCodeTld()) {
-        $geocodeUrl .= "&gl=" . $this->getViewportCountryCodeTld();
-      }
-
-      return $geocodeUrl;
+      return $this;
     }
 
     /**
-     * Executes the geocoding request. Google's raw response is returned.
+     * Get whether the request is from a device with a location sensor.
      *
-     * @link   http://code.google.com/apis/maps/documentation/geocoding/index.html#GeocodingResponses
-     * @return string|false false returned if all required values not set
-     * @uses   GoogleMapsGeocoder::buildGeocodeUrl()
+     * @return string 'true' or 'false'
      */
-    public function geocode() {
-      return file_get_contents($this->buildGeocodeUrl());
+    public function getSensor() {
+      return $this->sensor;
+    }
+
+    /**
+     * Build the query string with all set parameters of the geocode request.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#GeocodingRequests
+     * @return string encoded query string of the geocode request
+     */
+    private function geocodeQueryString() {
+      $queryString = array();
+
+      // One of the following is required.
+      $address = $this->getAddress();
+      $latitudeLongitude = $this->getLatitudeLongitude();
+
+      // If both are set for some reason, favor address to geocode.
+      if ($address) {
+        $queryString['address'] = $address;
+      }
+      elseif ($latitudeLongitude) {
+        $queryString['latlng'] = $latitudeLongitude;
+      }
+
+      // Optional parameters.
+      $queryString['bounds'] = $this->getBounds();
+      $queryString['region'] = $this->getRegion();
+      $queryString['language'] = $this->getLanguage();
+
+      // Required.
+      $queryString['sensor'] = $this->getSensor();
+
+      // Remove any unset parameters.
+      $queryString = array_filter($queryString);
+
+      // Convert array to proper query string.
+      return http_build_query($queryString);
+    }
+
+    /**
+     * Build the URL (with query string) of the geocode request.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#GeocodingRequests
+     * @param  bool $https whether to make the request over HTTPS
+     * @return string URL of the geocode request
+     */
+    private function geocodeUrl($https = false) {
+      $url = $https ? self::URL_HTTPS : self::URL_HTTP;
+
+      return $url . $this->getFormat() . "?" . $this->geocodeQueryString();
+    }
+
+    /**
+     * Execute the geocoding request. The return type is based on the requested
+     * format: associative array if JSON, SimpleXMLElement object if XML.
+     *
+     * @link   http://code.google.com/apis/maps/documentation/geocoding/#GeocodingResponses
+     * @param  bool $https whether to make the request over HTTPS
+     * @param  bool $raw whether to return the raw (string) response
+     * @return string|array|SimpleXMLElement response in requested format
+     */
+    public function geocode($https = false, $raw = false) {
+      $response = file_get_contents($this->geocodeUrl($https));
+
+      if ($raw) {
+        return $response;
+      }
+      elseif ($this->isFormatJson()) {
+        return json_decode($response, true);
+      }
+      elseif ($his->isFormatXml()) {
+        return new SimpleXMLElement($response);
+      }
+      else {
+        return $response;
+      }
     }
 
     /**
@@ -403,10 +755,12 @@
      * contains another array with two keys: 'max' and 'min'. Four points are
      * returned in total.
      *
-     * @return array
-     * @uses   GoogleMapsGeocoder::EQUATOR_LAT_DEGREE_IN_MILES
+     * @param  float|string $latitude to draw the bounding box around
+     * @param  float|string $longitude to draw the bounding box around
+     * @param  int|float|string $mileRange mile range around point
+     * @return array 'lat' and 'lon' 'min' and 'max' points
      */
-    public static function computeBoundingBoxCoordinates($latitude, $longitude, $mileRange) {
+    public static function boundingBox($latitude, $longitude, $mileRange) {
       $maxLatitude = $latitude + $mileRange / self::EQUATOR_LAT_DEGREE_IN_MILES;
       $minLatitude = $latitude - ($maxLatitude - $latitude);
 

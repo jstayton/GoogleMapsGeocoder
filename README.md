@@ -6,7 +6,7 @@ A PHP 5 object-oriented interface to the Google Maps Geocoding API v3.
 Developed by [Justin Stayton](http://twitter.com/jstayton) while at
 [Monk Development](http://monkdev.com).
 
-*   [Documentation](http://jstayton.github.com/GoogleMapsGeocoder/GoogleMapsGeocoder/GoogleMapsGeocoder.html)
+*   [Documentation](http://jstayton.github.com/GoogleMapsGeocoder/classes/GoogleMapsGeocoder.html)
 *   [Release Notes](https://github.com/jstayton/GoogleMapsGeocoder/wiki/Release-Notes)
 
 Requirements
@@ -24,10 +24,6 @@ Installation
 
 Getting Started
 ---------------
-
-To start, make sure to add the class to your autoloader or require it directly:
-
-    require "GoogleMapsGeocoder.php";
 
 We'll use the address of [Monk Development](http://monkdev.com) for this
 example:
@@ -47,7 +43,7 @@ Or the address can be set after the object is created:
 By default, the `format` is set to `json` and the `sensor` is set to `false`.
 These values can be changed either through the constructor or after the object
 is created. See the
-[documentation](http://jstayton.github.com/GoogleMapsGeocoder/GoogleMapsGeocoder/GoogleMapsGeocoder.html)
+[documentation](http://jstayton.github.com/GoogleMapsGeocoder/classes/GoogleMapsGeocoder.html)
 for the complete list of API parameters that can be changed.
 
 Once all parameters are set, the final step is to send the request to the
@@ -58,7 +54,7 @@ Google Maps Geocoding API:
 The `geocode` method converts the response into a JSON associative array
 (default) or `SimpleXMLElement` object depending on the specified `format`. See
 the `geocode`
-[documentation](http://jstayton.github.com/GoogleMapsGeocoder/GoogleMapsGeocoder/GoogleMapsGeocoder.html#methodgeocode)
+[documentation](http://jstayton.github.com/GoogleMapsGeocoder/classes/GoogleMapsGeocoder.html#geocode)
 for making the request over HTTPS or preventing conversion (instead returning
 the raw plain text response).
 

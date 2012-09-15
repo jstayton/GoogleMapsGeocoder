@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a10" title="">
+  <file path="GoogleMapsGeocoder.php" hash="cded1c483d1c745bdb3119c4bca920ab" package="Default">
+    <class final="false" abstract="false" namespace="global" line="13" package="GoogleMapsGeocoder">
+      <extends/>
+      <name>GoogleMapsGeocoder</name>
+      <full_name>\GoogleMapsGeocoder</full_name>
+      <docblock line="3">
+        <description><![CDATA[A PHP 5 object-oriented interface to the Google Maps Geocoding API v3.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="3" name="author" description="Justin Stayton &lt;justin.stayton@gmail.com&gt;"/>
+        <tag line="3" name="copyright" description="Copyright 2011 by Justin Stayton"/>
+        <tag line="3" name="license" description="http://en.wikipedia.org/wiki/MIT_License MIT License"/>
+        <tag line="3" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/" link="http://code.google.com/apis/maps/documentation/geocoding/"/>
+        <tag line="3" name="package" description="GoogleMapsGeocoder"/>
+        <tag line="3" name="version" description="2.0.0"/>
+      </docblock>
+      <constant namespace="global" line="18" package="GoogleMapsGeocoder">
+        <name>URL_HTTP</name>
+        <full_name>URL_HTTP</full_name>
+        <value><![CDATA["http://maps.googleapis.com/maps/api/geocode/"]]></value>
+        <docblock line="15">
+          <description><![CDATA[HTTP URL of the Google Geocoding API.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="23" package="GoogleMapsGeocoder">
+        <name>URL_HTTPS</name>
+        <full_name>URL_HTTPS</full_name>
+        <value><![CDATA["https://maps.googleapis.com/maps/api/geocode/"]]></value>
+        <docblock line="20">
+          <description><![CDATA[HTTPS URL of the Google Geocoding API.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="28" package="GoogleMapsGeocoder">
+        <name>FORMAT_JSON</name>
+        <full_name>FORMAT_JSON</full_name>
+        <value><![CDATA["json"]]></value>
+        <docblock line="25">
+          <description><![CDATA[JSON response format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="33" package="GoogleMapsGeocoder">
+        <name>FORMAT_XML</name>
+        <full_name>FORMAT_XML</full_name>
+        <value><![CDATA["xml"]]></value>
+        <docblock line="30">
+          <description><![CDATA[XML response format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="39" package="GoogleMapsGeocoder">
+        <name>STATUS_SUCCESS</name>
+        <full_name>STATUS_SUCCESS</full_name>
+        <value><![CDATA["OK"]]></value>
+        <docblock line="35">
+          <description><![CDATA[No errors occurred, the address was successfully parsed and at least one
+geocode was returned.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="44" package="GoogleMapsGeocoder">
+        <name>STATUS_NO_RESULTS</name>
+        <full_name>STATUS_NO_RESULTS</full_name>
+        <value><![CDATA["ZERO_RESULTS"]]></value>
+        <docblock line="41">
+          <description><![CDATA[Geocode was successful, but returned no results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="49" package="GoogleMapsGeocoder">
+        <name>STATUS_OVER_LIMIT</name>
+        <full_name>STATUS_OVER_LIMIT</full_name>
+        <value><![CDATA["OVER_QUERY_LIMIT"]]></value>
+        <docblock line="46">
+          <description><![CDATA[Over limit of 2,500 (100,000 if premier) requests per day.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="54" package="GoogleMapsGeocoder">
+        <name>STATUS_REQUEST_DENIED</name>
+        <full_name>STATUS_REQUEST_DENIED</full_name>
+        <value><![CDATA["REQUEST_DENIED"]]></value>
+        <docblock line="51">
+          <description><![CDATA[Request denied, usually because of missing sensor parameter.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="59" package="GoogleMapsGeocoder">
+        <name>STATUS_INVALID_REQUEST</name>
+        <full_name>STATUS_INVALID_REQUEST</full_name>
+        <value><![CDATA["INVALID_REQUEST"]]></value>
+        <docblock line="56">
+          <description><![CDATA[Invalid request, usually because of missing parameter that's required.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="64" package="GoogleMapsGeocoder">
+        <name>LOCATION_TYPE_ROOFTOP</name>
+        <full_name>LOCATION_TYPE_ROOFTOP</full_name>
+        <value><![CDATA["ROOFTOP"]]></value>
+        <docblock line="61">
+          <description><![CDATA[Returned result is a precise street address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="69" package="GoogleMapsGeocoder">
+        <name>LOCATION_TYPE_RANGE</name>
+        <full_name>LOCATION_TYPE_RANGE</full_name>
+        <value><![CDATA["RANGE_INTERPOLATED"]]></value>
+        <docblock line="66">
+          <description><![CDATA[Returned result is between two precise points (usually on a road).]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="75" package="GoogleMapsGeocoder">
+        <name>LOCATION_TYPE_CENTER</name>
+        <full_name>LOCATION_TYPE_CENTER</full_name>
+        <value><![CDATA["GEOMETRIC_CENTER"]]></value>
+        <docblock line="71">
+          <description><![CDATA[Returned result is the geometric center of a polyline (i.e., a street)
+or polygon (i.e., a region).]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="80" package="GoogleMapsGeocoder">
+        <name>LOCATION_TYPE_APPROXIMATE</name>
+        <full_name>LOCATION_TYPE_APPROXIMATE</full_name>
+        <value><![CDATA["APPROXIMATE"]]></value>
+        <docblock line="77">
+          <description><![CDATA[Returned result is approximate.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="85" package="GoogleMapsGeocoder">
+        <name>TYPE_STREET_ADDRESS</name>
+        <full_name>TYPE_STREET_ADDRESS</full_name>
+        <value><![CDATA["street_address"]]></value>
+        <docblock line="82">
+          <description><![CDATA[A precise street address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="90" package="GoogleMapsGeocoder">
+        <name>TYPE_ROUTE</name>
+        <full_name>TYPE_ROUTE</full_name>
+        <value><![CDATA["route"]]></value>
+        <docblock line="87">
+          <description><![CDATA[A named route (such as "US 101").]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="95" package="GoogleMapsGeocoder">
+        <name>TYPE_INTERSECTION</name>
+        <full_name>TYPE_INTERSECTION</full_name>
+        <value><![CDATA["intersection"]]></value>
+        <docblock line="92">
+          <description><![CDATA[A major intersection, usually of two major roads.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="100" package="GoogleMapsGeocoder">
+        <name>TYPE_POLITICAL</name>
+        <full_name>TYPE_POLITICAL</full_name>
+        <value><![CDATA["political"]]></value>
+        <docblock line="97">
+          <description><![CDATA[A political entity, usually of some civil administration.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="105" package="GoogleMapsGeocoder">
+        <name>TYPE_COUNTRY</name>
+        <full_name>TYPE_COUNTRY</full_name>
+        <value><![CDATA["country"]]></value>
+        <docblock line="102">
+          <description><![CDATA[A national political entity (country).]]></description>
+          <long-description><![CDATA[<p>The highest order type returned.</p>]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="110" package="GoogleMapsGeocoder">
+        <name>TYPE_ADMIN_AREA_1</name>
+        <full_name>TYPE_ADMIN_AREA_1</full_name>
+        <value><![CDATA["administrative_area_level_1"]]></value>
+        <docblock line="107">
+          <description><![CDATA[A first-order civil entity below country (states within the US).]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="115" package="GoogleMapsGeocoder">
+        <name>TYPE_ADMIN_AREA_2</name>
+        <full_name>TYPE_ADMIN_AREA_2</full_name>
+        <value><![CDATA["administrative_area_level_2"]]></value>
+        <docblock line="112">
+          <description><![CDATA[A second-order civil entity below country (counties within the US).]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="120" package="GoogleMapsGeocoder">
+        <name>TYPE_ADMIN_AREA_3</name>
+        <full_name>TYPE_ADMIN_AREA_3</full_name>
+        <value><![CDATA["administrative_area_level_3"]]></value>
+        <docblock line="117">
+          <description><![CDATA[A third-order civil entity below country.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="125" package="GoogleMapsGeocoder">
+        <name>TYPE_COLLOQUIAL_AREA</name>
+        <full_name>TYPE_COLLOQUIAL_AREA</full_name>
+        <value><![CDATA["colloquial_area"]]></value>
+        <docblock line="122">
+          <description><![CDATA[A commonly-used alternative name for the entity.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="130" package="GoogleMapsGeocoder">
+        <name>TYPE_LOCALITY</name>
+        <full_name>TYPE_LOCALITY</full_name>
+        <value><![CDATA["locality"]]></value>
+        <docblock line="127">
+          <description><![CDATA[An incorporated city or town.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="135" package="GoogleMapsGeocoder">
+        <name>TYPE_SUB_LOCALITY</name>
+        <full_name>TYPE_SUB_LOCALITY</full_name>
+        <value><![CDATA["sublocality"]]></value>
+        <docblock line="132">
+          <description><![CDATA[A first-order civil entity below a locality.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="140" package="GoogleMapsGeocoder">
+        <name>TYPE_NEIGHBORHOOD</name>
+        <full_name>TYPE_NEIGHBORHOOD</full_name>
+        <value><![CDATA["neighborhood"]]></value>
+        <docblock line="137">
+          <description><![CDATA[A named neighborhood.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="145" package="GoogleMapsGeocoder">
+        <name>TYPE_PREMISE</name>
+        <full_name>TYPE_PREMISE</full_name>
+        <value><![CDATA["premise"]]></value>
+        <docblock line="142">
+          <description><![CDATA[A named location, usually a building or collection of buildings.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="151" package="GoogleMapsGeocoder">
+        <name>TYPE_SUB_PREMISE</name>
+        <full_name>TYPE_SUB_PREMISE</full_name>
+        <value><![CDATA["subpremise"]]></value>
+        <docblock line="147">
+          <description><![CDATA[A first-order entity below a named location, usually a single building
+within a collection of building with a common name.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="156" package="GoogleMapsGeocoder">
+        <name>TYPE_POSTAL_CODE</name>
+        <full_name>TYPE_POSTAL_CODE</full_name>
+        <value><![CDATA["postal_code"]]></value>
+        <docblock line="153">
+          <description><![CDATA[A postal code as used to address mail within the country.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="161" package="GoogleMapsGeocoder">
+        <name>TYPE_NATURAL_FEATURE</name>
+        <full_name>TYPE_NATURAL_FEATURE</full_name>
+        <value><![CDATA["natural_feature"]]></value>
+        <docblock line="158">
+          <description><![CDATA[A prominent natural feature.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="166" package="GoogleMapsGeocoder">
+        <name>TYPE_AIRPORT</name>
+        <full_name>TYPE_AIRPORT</full_name>
+        <value><![CDATA["airport"]]></value>
+        <docblock line="163">
+          <description><![CDATA[An airport.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="171" package="GoogleMapsGeocoder">
+        <name>TYPE_PARK</name>
+        <full_name>TYPE_PARK</full_name>
+        <value><![CDATA["park"]]></value>
+        <docblock line="168">
+          <description><![CDATA[A named park.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="176" package="GoogleMapsGeocoder">
+        <name>TYPE_POINT_OF_INTEREST</name>
+        <full_name>TYPE_POINT_OF_INTEREST</full_name>
+        <value><![CDATA["point_of_interest"]]></value>
+        <docblock line="173">
+          <description><![CDATA[A named point of interest that doesn't fit within another category.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="181" package="GoogleMapsGeocoder">
+        <name>TYPE_POST_BOX</name>
+        <full_name>TYPE_POST_BOX</full_name>
+        <value><![CDATA["post_box"]]></value>
+        <docblock line="178">
+          <description><![CDATA[A specific postal box.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="186" package="GoogleMapsGeocoder">
+        <name>TYPE_STREET_NUMBER</name>
+        <full_name>TYPE_STREET_NUMBER</full_name>
+        <value><![CDATA["street_number"]]></value>
+        <docblock line="183">
+          <description><![CDATA[A precise street number.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="191" package="GoogleMapsGeocoder">
+        <name>TYPE_FLOOR</name>
+        <full_name>TYPE_FLOOR</full_name>
+        <value><![CDATA["floor"]]></value>
+        <docblock line="188">
+          <description><![CDATA[A floor of a building address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="196" package="GoogleMapsGeocoder">
+        <name>TYPE_ROOM</name>
+        <full_name>TYPE_ROOM</full_name>
+        <value><![CDATA["room"]]></value>
+        <docblock line="193">
+          <description><![CDATA[A room of a building address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="202" package="GoogleMapsGeocoder">
+        <name>EQUATOR_LAT_DEGREE_IN_MILES</name>
+        <full_name>EQUATOR_LAT_DEGREE_IN_MILES</full_name>
+        <value><![CDATA[69.172]]></value>
+        <docblock line="198">
+          <description><![CDATA[Helps calculate a more realistic bounding box by taking into account the
+curvature of the earth's surface.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="private" line="209" namespace="global" package="Default">
+        <name>$format</name>
+        <default><![CDATA[]]></default>
+        <docblock line="204">
+          <description><![CDATA[Response format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="204" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="216" namespace="global" package="Default">
+        <name>$address</name>
+        <default><![CDATA[]]></default>
+        <docblock line="211">
+          <description><![CDATA[Address to geocode.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="211" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="223" namespace="global" package="Default">
+        <name>$latitude</name>
+        <default><![CDATA[]]></default>
+        <docblock line="218">
+          <description><![CDATA[Latitude to reverse geocode to the closest address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="218" name="var" description="" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="230" namespace="global" package="Default">
+        <name>$longitude</name>
+        <default><![CDATA[]]></default>
+        <docblock line="225">
+          <description><![CDATA[Longitude to reverse geocode to the closest address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="225" name="var" description="" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="238" namespace="global" package="Default">
+        <name>$boundsSouthwestLatitude</name>
+        <default><![CDATA[]]></default>
+        <docblock line="232">
+          <description><![CDATA[Southwest latitude of the bounding box within which to bias geocode
+results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="232" name="var" description="" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="246" namespace="global" package="Default">
+        <name>$boundsSouthwestLongitude</name>
+        <default><![CDATA[]]></default>
+        <docblock line="240">
+          <description><![CDATA[Southwest longitude of the bounding box within which to bias geocode
+results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="240" name="var" description="" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="254" namespace="global" package="Default">
+        <name>$boundsNortheastLatitude</name>
+        <default><![CDATA[]]></default>
+        <docblock line="248">
+          <description><![CDATA[Northeast latitude of the bounding box within which to bias geocode
+results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="248" name="var" description="" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="262" namespace="global" package="Default">
+        <name>$boundsNortheastLongitude</name>
+        <default><![CDATA[]]></default>
+        <docblock line="256">
+          <description><![CDATA[Northeast longitude of the bounding box within which to bias geocode
+results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="256" name="var" description="" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="270" namespace="global" package="Default">
+        <name>$region</name>
+        <default><![CDATA[]]></default>
+        <docblock line="264">
+          <description><![CDATA[Two-character, top-level domain (ccTLD) within which to bias geocode
+results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="264" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="277" namespace="global" package="Default">
+        <name>$language</name>
+        <default><![CDATA[]]></default>
+        <docblock line="272">
+          <description><![CDATA[Language code in which to return results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="272" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="284" namespace="global" package="Default">
+        <name>$sensor</name>
+        <default><![CDATA[]]></default>
+        <docblock line="279">
+          <description><![CDATA[Whether the request is from a device with a location sensor.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="279" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="295" package="GoogleMapsGeocoder">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="286">
+          <description><![CDATA[Constructor.]]></description>
+          <long-description><![CDATA[<p>The request is not executed until
+{@link GoogleMapsGeocoder::geocode()} is called.</p>]]></long-description>
+          <tag line="286" name="param" description="optional address to geocode" type="string" variable="$address">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="286" name="param" description="optional response format (JSON default)" type="string" variable="$format">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="286" name="param" description="optional whether device has location sensor" type="bool|string" variable="$sensor">
+            <type by_reference="false">bool</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="286" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="295">
+          <name>$address</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+        <argument line="295">
+          <name>$format</name>
+          <default><![CDATA[self::FORMAT_JSON]]></default>
+          <type/>
+        </argument>
+        <argument line="295">
+          <name>$sensor</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="308" package="GoogleMapsGeocoder">
+        <name>setFormat</name>
+        <full_name>setFormat</full_name>
+        <docblock line="301">
+          <description><![CDATA[Set the response format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="301" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#GeocodingResponses" link="http://code.google.com/apis/maps/documentation/geocoding/#GeocodingResponses"/>
+          <tag line="301" name="param" description="response format" type="string" variable="$format">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="301" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="308">
+          <name>$format</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="320" package="GoogleMapsGeocoder">
+        <name>getFormat</name>
+        <full_name>getFormat</full_name>
+        <docblock line="314">
+          <description><![CDATA[Get the response format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="314" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#GeocodingResponses" link="http://code.google.com/apis/maps/documentation/geocoding/#GeocodingResponses"/>
+          <tag line="314" name="return" description="response format" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="330" package="GoogleMapsGeocoder">
+        <name>isFormatJson</name>
+        <full_name>isFormatJson</full_name>
+        <docblock line="324">
+          <description><![CDATA[Whether the response format is JSON.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="324" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#JSON" link="http://code.google.com/apis/maps/documentation/geocoding/#JSON"/>
+          <tag line="324" name="return" description="whether JSON" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="340" package="GoogleMapsGeocoder">
+        <name>isFormatXml</name>
+        <full_name>isFormatXml</full_name>
+        <docblock line="334">
+          <description><![CDATA[Whether the response format is XML.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="334" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#XML" link="http://code.google.com/apis/maps/documentation/geocoding/#XML"/>
+          <tag line="334" name="return" description="whether XML" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="350" package="GoogleMapsGeocoder">
+        <name>setAddress</name>
+        <full_name>setAddress</full_name>
+        <docblock line="344">
+          <description><![CDATA[Set the address to geocode.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="344" name="param" description="address to geocode" type="string" variable="$address">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="344" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="350">
+          <name>$address</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="361" package="GoogleMapsGeocoder">
+        <name>getAddress</name>
+        <full_name>getAddress</full_name>
+        <docblock line="356">
+          <description><![CDATA[Get the address to geocode.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="356" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="373" package="GoogleMapsGeocoder">
+        <name>setLatitudeLongitude</name>
+        <full_name>setLatitudeLongitude</full_name>
+        <docblock line="365">
+          <description><![CDATA[Set the latitude/longitude to reverse geocode to the closest address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="365" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding" link="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding"/>
+          <tag line="365" name="param" description="latitude to reverse geocode" type="float|string" variable="$latitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="365" name="param" description="longitude to reverse geocode" type="float|string" variable="$longitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="365" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="373">
+          <name>$latitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="373">
+          <name>$longitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="387" package="GoogleMapsGeocoder">
+        <name>getLatitudeLongitude</name>
+        <full_name>getLatitudeLongitude</full_name>
+        <docblock line="380">
+          <description><![CDATA[Get the latitude/longitude to reverse geocode to the closest address
+in comma-separated format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="380" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding" link="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding"/>
+          <tag line="380" name="return" description="comma-separated coordinates, or false if not set" type="string|false">
+            <type by_reference="false">string</type>
+            <type by_reference="false">false</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="406" package="GoogleMapsGeocoder">
+        <name>setLatitude</name>
+        <full_name>setLatitude</full_name>
+        <docblock line="399">
+          <description><![CDATA[Set the latitude to reverse geocode to the closest address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="399" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding" link="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding"/>
+          <tag line="399" name="param" description="latitude to reverse geocode" type="float|string" variable="$latitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="399" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="406">
+          <name>$latitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="418" package="GoogleMapsGeocoder">
+        <name>getLatitude</name>
+        <full_name>getLatitude</full_name>
+        <docblock line="412">
+          <description><![CDATA[Get the latitude to reverse geocode to the closest address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="412" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding" link="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding"/>
+          <tag line="412" name="return" description="latitude to reverse geocode" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="429" package="GoogleMapsGeocoder">
+        <name>setLongitude</name>
+        <full_name>setLongitude</full_name>
+        <docblock line="422">
+          <description><![CDATA[Set the longitude to reverse geocode to the closest address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="422" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding" link="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding"/>
+          <tag line="422" name="param" description="longitude to reverse geocode" type="float|string" variable="$longitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="422" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="429">
+          <name>$longitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="441" package="GoogleMapsGeocoder">
+        <name>getLongitude</name>
+        <full_name>getLongitude</full_name>
+        <docblock line="435">
+          <description><![CDATA[Get the longitude to reverse geocode to the closest address.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="435" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding" link="http://code.google.com/apis/maps/documentation/geocoding/#ReverseGeocoding"/>
+          <tag line="435" name="return" description="longitude to reverse geocode" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="455" package="GoogleMapsGeocoder">
+        <name>setBounds</name>
+        <full_name>setBounds</full_name>
+        <docblock line="445">
+          <description><![CDATA[Set the bounding box coordinates within which to bias geocode results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="445" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#Viewports" link="http://code.google.com/apis/maps/documentation/geocoding/#Viewports"/>
+          <tag line="445" name="param" description="southwest latitude boundary" type="float|string" variable="$southwestLatitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="445" name="param" description="southwest longitude boundary" type="float|string" variable="$southwestLongitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="445" name="param" description="northeast latitude boundary" type="float|string" variable="$northeastLatitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="445" name="param" description="northeasy longitude boundary" type="float|string" variable="$northeastLongitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="445" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="455">
+          <name>$southwestLatitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="455">
+          <name>$southwestLongitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="455">
+          <name>$northeastLatitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="455">
+          <name>$northeastLongitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="470" package="GoogleMapsGeocoder">
+        <name>getBounds</name>
+        <full_name>getBounds</full_name>
+        <docblock line="462">
+          <description><![CDATA[Get the bounding box coordinates within which to bias geocode results
+in comma-separated, pipe-delimited format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="462" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#Viewports" link="http://code.google.com/apis/maps/documentation/geocoding/#Viewports"/>
+          <tag line="462" name="return" description="comma-separated, pipe-delimited coordinates, or false if not set" type="string|false">
+            <type by_reference="false">string</type>
+            <type by_reference="false">false</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="491" package="GoogleMapsGeocoder">
+        <name>setBoundsSouthwest</name>
+        <full_name>setBoundsSouthwest</full_name>
+        <docblock line="482">
+          <description><![CDATA[Set the southwest coordinates of the bounding box within which to bias
+geocode results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="482" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#Viewports" link="http://code.google.com/apis/maps/documentation/geocoding/#Viewports"/>
+          <tag line="482" name="param" description="southwest latitude boundary" type="float|string" variable="$latitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="482" name="param" description="southwest longitude boundary" type="float|string" variable="$longitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="482" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="491">
+          <name>$latitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="491">
+          <name>$longitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="505" package="GoogleMapsGeocoder">
+        <name>getBoundsSouthwest</name>
+        <full_name>getBoundsSouthwest</full_name>
+        <docblock line="498">
+          <description><![CDATA[Get the southwest coordinates of the bounding box within which to bias
+geocode results in comma-separated format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="498" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#Viewports" link="http://code.google.com/apis/maps/documentation/geocoding/#Viewports"/>
+          <tag line="498" name="return" description="comma-separated coordinates, or false if not set" type="string|false">
+            <type by_reference="false">string</type>
+            <type by_reference="false">false</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="524" package="GoogleMapsGeocoder">
+        <name>getBoundsSouthwestLatitude</name>
+        <full_name>getBoundsSouthwestLatitude</full_name>
+        <docblock line="517">
+          <description><![CDATA[Get the southwest latitude of the bounding box within which to bias
+geocode results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="517" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#Viewports" link="http://code.google.com/apis/maps/documentation/geocoding/#Viewports"/>
+          <tag line="517" name="return" description="southwest latitude boundary" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="535" package="GoogleMapsGeocoder">
+        <name>getBoundsSouthwestLongitude</name>
+        <full_name>getBoundsSouthwestLongitude</full_name>
+        <docblock line="528">
+          <description><![CDATA[Get the southwest longitude of the bounding box within which to bias
+geocode results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="528" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#Viewports" link="http://code.google.com/apis/maps/documentation/geocoding/#Viewports"/>
+          <tag line="528" name="return" description="southwest longitude boundary" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="548" package="GoogleMapsGeocoder">
+        <name>setBoundsNortheast</name>
+        <full_name>setBoundsNortheast</full_name>
+        <docblock line="539">
+          <description><![CDATA[Set the northeast coordinates of the bounding box within which to bias
+geocode results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="539" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#Viewports" link="http://code.google.com/apis/maps/documentation/geocoding/#Viewports"/>
+          <tag line="539" name="param" description="northeast latitude boundary" type="float|string" variable="$latitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="539" name="param" description="northeast longitude boundary" type="float|string" variable="$longitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="539" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="548">
+          <name>$latitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="548">
+          <name>$longitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="562" package="GoogleMapsGeocoder">
+        <name>getBoundsNortheast</name>
+        <full_name>getBoundsNortheast</full_name>
+        <docblock line="555">
+          <description><![CDATA[Get the northeast coordinates of the bounding box within which to bias
+geocode results in comma-separated format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="555" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#Viewports" link="http://code.google.com/apis/maps/documentation/geocoding/#Viewports"/>
+          <tag line="555" name="return" description="comma-separated coordinates, or false if not set" type="string|false">
+            <type by_reference="false">string</type>
+            <type by_reference="false">false</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="581" package="GoogleMapsGeocoder">
+        <name>getBoundsNortheastLatitude</name>
+        <full_name>getBoundsNortheastLatitude</full_name>
+        <docblock line="574">
+          <description><![CDATA[Get the northeast latitude of the bounding box within which to bias
+geocode results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="574" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#Viewports" link="http://code.google.com/apis/maps/documentation/geocoding/#Viewports"/>
+          <tag line="574" name="return" description="northeast latitude boundary" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="592" package="GoogleMapsGeocoder">
+        <name>getBoundsNortheastLongitude</name>
+        <full_name>getBoundsNortheastLongitude</full_name>
+        <docblock line="585">
+          <description><![CDATA[Get the northeast longitude of the bounding box within which to bias
+geocode results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="585" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#Viewports" link="http://code.google.com/apis/maps/documentation/geocoding/#Viewports"/>
+          <tag line="585" name="return" description="northeast longitude boundary" type="float|string">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="604" package="GoogleMapsGeocoder">
+        <name>setRegion</name>
+        <full_name>setRegion</full_name>
+        <docblock line="596">
+          <description><![CDATA[Set the two-character, top-level domain (ccTLD) within which to bias
+geocode results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="596" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#RegionCodes" link="http://code.google.com/apis/maps/documentation/geocoding/#RegionCodes"/>
+          <tag line="596" name="param" description="two-character, top-level domain (ccTLD)" type="string" variable="$region">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="596" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="604">
+          <name>$region</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="617" package="GoogleMapsGeocoder">
+        <name>getRegion</name>
+        <full_name>getRegion</full_name>
+        <docblock line="610">
+          <description><![CDATA[Get the two-character, top-level domain (ccTLD) within which to bias
+geocode results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="610" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#RegionCodes" link="http://code.google.com/apis/maps/documentation/geocoding/#RegionCodes"/>
+          <tag line="610" name="return" description="two-character, top-level domain (ccTLD)" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="628" package="GoogleMapsGeocoder">
+        <name>setLanguage</name>
+        <full_name>setLanguage</full_name>
+        <docblock line="621">
+          <description><![CDATA[Set the language code in which to return results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="621" name="link" description="https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1" link="https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1"/>
+          <tag line="621" name="param" description="language code" type="string" variable="$language">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="621" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="628">
+          <name>$language</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="640" package="GoogleMapsGeocoder">
+        <name>getLanguage</name>
+        <full_name>getLanguage</full_name>
+        <docblock line="634">
+          <description><![CDATA[Get the language code in which to return results.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="634" name="link" description="https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1" link="https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1"/>
+          <tag line="634" name="return" description="language code" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="650" package="GoogleMapsGeocoder">
+        <name>setSensor</name>
+        <full_name>setSensor</full_name>
+        <docblock line="644">
+          <description><![CDATA[Set whether the request is from a device with a location sensor.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="644" name="param" description="boolean or 'true'/'false' string" type="bool|string" variable="$sensor">
+            <type by_reference="false">bool</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="644" name="return" description="" type="\GoogleMapsGeocoder">
+            <type by_reference="false">\GoogleMapsGeocoder</type>
+          </tag>
+        </docblock>
+        <argument line="650">
+          <name>$sensor</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="669" package="GoogleMapsGeocoder">
+        <name>getSensor</name>
+        <full_name>getSensor</full_name>
+        <docblock line="664">
+          <description><![CDATA[Get whether the request is from a device with a location sensor.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="664" name="return" description="'true' or 'false'" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="679" package="GoogleMapsGeocoder">
+        <name>geocodeQueryString</name>
+        <full_name>geocodeQueryString</full_name>
+        <docblock line="673">
+          <description><![CDATA[Build the query string with all set parameters of the geocode request.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="673" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#GeocodingRequests" link="http://code.google.com/apis/maps/documentation/geocoding/#GeocodingRequests"/>
+          <tag line="673" name="return" description="encoded query string of the geocode request" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="716" package="GoogleMapsGeocoder">
+        <name>geocodeUrl</name>
+        <full_name>geocodeUrl</full_name>
+        <docblock line="709">
+          <description><![CDATA[Build the URL (with query string) of the geocode request.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="709" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#GeocodingRequests" link="http://code.google.com/apis/maps/documentation/geocoding/#GeocodingRequests"/>
+          <tag line="709" name="param" description="whether to make the request over HTTPS" type="bool" variable="$https">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="709" name="return" description="URL of the geocode request" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="716">
+          <name>$https</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="731" package="GoogleMapsGeocoder">
+        <name>geocode</name>
+        <full_name>geocode</full_name>
+        <docblock line="722">
+          <description><![CDATA[Execute the geocoding request.]]></description>
+          <long-description><![CDATA[<p>The return type is based on the requested
+format: associative array if JSON, SimpleXMLElement object if XML.</p>]]></long-description>
+          <tag line="722" name="link" description="http://code.google.com/apis/maps/documentation/geocoding/#GeocodingResponses" link="http://code.google.com/apis/maps/documentation/geocoding/#GeocodingResponses"/>
+          <tag line="722" name="param" description="whether to make the request over HTTPS" type="bool" variable="$https">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="722" name="param" description="whether to return the raw (string) response" type="bool" variable="$raw">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="722" name="return" description="response in requested format" type="string|array|\SimpleXMLElement">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+            <type by_reference="false">\SimpleXMLElement</type>
+          </tag>
+        </docblock>
+        <argument line="731">
+          <name>$https</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+        <argument line="731">
+          <name>$raw</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="763" package="GoogleMapsGeocoder">
+        <name>boundingBox</name>
+        <full_name>boundingBox</full_name>
+        <docblock line="748">
+          <description><![CDATA[Computes a four point bounding box around the specified location.]]></description>
+          <long-description><![CDATA[<p>This
+can then be used to find all locations within an X-mile range of a central
+location. A bounding box is much easier and faster to compute than a
+bounding radius.</p>
+
+<p>The returned array contains two keys: 'lat' and 'lon'. Each of these
+contains another array with two keys: 'max' and 'min'. Four points are
+returned in total.</p>]]></long-description>
+          <tag line="748" name="param" description="to draw the bounding box around" type="float|string" variable="$latitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="748" name="param" description="to draw the bounding box around" type="float|string" variable="$longitude">
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="748" name="param" description="mile range around point" type="int|float|string" variable="$mileRange">
+            <type by_reference="false">int</type>
+            <type by_reference="false">float</type>
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="748" name="return" description="'lat' and 'lon' 'min' and 'max' points" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="763">
+          <name>$latitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="763">
+          <name>$longitude</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="763">
+          <name>$mileRange</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file GoogleMapsGeocoder.php</error>
+    </parse_markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="GoogleMapsGeocoder" full_name="GoogleMapsGeocoder"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="0">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

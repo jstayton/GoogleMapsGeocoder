@@ -12,7 +12,15 @@ Developed by [Justin Stayton](http://twitter.com/jstayton) while at
 Requirements
 ------------
 
-*   PHP 5.2.0 or newer.
+*   PHP >= 5.2.0
+
+Installation
+------------
+
+1.  Copy `GoogleMapsGeocoder.php` to your codebase, perhaps to the `vendor`
+    directory.
+2.  Add the `GoogleMapsGeocoder` class to your autoloader or `require` the file
+    directly.
 
 Getting Started
 ---------------
@@ -60,3 +68,12 @@ Feedback
 Please open an issue to request a feature or submit a bug report. Or even if
 you just want to provide some feedback, I'd love to hear. I'm also available on
 Twitter as [@jstayton](http://twitter.com/jstayton).
+
+Contributing
+------------
+
+1.  Fork it.
+2.  Create your feature branch (`git checkout -b my-new-feature`).
+3.  Commit your changes (`git commit -am 'Added some feature'`).
+4.  Push to the branch (`git push origin my-new-feature`).
+5.  Create a new Pull Request.

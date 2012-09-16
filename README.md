@@ -17,6 +17,23 @@ Requirements
 Installation
 ------------
 
+### Composer
+
+The recommended installation method is through
+[Composer](http://getcomposer.org/), a dependency manager for PHP. Just add
+`jstayton/google-maps-geocoder` to your project's `composer.json` file:
+
+    {
+        "require": {
+            "jstayton/google-maps-geocoder": "*"
+        }
+    }
+
+[More details](http://packagist.org/packages/jstayton/google-maps-geocoder) can
+be found over at [Packagist](http://packagist.org).
+
+### Manually
+
 1.  Copy `GoogleMapsGeocoder.php` to your codebase, perhaps to the `vendor`
     directory.
 2.  Add the `GoogleMapsGeocoder` class to your autoloader or `require` the file

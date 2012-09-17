@@ -1,7 +1,7 @@
 GoogleMapsGeocoder
 ==================
 
-A PHP 5 object-oriented interface to the Google Maps Geocoding API v3.
+A PHP wrapper for the Google Maps Geocoding API v3.
 
 Developed by [Justin Stayton](http://twitter.com/jstayton) while at
 [Monk Development](http://monkdev.com).

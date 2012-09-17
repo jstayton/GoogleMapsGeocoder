@@ -1,7 +1,7 @@
 {
     "name": "jstayton/google-maps-geocoder",
     "type": "library",
-    "description": "A PHP 5 object-oriented interface to the Google Maps Geocoding API v3.",
+    "description": "A PHP wrapper for the Google Maps Geocoding API v3.",
     "keywords": ["google", "map", "maps", "gmap", "gmaps", "geocode", "geocoder", "geocoding"],
     "homepage": "https://github.com/jstayton/GoogleMapsGeocoder",
     "license": "MIT",

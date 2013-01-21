@@ -4,7 +4,7 @@
    * A PHP wrapper for the Google Maps Geocoding API v3.
    *
    * @author    Justin Stayton
-   * @copyright Copyright 2011-2012 by Justin Stayton
+   * @copyright Copyright 2013 by Justin Stayton
    * @license   https://github.com/jstayton/Miner/blob/master/LICENSE-MIT MIT
    * @link      https://developers.google.com/maps/documentation/geocoding/
    * @package   GoogleMapsGeocoder

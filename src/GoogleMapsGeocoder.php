@@ -736,7 +736,7 @@
       elseif ($this->isFormatJson()) {
         return json_decode($response, true);
       }
-      elseif ($his->isFormatXml()) {
+      elseif ($this->isFormatXml()) {
         return new SimpleXMLElement($response);
       }
       else {
@@ -773,5 +773,3 @@
     }
 
   }
-
-?>

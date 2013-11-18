@@ -12,6 +12,11 @@
             "role": "Developer"
         }
     ],
+    "autoload": {
+        "psr-0": {
+            "GoogleMapsGeocoder": "src/"
+        }
+    },
     "require": {
         "php": ">=5.2.0"
     }

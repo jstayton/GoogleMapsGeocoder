@@ -1,9 +1,9 @@
-<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>phpDocumentor » \GoogleMapsGeocoder</title>
+<title>GoogleMapsGeocoder » \GoogleMapsGeocoder</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -15,7 +15,7 @@
 <body>
 <div class="navbar navbar-fixed-top">
 <div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">GoogleMapsGeocoder</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
@@ -49,169 +49,190 @@
                         </div></noscript>
 <div class="row">
 <div class="span4">
-<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<div class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
 <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
 </div>
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
-<i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#__construct" title="__construct :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#boundingBox" title="boundingBox :: Computes a four point bounding box around the specified location."><span class="description">Computes a four point bounding box around the specified location.</span><pre>boundingBox()</pre></a></li>
-<li class="method public "><a href="#geocode" title="geocode :: Execute the geocoding request."><span class="description">Execute the geocoding request.</span><pre>geocode()</pre></a></li>
-<li class="method public "><a href="#getAddress" title="getAddress :: Get the address to geocode."><span class="description">Get the address to geocode.</span><pre>getAddress()</pre></a></li>
-<li class="method public "><a href="#getBounds" title="getBounds :: Get the bounding box coordinates within which to bias geocode results
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: Constructor. The request is not executed until `geocode()` is called."><span class="description">Constructor. The request is not executed until `geocode()` is called.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_boundingBox" title="boundingBox() :: Computes a four point bounding box around the specified location. This
+can then be used to find all locations within an X-mile range of a central
+location. A bounding box is much easier and faster to compute than a
+bounding radius."><span class="description">Computes a four point bounding box around the specified location. This
+can then be used to find all locations within an X-mile range of a central
+location. A bounding box is much easier and faster to compute than a
+bounding radius.</span><pre>boundingBox()</pre></a></li>
+<li class="method public "><a href="#method_geocode" title="geocode() :: Execute the geocoding request. The return type is based on the requested
+format: associative array if JSON, SimpleXMLElement object if XML."><span class="description">Execute the geocoding request. The return type is based on the requested
+format: associative array if JSON, SimpleXMLElement object if XML.</span><pre>geocode()</pre></a></li>
+<li class="method public "><a href="#method_getAddress" title="getAddress() :: Get the address to geocode."><span class="description">Get the address to geocode.</span><pre>getAddress()</pre></a></li>
+<li class="method public "><a href="#method_getBounds" title="getBounds() :: Get the bounding box coordinates within which to bias geocode results
 in comma-separated, pipe-delimited format."><span class="description">Get the bounding box coordinates within which to bias geocode results
 in comma-separated, pipe-delimited format.</span><pre>getBounds()</pre></a></li>
-<li class="method public "><a href="#getBoundsNortheast" title="getBoundsNortheast :: Get the northeast coordinates of the bounding box within which to bias
+<li class="method public "><a href="#method_getBoundsNortheast" title="getBoundsNortheast() :: Get the northeast coordinates of the bounding box within which to bias
 geocode results in comma-separated format."><span class="description">Get the northeast coordinates of the bounding box within which to bias
 geocode results in comma-separated format.</span><pre>getBoundsNortheast()</pre></a></li>
-<li class="method public "><a href="#getBoundsNortheastLatitude" title="getBoundsNortheastLatitude :: Get the northeast latitude of the bounding box within which to bias
+<li class="method public "><a href="#method_getBoundsNortheastLatitude" title="getBoundsNortheastLatitude() :: Get the northeast latitude of the bounding box within which to bias
 geocode results."><span class="description">Get the northeast latitude of the bounding box within which to bias
 geocode results.</span><pre>getBoundsNortheastLatitude()</pre></a></li>
-<li class="method public "><a href="#getBoundsNortheastLongitude" title="getBoundsNortheastLongitude :: Get the northeast longitude of the bounding box within which to bias
+<li class="method public "><a href="#method_getBoundsNortheastLongitude" title="getBoundsNortheastLongitude() :: Get the northeast longitude of the bounding box within which to bias
 geocode results."><span class="description">Get the northeast longitude of the bounding box within which to bias
 geocode results.</span><pre>getBoundsNortheastLongitude()</pre></a></li>
-<li class="method public "><a href="#getBoundsSouthwest" title="getBoundsSouthwest :: Get the southwest coordinates of the bounding box within which to bias
+<li class="method public "><a href="#method_getBoundsSouthwest" title="getBoundsSouthwest() :: Get the southwest coordinates of the bounding box within which to bias
 geocode results in comma-separated format."><span class="description">Get the southwest coordinates of the bounding box within which to bias
 geocode results in comma-separated format.</span><pre>getBoundsSouthwest()</pre></a></li>
-<li class="method public "><a href="#getBoundsSouthwestLatitude" title="getBoundsSouthwestLatitude :: Get the southwest latitude of the bounding box within which to bias
+<li class="method public "><a href="#method_getBoundsSouthwestLatitude" title="getBoundsSouthwestLatitude() :: Get the southwest latitude of the bounding box within which to bias
 geocode results."><span class="description">Get the southwest latitude of the bounding box within which to bias
 geocode results.</span><pre>getBoundsSouthwestLatitude()</pre></a></li>
-<li class="method public "><a href="#getBoundsSouthwestLongitude" title="getBoundsSouthwestLongitude :: Get the southwest longitude of the bounding box within which to bias
+<li class="method public "><a href="#method_getBoundsSouthwestLongitude" title="getBoundsSouthwestLongitude() :: Get the southwest longitude of the bounding box within which to bias
 geocode results."><span class="description">Get the southwest longitude of the bounding box within which to bias
 geocode results.</span><pre>getBoundsSouthwestLongitude()</pre></a></li>
-<li class="method public "><a href="#getFormat" title="getFormat :: Get the response format."><span class="description">Get the response format.</span><pre>getFormat()</pre></a></li>
-<li class="method public "><a href="#getLanguage" title="getLanguage :: Get the language code in which to return results."><span class="description">Get the language code in which to return results.</span><pre>getLanguage()</pre></a></li>
-<li class="method public "><a href="#getLatitude" title="getLatitude :: Get the latitude to reverse geocode to the closest address."><span class="description">Get the latitude to reverse geocode to the closest address.</span><pre>getLatitude()</pre></a></li>
-<li class="method public "><a href="#getLatitudeLongitude" title="getLatitudeLongitude :: Get the latitude/longitude to reverse geocode to the closest address
+<li class="method public "><a href="#method_getFormat" title="getFormat() :: Get the response format."><span class="description">Get the response format.</span><pre>getFormat()</pre></a></li>
+<li class="method public "><a href="#method_getLanguage" title="getLanguage() :: Get the language code in which to return results."><span class="description">Get the language code in which to return results.</span><pre>getLanguage()</pre></a></li>
+<li class="method public "><a href="#method_getLatitude" title="getLatitude() :: Get the latitude to reverse geocode to the closest address."><span class="description">Get the latitude to reverse geocode to the closest address.</span><pre>getLatitude()</pre></a></li>
+<li class="method public "><a href="#method_getLatitudeLongitude" title="getLatitudeLongitude() :: Get the latitude/longitude to reverse geocode to the closest address
 in comma-separated format."><span class="description">Get the latitude/longitude to reverse geocode to the closest address
 in comma-separated format.</span><pre>getLatitudeLongitude()</pre></a></li>
-<li class="method public "><a href="#getLongitude" title="getLongitude :: Get the longitude to reverse geocode to the closest address."><span class="description">Get the longitude to reverse geocode to the closest address.</span><pre>getLongitude()</pre></a></li>
-<li class="method public "><a href="#getRegion" title="getRegion :: Get the two-character, top-level domain (ccTLD) within which to bias
+<li class="method public "><a href="#method_getLongitude" title="getLongitude() :: Get the longitude to reverse geocode to the closest address."><span class="description">Get the longitude to reverse geocode to the closest address.</span><pre>getLongitude()</pre></a></li>
+<li class="method public "><a href="#method_getRegion" title="getRegion() :: Get the two-character, top-level domain (ccTLD) within which to bias
 geocode results."><span class="description">Get the two-character, top-level domain (ccTLD) within which to bias
 geocode results.</span><pre>getRegion()</pre></a></li>
-<li class="method public "><a href="#getSensor" title="getSensor :: Get whether the request is from a device with a location sensor."><span class="description">Get whether the request is from a device with a location sensor.</span><pre>getSensor()</pre></a></li>
-<li class="method public "><a href="#isFormatJson" title="isFormatJson :: Whether the response format is JSON."><span class="description">Whether the response format is JSON.</span><pre>isFormatJson()</pre></a></li>
-<li class="method public "><a href="#isFormatXml" title="isFormatXml :: Whether the response format is XML."><span class="description">Whether the response format is XML.</span><pre>isFormatXml()</pre></a></li>
-<li class="method public "><a href="#setAddress" title="setAddress :: Set the address to geocode."><span class="description">Set the address to geocode.</span><pre>setAddress()</pre></a></li>
-<li class="method public "><a href="#setBounds" title="setBounds :: Set the bounding box coordinates within which to bias geocode results."><span class="description">Set the bounding box coordinates within which to bias geocode results.</span><pre>setBounds()</pre></a></li>
-<li class="method public "><a href="#setBoundsNortheast" title="setBoundsNortheast :: Set the northeast coordinates of the bounding box within which to bias
+<li class="method public "><a href="#method_getSensor" title="getSensor() :: Get whether the request is from a device with a location sensor."><span class="description">Get whether the request is from a device with a location sensor.</span><pre>getSensor()</pre></a></li>
+<li class="method public "><a href="#method_isFormatJson" title="isFormatJson() :: Whether the response format is JSON."><span class="description">Whether the response format is JSON.</span><pre>isFormatJson()</pre></a></li>
+<li class="method public "><a href="#method_isFormatXml" title="isFormatXml() :: Whether the response format is XML."><span class="description">Whether the response format is XML.</span><pre>isFormatXml()</pre></a></li>
+<li class="method public "><a href="#method_setAddress" title="setAddress() :: Set the address to geocode."><span class="description">Set the address to geocode.</span><pre>setAddress()</pre></a></li>
+<li class="method public "><a href="#method_setBounds" title="setBounds() :: Set the bounding box coordinates within which to bias geocode results."><span class="description">Set the bounding box coordinates within which to bias geocode results.</span><pre>setBounds()</pre></a></li>
+<li class="method public "><a href="#method_setBoundsNortheast" title="setBoundsNortheast() :: Set the northeast coordinates of the bounding box within which to bias
 geocode results."><span class="description">Set the northeast coordinates of the bounding box within which to bias
 geocode results.</span><pre>setBoundsNortheast()</pre></a></li>
-<li class="method public "><a href="#setBoundsSouthwest" title="setBoundsSouthwest :: Set the southwest coordinates of the bounding box within which to bias
+<li class="method public "><a href="#method_setBoundsSouthwest" title="setBoundsSouthwest() :: Set the southwest coordinates of the bounding box within which to bias
 geocode results."><span class="description">Set the southwest coordinates of the bounding box within which to bias
 geocode results.</span><pre>setBoundsSouthwest()</pre></a></li>
-<li class="method public "><a href="#setFormat" title="setFormat :: Set the response format."><span class="description">Set the response format.</span><pre>setFormat()</pre></a></li>
-<li class="method public "><a href="#setLanguage" title="setLanguage :: Set the language code in which to return results."><span class="description">Set the language code in which to return results.</span><pre>setLanguage()</pre></a></li>
-<li class="method public "><a href="#setLatitude" title="setLatitude :: Set the latitude to reverse geocode to the closest address."><span class="description">Set the latitude to reverse geocode to the closest address.</span><pre>setLatitude()</pre></a></li>
-<li class="method public "><a href="#setLatitudeLongitude" title="setLatitudeLongitude :: Set the latitude/longitude to reverse geocode to the closest address."><span class="description">Set the latitude/longitude to reverse geocode to the closest address.</span><pre>setLatitudeLongitude()</pre></a></li>
-<li class="method public "><a href="#setLongitude" title="setLongitude :: Set the longitude to reverse geocode to the closest address."><span class="description">Set the longitude to reverse geocode to the closest address.</span><pre>setLongitude()</pre></a></li>
-<li class="method public "><a href="#setRegion" title="setRegion :: Set the two-character, top-level domain (ccTLD) within which to bias
+<li class="method public "><a href="#method_setFormat" title="setFormat() :: Set the response format."><span class="description">Set the response format.</span><pre>setFormat()</pre></a></li>
+<li class="method public "><a href="#method_setLanguage" title="setLanguage() :: Set the language code in which to return results."><span class="description">Set the language code in which to return results.</span><pre>setLanguage()</pre></a></li>
+<li class="method public "><a href="#method_setLatitude" title="setLatitude() :: Set the latitude to reverse geocode to the closest address."><span class="description">Set the latitude to reverse geocode to the closest address.</span><pre>setLatitude()</pre></a></li>
+<li class="method public "><a href="#method_setLatitudeLongitude" title="setLatitudeLongitude() :: Set the latitude/longitude to reverse geocode to the closest address."><span class="description">Set the latitude/longitude to reverse geocode to the closest address.</span><pre>setLatitudeLongitude()</pre></a></li>
+<li class="method public "><a href="#method_setLongitude" title="setLongitude() :: Set the longitude to reverse geocode to the closest address."><span class="description">Set the longitude to reverse geocode to the closest address.</span><pre>setLongitude()</pre></a></li>
+<li class="method public "><a href="#method_setRegion" title="setRegion() :: Set the two-character, top-level domain (ccTLD) within which to bias
 geocode results."><span class="description">Set the two-character, top-level domain (ccTLD) within which to bias
 geocode results.</span><pre>setRegion()</pre></a></li>
-<li class="method public "><a href="#setSensor" title="setSensor :: Set whether the request is from a device with a location sensor."><span class="description">Set whether the request is from a device with a location sensor.</span><pre>setSensor()</pre></a></li>
-<li class="nav-header private">» Private</li>
-<li class="method private "><a href="#geocodeQueryString" title="geocodeQueryString :: Build the query string with all set parameters of the geocode request."><span class="description">Build the query string with all set parameters of the geocode request.</span><pre>geocodeQueryString()</pre></a></li>
-<li class="method private "><a href="#geocodeUrl" title="geocodeUrl :: Build the URL (with query string) of the geocode request."><span class="description">Build the URL (with query string) of the geocode request.</span><pre>geocodeUrl()</pre></a></li>
+<li class="method public "><a href="#method_setSensor" title="setSensor() :: Set whether the request is from a device with a location sensor."><span class="description">Set whether the request is from a device with a location sensor.</span><pre>setSensor()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_geocodeQueryString" title="geocodeQueryString() :: Build the query string with all set parameters of the geocode request."><span class="description">Build the query string with all set parameters of the geocode request.</span><pre>geocodeQueryString()</pre></a></li>
+<li class="method private "><a href="#method_geocodeUrl" title="geocodeUrl() :: Build the URL (with query string) of the geocode request."><span class="description">Build the URL (with query string) of the geocode request.</span><pre>geocodeUrl()</pre></a></li>
+</ul>
+</li>
 <li class="nav-header">
-<i class="icon-custom icon-property"></i> Properties</li>
-<li class="nav-header private">» Private</li>
-<li class="property private "><a href="#%24address" title="$address :: Address to geocode."><span class="description">Address to geocode.</span><pre>$address</pre></a></li>
-<li class="property private "><a href="#%24boundsNortheastLatitude" title="$boundsNortheastLatitude :: Northeast latitude of the bounding box within which to bias geocode
-results."><span class="description">Northeast latitude of the bounding box within which to bias geocode
-results.</span><pre>$boundsNortheastLatitude</pre></a></li>
-<li class="property private "><a href="#%24boundsNortheastLongitude" title="$boundsNortheastLongitude :: Northeast longitude of the bounding box within which to bias geocode
-results."><span class="description">Northeast longitude of the bounding box within which to bias geocode
-results.</span><pre>$boundsNortheastLongitude</pre></a></li>
-<li class="property private "><a href="#%24boundsSouthwestLatitude" title="$boundsSouthwestLatitude :: Southwest latitude of the bounding box within which to bias geocode
-results."><span class="description">Southwest latitude of the bounding box within which to bias geocode
-results.</span><pre>$boundsSouthwestLatitude</pre></a></li>
-<li class="property private "><a href="#%24boundsSouthwestLongitude" title="$boundsSouthwestLongitude :: Southwest longitude of the bounding box within which to bias geocode
-results."><span class="description">Southwest longitude of the bounding box within which to bias geocode
-results.</span><pre>$boundsSouthwestLongitude</pre></a></li>
-<li class="property private "><a href="#%24format" title="$format :: Response format."><span class="description">Response format.</span><pre>$format</pre></a></li>
-<li class="property private "><a href="#%24language" title="$language :: Language code in which to return results."><span class="description">Language code in which to return results.</span><pre>$language</pre></a></li>
-<li class="property private "><a href="#%24latitude" title="$latitude :: Latitude to reverse geocode to the closest address."><span class="description">Latitude to reverse geocode to the closest address.</span><pre>$latitude</pre></a></li>
-<li class="property private "><a href="#%24longitude" title="$longitude :: Longitude to reverse geocode to the closest address."><span class="description">Longitude to reverse geocode to the closest address.</span><pre>$longitude</pre></a></li>
-<li class="property private "><a href="#%24region" title="$region :: Two-character, top-level domain (ccTLD) within which to bias geocode
-results."><span class="description">Two-character, top-level domain (ccTLD) within which to bias geocode
-results.</span><pre>$region</pre></a></li>
-<li class="property private "><a href="#%24sensor" title="$sensor :: Whether the request is from a device with a location sensor."><span class="description">Whether the request is from a device with a location sensor.</span><pre>$sensor</pre></a></li>
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_address" title="$address() :: Address to geocode."><span class="description"></span><pre>$address</pre></a></li>
+<li class="property private "><a href="#property_boundsNortheastLatitude" title="$boundsNortheastLatitude() :: Northeast latitude of the bounding box within which to bias geocode
+results."><span class="description"></span><pre>$boundsNortheastLatitude</pre></a></li>
+<li class="property private "><a href="#property_boundsNortheastLongitude" title="$boundsNortheastLongitude() :: Northeast longitude of the bounding box within which to bias geocode
+results."><span class="description"></span><pre>$boundsNortheastLongitude</pre></a></li>
+<li class="property private "><a href="#property_boundsSouthwestLatitude" title="$boundsSouthwestLatitude() :: Southwest latitude of the bounding box within which to bias geocode
+results."><span class="description"></span><pre>$boundsSouthwestLatitude</pre></a></li>
+<li class="property private "><a href="#property_boundsSouthwestLongitude" title="$boundsSouthwestLongitude() :: Southwest longitude of the bounding box within which to bias geocode
+results."><span class="description"></span><pre>$boundsSouthwestLongitude</pre></a></li>
+<li class="property private "><a href="#property_format" title="$format() :: Response format."><span class="description"></span><pre>$format</pre></a></li>
+<li class="property private "><a href="#property_language" title="$language() :: Language code in which to return results."><span class="description"></span><pre>$language</pre></a></li>
+<li class="property private "><a href="#property_latitude" title="$latitude() :: Latitude to reverse geocode to the closest address."><span class="description"></span><pre>$latitude</pre></a></li>
+<li class="property private "><a href="#property_longitude" title="$longitude() :: Longitude to reverse geocode to the closest address."><span class="description"></span><pre>$longitude</pre></a></li>
+<li class="property private "><a href="#property_region" title="$region() :: Two-character, top-level domain (ccTLD) within which to bias geocode
+results."><span class="description"></span><pre>$region</pre></a></li>
+<li class="property private "><a href="#property_sensor" title="$sensor() :: Whether the request is from a device with a location sensor."><span class="description"></span><pre>$sensor</pre></a></li>
+</ul>
+</li>
 <li class="nav-header">
-<i class="icon-custom icon-constant"></i> Constants</li>
-<li class="constant  "><a href="#EQUATOR_LAT_DEGREE_IN_MILES" title="EQUATOR_LAT_DEGREE_IN_MILES :: Helps calculate a more realistic bounding box by taking into account the
+<i title="Constants" class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_EQUATOR_LAT_DEGREE_IN_MILES" title="EQUATOR_LAT_DEGREE_IN_MILES() :: Helps calculate a more realistic bounding box by taking into account the
 curvature of the earth's surface."><span class="description">Helps calculate a more realistic bounding box by taking into account the
 curvature of the earth's surface.</span><pre>EQUATOR_LAT_DEGREE_IN_MILES</pre></a></li>
-<li class="constant  "><a href="#FORMAT_JSON" title="FORMAT_JSON :: JSON response format."><span class="description">JSON response format.</span><pre>FORMAT_JSON</pre></a></li>
-<li class="constant  "><a href="#FORMAT_XML" title="FORMAT_XML :: XML response format."><span class="description">XML response format.</span><pre>FORMAT_XML</pre></a></li>
-<li class="constant  "><a href="#LOCATION_TYPE_APPROXIMATE" title="LOCATION_TYPE_APPROXIMATE :: Returned result is approximate."><span class="description">Returned result is approximate.</span><pre>LOCATION_TYPE_APPROXIMATE</pre></a></li>
-<li class="constant  "><a href="#LOCATION_TYPE_CENTER" title="LOCATION_TYPE_CENTER :: Returned result is the geometric center of a polyline (i.e., a street)
+<li class="constant  "><a href="#constant_FORMAT_JSON" title="FORMAT_JSON() :: JSON response format."><span class="description">JSON response format.</span><pre>FORMAT_JSON</pre></a></li>
+<li class="constant  "><a href="#constant_FORMAT_XML" title="FORMAT_XML() :: XML response format."><span class="description">XML response format.</span><pre>FORMAT_XML</pre></a></li>
+<li class="constant  "><a href="#constant_LOCATION_TYPE_APPROXIMATE" title="LOCATION_TYPE_APPROXIMATE() :: Returned result is approximate."><span class="description">Returned result is approximate.</span><pre>LOCATION_TYPE_APPROXIMATE</pre></a></li>
+<li class="constant  "><a href="#constant_LOCATION_TYPE_CENTER" title="LOCATION_TYPE_CENTER() :: Returned result is the geometric center of a polyline (i.e., a street)
 or polygon (i.e., a region)."><span class="description">Returned result is the geometric center of a polyline (i.e., a street)
 or polygon (i.e., a region).</span><pre>LOCATION_TYPE_CENTER</pre></a></li>
-<li class="constant  "><a href="#LOCATION_TYPE_RANGE" title="LOCATION_TYPE_RANGE :: Returned result is between two precise points (usually on a road)."><span class="description">Returned result is between two precise points (usually on a road).</span><pre>LOCATION_TYPE_RANGE</pre></a></li>
-<li class="constant  "><a href="#LOCATION_TYPE_ROOFTOP" title="LOCATION_TYPE_ROOFTOP :: Returned result is a precise street address."><span class="description">Returned result is a precise street address.</span><pre>LOCATION_TYPE_ROOFTOP</pre></a></li>
-<li class="constant  "><a href="#STATUS_INVALID_REQUEST" title="STATUS_INVALID_REQUEST :: Invalid request, usually because of missing parameter that's required."><span class="description">Invalid request, usually because of missing parameter that's required.</span><pre>STATUS_INVALID_REQUEST</pre></a></li>
-<li class="constant  "><a href="#STATUS_NO_RESULTS" title="STATUS_NO_RESULTS :: Geocode was successful, but returned no results."><span class="description">Geocode was successful, but returned no results.</span><pre>STATUS_NO_RESULTS</pre></a></li>
-<li class="constant  "><a href="#STATUS_OVER_LIMIT" title="STATUS_OVER_LIMIT :: Over limit of 2,500 (100,000 if premier) requests per day."><span class="description">Over limit of 2,500 (100,000 if premier) requests per day.</span><pre>STATUS_OVER_LIMIT</pre></a></li>
-<li class="constant  "><a href="#STATUS_REQUEST_DENIED" title="STATUS_REQUEST_DENIED :: Request denied, usually because of missing sensor parameter."><span class="description">Request denied, usually because of missing sensor parameter.</span><pre>STATUS_REQUEST_DENIED</pre></a></li>
-<li class="constant  "><a href="#STATUS_SUCCESS" title="STATUS_SUCCESS :: No errors occurred, the address was successfully parsed and at least one
+<li class="constant  "><a href="#constant_LOCATION_TYPE_RANGE" title="LOCATION_TYPE_RANGE() :: Returned result is between two precise points (usually on a road)."><span class="description">Returned result is between two precise points (usually on a road).</span><pre>LOCATION_TYPE_RANGE</pre></a></li>
+<li class="constant  "><a href="#constant_LOCATION_TYPE_ROOFTOP" title="LOCATION_TYPE_ROOFTOP() :: Returned result is a precise street address."><span class="description">Returned result is a precise street address.</span><pre>LOCATION_TYPE_ROOFTOP</pre></a></li>
+<li class="constant  "><a href="#constant_STATUS_INVALID_REQUEST" title="STATUS_INVALID_REQUEST() :: Invalid request, usually because of missing parameter that's required."><span class="description">Invalid request, usually because of missing parameter that's required.</span><pre>STATUS_INVALID_REQUEST</pre></a></li>
+<li class="constant  "><a href="#constant_STATUS_NO_RESULTS" title="STATUS_NO_RESULTS() :: Geocode was successful, but returned no results."><span class="description">Geocode was successful, but returned no results.</span><pre>STATUS_NO_RESULTS</pre></a></li>
+<li class="constant  "><a href="#constant_STATUS_OVER_LIMIT" title="STATUS_OVER_LIMIT() :: Over limit of 2,500 (100,000 if premier) requests per day."><span class="description">Over limit of 2,500 (100,000 if premier) requests per day.</span><pre>STATUS_OVER_LIMIT</pre></a></li>
+<li class="constant  "><a href="#constant_STATUS_REQUEST_DENIED" title="STATUS_REQUEST_DENIED() :: Request denied, usually because of missing sensor parameter."><span class="description">Request denied, usually because of missing sensor parameter.</span><pre>STATUS_REQUEST_DENIED</pre></a></li>
+<li class="constant  "><a href="#constant_STATUS_SUCCESS" title="STATUS_SUCCESS() :: No errors occurred, the address was successfully parsed and at least one
 geocode was returned."><span class="description">No errors occurred, the address was successfully parsed and at least one
 geocode was returned.</span><pre>STATUS_SUCCESS</pre></a></li>
-<li class="constant  "><a href="#TYPE_ADMIN_AREA_1" title="TYPE_ADMIN_AREA_1 :: A first-order civil entity below country (states within the US)."><span class="description">A first-order civil entity below country (states within the US).</span><pre>TYPE_ADMIN_AREA_1</pre></a></li>
-<li class="constant  "><a href="#TYPE_ADMIN_AREA_2" title="TYPE_ADMIN_AREA_2 :: A second-order civil entity below country (counties within the US)."><span class="description">A second-order civil entity below country (counties within the US).</span><pre>TYPE_ADMIN_AREA_2</pre></a></li>
-<li class="constant  "><a href="#TYPE_ADMIN_AREA_3" title="TYPE_ADMIN_AREA_3 :: A third-order civil entity below country."><span class="description">A third-order civil entity below country.</span><pre>TYPE_ADMIN_AREA_3</pre></a></li>
-<li class="constant  "><a href="#TYPE_AIRPORT" title="TYPE_AIRPORT :: An airport."><span class="description">An airport.</span><pre>TYPE_AIRPORT</pre></a></li>
-<li class="constant  "><a href="#TYPE_COLLOQUIAL_AREA" title="TYPE_COLLOQUIAL_AREA :: A commonly-used alternative name for the entity."><span class="description">A commonly-used alternative name for the entity.</span><pre>TYPE_COLLOQUIAL_AREA</pre></a></li>
-<li class="constant  "><a href="#TYPE_COUNTRY" title="TYPE_COUNTRY :: A national political entity (country)."><span class="description">A national political entity (country).</span><pre>TYPE_COUNTRY</pre></a></li>
-<li class="constant  "><a href="#TYPE_FLOOR" title="TYPE_FLOOR :: A floor of a building address."><span class="description">A floor of a building address.</span><pre>TYPE_FLOOR</pre></a></li>
-<li class="constant  "><a href="#TYPE_INTERSECTION" title="TYPE_INTERSECTION :: A major intersection, usually of two major roads."><span class="description">A major intersection, usually of two major roads.</span><pre>TYPE_INTERSECTION</pre></a></li>
-<li class="constant  "><a href="#TYPE_LOCALITY" title="TYPE_LOCALITY :: An incorporated city or town."><span class="description">An incorporated city or town.</span><pre>TYPE_LOCALITY</pre></a></li>
-<li class="constant  "><a href="#TYPE_NATURAL_FEATURE" title="TYPE_NATURAL_FEATURE :: A prominent natural feature."><span class="description">A prominent natural feature.</span><pre>TYPE_NATURAL_FEATURE</pre></a></li>
-<li class="constant  "><a href="#TYPE_NEIGHBORHOOD" title="TYPE_NEIGHBORHOOD :: A named neighborhood."><span class="description">A named neighborhood.</span><pre>TYPE_NEIGHBORHOOD</pre></a></li>
-<li class="constant  "><a href="#TYPE_PARK" title="TYPE_PARK :: A named park."><span class="description">A named park.</span><pre>TYPE_PARK</pre></a></li>
-<li class="constant  "><a href="#TYPE_POINT_OF_INTEREST" title="TYPE_POINT_OF_INTEREST :: A named point of interest that doesn't fit within another category."><span class="description">A named point of interest that doesn't fit within another category.</span><pre>TYPE_POINT_OF_INTEREST</pre></a></li>
-<li class="constant  "><a href="#TYPE_POLITICAL" title="TYPE_POLITICAL :: A political entity, usually of some civil administration."><span class="description">A political entity, usually of some civil administration.</span><pre>TYPE_POLITICAL</pre></a></li>
-<li class="constant  "><a href="#TYPE_POSTAL_CODE" title="TYPE_POSTAL_CODE :: A postal code as used to address mail within the country."><span class="description">A postal code as used to address mail within the country.</span><pre>TYPE_POSTAL_CODE</pre></a></li>
-<li class="constant  "><a href="#TYPE_POST_BOX" title="TYPE_POST_BOX :: A specific postal box."><span class="description">A specific postal box.</span><pre>TYPE_POST_BOX</pre></a></li>
-<li class="constant  "><a href="#TYPE_PREMISE" title="TYPE_PREMISE :: A named location, usually a building or collection of buildings."><span class="description">A named location, usually a building or collection of buildings.</span><pre>TYPE_PREMISE</pre></a></li>
-<li class="constant  "><a href="#TYPE_ROOM" title="TYPE_ROOM :: A room of a building address."><span class="description">A room of a building address.</span><pre>TYPE_ROOM</pre></a></li>
-<li class="constant  "><a href="#TYPE_ROUTE" title='TYPE_ROUTE :: A named route (such as "US 101").'><span class="description">A named route (such as "US 101").</span><pre>TYPE_ROUTE</pre></a></li>
-<li class="constant  "><a href="#TYPE_STREET_ADDRESS" title="TYPE_STREET_ADDRESS :: A precise street address."><span class="description">A precise street address.</span><pre>TYPE_STREET_ADDRESS</pre></a></li>
-<li class="constant  "><a href="#TYPE_STREET_NUMBER" title="TYPE_STREET_NUMBER :: A precise street number."><span class="description">A precise street number.</span><pre>TYPE_STREET_NUMBER</pre></a></li>
-<li class="constant  "><a href="#TYPE_SUB_LOCALITY" title="TYPE_SUB_LOCALITY :: A first-order civil entity below a locality."><span class="description">A first-order civil entity below a locality.</span><pre>TYPE_SUB_LOCALITY</pre></a></li>
-<li class="constant  "><a href="#TYPE_SUB_PREMISE" title="TYPE_SUB_PREMISE :: A first-order entity below a named location, usually a single building
+<li class="constant  "><a href="#constant_TYPE_ADMIN_AREA_1" title="TYPE_ADMIN_AREA_1() :: A first-order civil entity below country (states within the US)."><span class="description">A first-order civil entity below country (states within the US).</span><pre>TYPE_ADMIN_AREA_1</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_ADMIN_AREA_2" title="TYPE_ADMIN_AREA_2() :: A second-order civil entity below country (counties within the US)."><span class="description">A second-order civil entity below country (counties within the US).</span><pre>TYPE_ADMIN_AREA_2</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_ADMIN_AREA_3" title="TYPE_ADMIN_AREA_3() :: A third-order civil entity below country."><span class="description">A third-order civil entity below country.</span><pre>TYPE_ADMIN_AREA_3</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_AIRPORT" title="TYPE_AIRPORT() :: An airport."><span class="description">An airport.</span><pre>TYPE_AIRPORT</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_COLLOQUIAL_AREA" title="TYPE_COLLOQUIAL_AREA() :: A commonly-used alternative name for the entity."><span class="description">A commonly-used alternative name for the entity.</span><pre>TYPE_COLLOQUIAL_AREA</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_COUNTRY" title="TYPE_COUNTRY() :: A national political entity (country). The highest order type returned."><span class="description">A national political entity (country). The highest order type returned.</span><pre>TYPE_COUNTRY</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_FLOOR" title="TYPE_FLOOR() :: A floor of a building address."><span class="description">A floor of a building address.</span><pre>TYPE_FLOOR</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_INTERSECTION" title="TYPE_INTERSECTION() :: A major intersection, usually of two major roads."><span class="description">A major intersection, usually of two major roads.</span><pre>TYPE_INTERSECTION</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_LOCALITY" title="TYPE_LOCALITY() :: An incorporated city or town."><span class="description">An incorporated city or town.</span><pre>TYPE_LOCALITY</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_NATURAL_FEATURE" title="TYPE_NATURAL_FEATURE() :: A prominent natural feature."><span class="description">A prominent natural feature.</span><pre>TYPE_NATURAL_FEATURE</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_NEIGHBORHOOD" title="TYPE_NEIGHBORHOOD() :: A named neighborhood."><span class="description">A named neighborhood.</span><pre>TYPE_NEIGHBORHOOD</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_PARK" title="TYPE_PARK() :: A named park."><span class="description">A named park.</span><pre>TYPE_PARK</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_POINT_OF_INTEREST" title="TYPE_POINT_OF_INTEREST() :: A named point of interest that doesn't fit within another category."><span class="description">A named point of interest that doesn't fit within another category.</span><pre>TYPE_POINT_OF_INTEREST</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_POLITICAL" title="TYPE_POLITICAL() :: A political entity, usually of some civil administration."><span class="description">A political entity, usually of some civil administration.</span><pre>TYPE_POLITICAL</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_POSTAL_CODE" title="TYPE_POSTAL_CODE() :: A postal code as used to address mail within the country."><span class="description">A postal code as used to address mail within the country.</span><pre>TYPE_POSTAL_CODE</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_POST_BOX" title="TYPE_POST_BOX() :: A specific postal box."><span class="description">A specific postal box.</span><pre>TYPE_POST_BOX</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_PREMISE" title="TYPE_PREMISE() :: A named location, usually a building or collection of buildings."><span class="description">A named location, usually a building or collection of buildings.</span><pre>TYPE_PREMISE</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_ROOM" title="TYPE_ROOM() :: A room of a building address."><span class="description">A room of a building address.</span><pre>TYPE_ROOM</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_ROUTE" title='TYPE_ROUTE() :: A named route (such as "US 101").'><span class="description">A named route (such as "US 101").</span><pre>TYPE_ROUTE</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_STREET_ADDRESS" title="TYPE_STREET_ADDRESS() :: A precise street address."><span class="description">A precise street address.</span><pre>TYPE_STREET_ADDRESS</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_STREET_NUMBER" title="TYPE_STREET_NUMBER() :: A precise street number."><span class="description">A precise street number.</span><pre>TYPE_STREET_NUMBER</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_SUB_LOCALITY" title="TYPE_SUB_LOCALITY() :: A first-order civil entity below a locality."><span class="description">A first-order civil entity below a locality.</span><pre>TYPE_SUB_LOCALITY</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_SUB_PREMISE" title="TYPE_SUB_PREMISE() :: A first-order entity below a named location, usually a single building
 within a collection of building with a common name."><span class="description">A first-order entity below a named location, usually a single building
 within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE</pre></a></li>
-<li class="constant  "><a href="#URL_HTTP" title="URL_HTTP :: HTTP URL of the Google Geocoding API."><span class="description">HTTP URL of the Google Geocoding API.</span><pre>URL_HTTP</pre></a></li>
-<li class="constant  "><a href="#URL_HTTPS" title="URL_HTTPS :: HTTPS URL of the Google Geocoding API."><span class="description">HTTPS URL of the Google Geocoding API.</span><pre>URL_HTTPS</pre></a></li>
+<li class="constant  "><a href="#constant_URL_HTTP" title="URL_HTTP() :: HTTP URL of the Google Geocoding API."><span class="description">HTTP URL of the Google Geocoding API.</span><pre>URL_HTTP</pre></a></li>
+<li class="constant  "><a href="#constant_URL_HTTPS" title="URL_HTTPS() :: HTTPS URL of the Google Geocoding API."><span class="description">HTTPS URL of the Google Geocoding API.</span><pre>URL_HTTPS</pre></a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="span8">
-<a name="%5CGoogleMapsGeocoder" id="\GoogleMapsGeocoder"></a><ul class="breadcrumb">
+<a id="\GoogleMapsGeocoder"></a><ul class="breadcrumb">
 <li>
-<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
-<li><a href="../namespaces/global.html">global</a></li>
 <li class="active">
 <span class="divider">\</span><a href="../classes/GoogleMapsGeocoder.html">GoogleMapsGeocoder</a>
 </li>
 </ul>
-<div href="../classes/GoogleMapsGeocoder.html" class="element class">
+<div class="element class">
 <p class="short_description">A PHP wrapper for the Google Maps Geocoding API v3.</p>
 <div class="details">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
-<td><a href="mailto:justin.stayton@gmail.com">Justin Stayton</a></td>
+<td><a href="">Justin Stayton</a></td>
 </tr>
 <tr>
 <th>copyright</th>
-<td>Copyright 2011-2012 by Justin Stayton</td>
+<td>Copyright 2013 by Justin Stayton</td>
 </tr>
 <tr>
 <th>license</th>
-<td><a href="http://en.wikipedia.org/wiki/MIT_License">MIT License</a></td>
+<td><a href="https://github.com/jstayton/Miner/blob/master/LICENSE-MIT">MIT</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -223,25 +244,24 @@ within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE<
 </tr>
 <tr>
 <th>version</th>
-<td>2.0.1</td>
+<td>2.0.3</td>
 </tr>
 </table>
 <h3>
-<i class="icon-custom icon-method"></i> Methods</h3>
-<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
-<h2>Constructor.</h2>
-<pre>__construct(string $address, string $format, bool | string $sensor) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Constructor. The request is not executed until `geocode()` is called.</h2>
+<pre>__construct(string $address<code> = null</code>, string $format<code> = self::FORMAT_JSON</code>, bool|string $sensor<code> = false</code>) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>The request is not executed until <code>geocode()</code> is called.</p></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$address</h4>
 <code>string</code><p>optional address to geocode</p></div>
 <div class="subelement argument">
 <h4>$format</h4>
-<code>string</code><p>optional response format (JSON default)</p>
-</div>
+<code>string</code><p>optional response format (JSON default)</p></div>
 <div class="subelement argument">
 <h4>$sensor</h4>
 <code>bool</code><code>string</code><p>optional whether device has location sensor</p></div>
@@ -249,19 +269,17 @@ within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE<
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="boundingBox" id="boundingBox"></a><div class="element clickable method public boundingBox" data-toggle="collapse" data-target=".boundingBox .collapse">
-<h2>Computes a four point bounding box around the specified location.</h2>
-<pre>boundingBox(float | string $latitude, float | string $longitude, int | float | string $mileRange) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>This
+<a id="method_boundingBox"></a><div class="element clickable method public method_boundingBox" data-toggle="collapse" data-target=".method_boundingBox .collapse" title="public">
+<h2>Computes a four point bounding box around the specified location. This
 can then be used to find all locations within an X-mile range of a central
 location. A bounding box is much easier and faster to compute than a
-bounding radius.</p>
-
-<p>The returned array contains two keys: 'lat' and 'lon'. Each of these
+bounding radius.</h2>
+<pre>boundingBox(float|string $latitude, float|string $longitude, int|float|string $mileRange) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description">The returned array contains two keys: 'lat' and 'lon'. Each of these
 contains another array with two keys: 'max' and 'min'. Four points are
-returned in total.</p></p>
+returned in total.</div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$latitude</h4>
@@ -277,13 +295,13 @@ returned in total.</p></p>
 <code>array</code>'lat' and 'lon' 'min' and 'max' points</div>
 </div></div>
 </div>
-<a name="geocode" id="geocode"></a><div class="element clickable method public geocode" data-toggle="collapse" data-target=".geocode .collapse">
-<h2>Execute the geocoding request.</h2>
-<pre>geocode(bool $https, bool $raw) : string | array | <a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></pre>
+<a id="method_geocode"></a><div class="element clickable method public method_geocode" data-toggle="collapse" data-target=".method_geocode .collapse" title="public">
+<h2>Execute the geocoding request. The return type is based on the requested
+format: associative array if JSON, SimpleXMLElement object if XML.</h2>
+<pre>geocode(bool $https<code> = false</code>, bool $raw<code> = false</code>) : string | array | <a href="SimpleXMLElement.html">\SimpleXMLElement</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"><p>The return type is based on the requested
-format: associative array if JSON, SimpleXMLElement object if XML.</p></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses">https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses</a></td>
@@ -294,46 +312,46 @@ format: associative array if JSON, SimpleXMLElement object if XML.</p></p>
 <code>bool</code><p>whether to make the request over HTTPS</p></div>
 <div class="subelement argument">
 <h4>$raw</h4>
-<code>bool</code><p>whether to return the raw (string) response</p>
-</div>
+<code>bool</code><p>whether to return the raw (string) response</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>string</code><code>array</code><code><a href="http://php.net/manual/en/class.simplexmlelement.php">\SimpleXMLElement</a></code>response in requested format</div>
+<code>string</code><code>array</code><code><a href="SimpleXMLElement.html">\SimpleXMLElement</a></code>response in requested format</div>
 </div></div>
 </div>
-<a name="getAddress" id="getAddress"></a><div class="element clickable method public getAddress" data-toggle="collapse" data-target=".getAddress .collapse">
+<a id="method_getAddress"></a><div class="element clickable method public method_getAddress" data-toggle="collapse" data-target=".method_getAddress .collapse" title="public">
 <h2>Get the address to geocode.</h2>
 <pre>getAddress() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Returns</h3>
 <div class="subelement response"><code>string</code></div>
 </div></div>
 </div>
-<a name="getBounds" id="getBounds"></a><div class="element clickable method public getBounds" data-toggle="collapse" data-target=".getBounds .collapse">
+<a id="method_getBounds"></a><div class="element clickable method public method_getBounds" data-toggle="collapse" data-target=".method_getBounds .collapse" title="public">
 <h2>Get the bounding box coordinates within which to bias geocode results
 in comma-separated, pipe-delimited format.</h2>
 <pre>getBounds() : string | false</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>string</code><code>false</code>comma-separated, pipe-delimited coordinates, or false if not set</div>
+<code>string</code><code>false</code>comma-separated, pipe-delimited coordinates, or
+                     false if not set</div>
 </div></div>
 </div>
-<a name="getBoundsNortheast" id="getBoundsNortheast"></a><div class="element clickable method public getBoundsNortheast" data-toggle="collapse" data-target=".getBoundsNortheast .collapse">
+<a id="method_getBoundsNortheast"></a><div class="element clickable method public method_getBoundsNortheast" data-toggle="collapse" data-target=".method_getBoundsNortheast .collapse" title="public">
 <h2>Get the northeast coordinates of the bounding box within which to bias
 geocode results in comma-separated format.</h2>
 <pre>getBoundsNortheast() : string | false</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
@@ -343,13 +361,13 @@ geocode results in comma-separated format.</h2>
 <code>string</code><code>false</code>comma-separated coordinates, or false if not set</div>
 </div></div>
 </div>
-<a name="getBoundsNortheastLatitude" id="getBoundsNortheastLatitude"></a><div class="element clickable method public getBoundsNortheastLatitude" data-toggle="collapse" data-target=".getBoundsNortheastLatitude .collapse">
+<a id="method_getBoundsNortheastLatitude"></a><div class="element clickable method public method_getBoundsNortheastLatitude" data-toggle="collapse" data-target=".method_getBoundsNortheastLatitude .collapse" title="public">
 <h2>Get the northeast latitude of the bounding box within which to bias
 geocode results.</h2>
 <pre>getBoundsNortheastLatitude() : float | string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
@@ -359,13 +377,13 @@ geocode results.</h2>
 <code>float</code><code>string</code>northeast latitude boundary</div>
 </div></div>
 </div>
-<a name="getBoundsNortheastLongitude" id="getBoundsNortheastLongitude"></a><div class="element clickable method public getBoundsNortheastLongitude" data-toggle="collapse" data-target=".getBoundsNortheastLongitude .collapse">
+<a id="method_getBoundsNortheastLongitude"></a><div class="element clickable method public method_getBoundsNortheastLongitude" data-toggle="collapse" data-target=".method_getBoundsNortheastLongitude .collapse" title="public">
 <h2>Get the northeast longitude of the bounding box within which to bias
 geocode results.</h2>
 <pre>getBoundsNortheastLongitude() : float | string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
@@ -375,13 +393,13 @@ geocode results.</h2>
 <code>float</code><code>string</code>northeast longitude boundary</div>
 </div></div>
 </div>
-<a name="getBoundsSouthwest" id="getBoundsSouthwest"></a><div class="element clickable method public getBoundsSouthwest" data-toggle="collapse" data-target=".getBoundsSouthwest .collapse">
+<a id="method_getBoundsSouthwest"></a><div class="element clickable method public method_getBoundsSouthwest" data-toggle="collapse" data-target=".method_getBoundsSouthwest .collapse" title="public">
 <h2>Get the southwest coordinates of the bounding box within which to bias
 geocode results in comma-separated format.</h2>
 <pre>getBoundsSouthwest() : string | false</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
@@ -391,13 +409,13 @@ geocode results in comma-separated format.</h2>
 <code>string</code><code>false</code>comma-separated coordinates, or false if not set</div>
 </div></div>
 </div>
-<a name="getBoundsSouthwestLatitude" id="getBoundsSouthwestLatitude"></a><div class="element clickable method public getBoundsSouthwestLatitude" data-toggle="collapse" data-target=".getBoundsSouthwestLatitude .collapse">
+<a id="method_getBoundsSouthwestLatitude"></a><div class="element clickable method public method_getBoundsSouthwestLatitude" data-toggle="collapse" data-target=".method_getBoundsSouthwestLatitude .collapse" title="public">
 <h2>Get the southwest latitude of the bounding box within which to bias
 geocode results.</h2>
 <pre>getBoundsSouthwestLatitude() : float | string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
@@ -407,13 +425,13 @@ geocode results.</h2>
 <code>float</code><code>string</code>southwest latitude boundary</div>
 </div></div>
 </div>
-<a name="getBoundsSouthwestLongitude" id="getBoundsSouthwestLongitude"></a><div class="element clickable method public getBoundsSouthwestLongitude" data-toggle="collapse" data-target=".getBoundsSouthwestLongitude .collapse">
+<a id="method_getBoundsSouthwestLongitude"></a><div class="element clickable method public method_getBoundsSouthwestLongitude" data-toggle="collapse" data-target=".method_getBoundsSouthwestLongitude .collapse" title="public">
 <h2>Get the southwest longitude of the bounding box within which to bias
 geocode results.</h2>
 <pre>getBoundsSouthwestLongitude() : float | string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
@@ -423,12 +441,12 @@ geocode results.</h2>
 <code>float</code><code>string</code>southwest longitude boundary</div>
 </div></div>
 </div>
-<a name="getFormat" id="getFormat"></a><div class="element clickable method public getFormat" data-toggle="collapse" data-target=".getFormat .collapse">
+<a id="method_getFormat"></a><div class="element clickable method public method_getFormat" data-toggle="collapse" data-target=".method_getFormat .collapse" title="public">
 <h2>Get the response format.</h2>
 <pre>getFormat() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses">https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses</a></td>
@@ -438,27 +456,27 @@ geocode results.</h2>
 <code>string</code>response format</div>
 </div></div>
 </div>
-<a name="getLanguage" id="getLanguage"></a><div class="element clickable method public getLanguage" data-toggle="collapse" data-target=".getLanguage .collapse">
+<a id="method_getLanguage"></a><div class="element clickable method public method_getLanguage" data-toggle="collapse" data-target=".method_getLanguage .collapse" title="public">
 <h2>Get the language code in which to return results.</h2>
 <pre>getLanguage() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1">https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1</a></td>
+<td><a href="https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;amp;gid=1">https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>language code</div>
 </div></div>
 </div>
-<a name="getLatitude" id="getLatitude"></a><div class="element clickable method public getLatitude" data-toggle="collapse" data-target=".getLatitude .collapse">
+<a id="method_getLatitude"></a><div class="element clickable method public method_getLatitude" data-toggle="collapse" data-target=".method_getLatitude .collapse" title="public">
 <h2>Get the latitude to reverse geocode to the closest address.</h2>
 <pre>getLatitude() : float | string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
@@ -468,13 +486,13 @@ geocode results.</h2>
 <code>float</code><code>string</code>latitude to reverse geocode</div>
 </div></div>
 </div>
-<a name="getLatitudeLongitude" id="getLatitudeLongitude"></a><div class="element clickable method public getLatitudeLongitude" data-toggle="collapse" data-target=".getLatitudeLongitude .collapse">
+<a id="method_getLatitudeLongitude"></a><div class="element clickable method public method_getLatitudeLongitude" data-toggle="collapse" data-target=".method_getLatitudeLongitude .collapse" title="public">
 <h2>Get the latitude/longitude to reverse geocode to the closest address
 in comma-separated format.</h2>
 <pre>getLatitudeLongitude() : string | false</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
@@ -484,12 +502,12 @@ in comma-separated format.</h2>
 <code>string</code><code>false</code>comma-separated coordinates, or false if not set</div>
 </div></div>
 </div>
-<a name="getLongitude" id="getLongitude"></a><div class="element clickable method public getLongitude" data-toggle="collapse" data-target=".getLongitude .collapse">
+<a id="method_getLongitude"></a><div class="element clickable method public method_getLongitude" data-toggle="collapse" data-target=".method_getLongitude .collapse" title="public">
 <h2>Get the longitude to reverse geocode to the closest address.</h2>
 <pre>getLongitude() : float | string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
@@ -499,13 +517,13 @@ in comma-separated format.</h2>
 <code>float</code><code>string</code>longitude to reverse geocode</div>
 </div></div>
 </div>
-<a name="getRegion" id="getRegion"></a><div class="element clickable method public getRegion" data-toggle="collapse" data-target=".getRegion .collapse">
+<a id="method_getRegion"></a><div class="element clickable method public method_getRegion" data-toggle="collapse" data-target=".method_getRegion .collapse" title="public">
 <h2>Get the two-character, top-level domain (ccTLD) within which to bias
 geocode results.</h2>
 <pre>getRegion() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#RegionCodes">https://developers.google.com/maps/documentation/geocoding/#RegionCodes</a></td>
@@ -515,23 +533,23 @@ geocode results.</h2>
 <code>string</code>two-character, top-level domain (ccTLD)</div>
 </div></div>
 </div>
-<a name="getSensor" id="getSensor"></a><div class="element clickable method public getSensor" data-toggle="collapse" data-target=".getSensor .collapse">
+<a id="method_getSensor"></a><div class="element clickable method public method_getSensor" data-toggle="collapse" data-target=".method_getSensor .collapse" title="public">
 <h2>Get whether the request is from a device with a location sensor.</h2>
 <pre>getSensor() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>'true' or 'false'</div>
 </div></div>
 </div>
-<a name="isFormatJson" id="isFormatJson"></a><div class="element clickable method public isFormatJson" data-toggle="collapse" data-target=".isFormatJson .collapse">
+<a id="method_isFormatJson"></a><div class="element clickable method public method_isFormatJson" data-toggle="collapse" data-target=".method_isFormatJson .collapse" title="public">
 <h2>Whether the response format is JSON.</h2>
 <pre>isFormatJson() : bool</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#JSON">https://developers.google.com/maps/documentation/geocoding/#JSON</a></td>
@@ -541,12 +559,12 @@ geocode results.</h2>
 <code>bool</code>whether JSON</div>
 </div></div>
 </div>
-<a name="isFormatXml" id="isFormatXml"></a><div class="element clickable method public isFormatXml" data-toggle="collapse" data-target=".isFormatXml .collapse">
+<a id="method_isFormatXml"></a><div class="element clickable method public method_isFormatXml" data-toggle="collapse" data-target=".method_isFormatXml .collapse" title="public">
 <h2>Whether the response format is XML.</h2>
 <pre>isFormatXml() : bool</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#XML">https://developers.google.com/maps/documentation/geocoding/#XML</a></td>
@@ -556,12 +574,12 @@ geocode results.</h2>
 <code>bool</code>whether XML</div>
 </div></div>
 </div>
-<a name="setAddress" id="setAddress"></a><div class="element clickable method public setAddress" data-toggle="collapse" data-target=".setAddress .collapse">
+<a id="method_setAddress"></a><div class="element clickable method public method_setAddress" data-toggle="collapse" data-target=".method_setAddress .collapse" title="public">
 <h2>Set the address to geocode.</h2>
 <pre>setAddress(string $address) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$address</h4>
@@ -570,12 +588,12 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="setBounds" id="setBounds"></a><div class="element clickable method public setBounds" data-toggle="collapse" data-target=".setBounds .collapse">
+<a id="method_setBounds"></a><div class="element clickable method public method_setBounds" data-toggle="collapse" data-target=".method_setBounds .collapse" title="public">
 <h2>Set the bounding box coordinates within which to bias geocode results.</h2>
-<pre>setBounds(float | string $southwestLatitude, float | string $southwestLongitude, float | string $northeastLatitude, float | string $northeastLongitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<pre>setBounds(float|string $southwestLatitude, float|string $southwestLongitude, float|string $northeastLatitude, float|string $northeastLongitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
@@ -597,13 +615,13 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="setBoundsNortheast" id="setBoundsNortheast"></a><div class="element clickable method public setBoundsNortheast" data-toggle="collapse" data-target=".setBoundsNortheast .collapse">
+<a id="method_setBoundsNortheast"></a><div class="element clickable method public method_setBoundsNortheast" data-toggle="collapse" data-target=".method_setBoundsNortheast .collapse" title="public">
 <h2>Set the northeast coordinates of the bounding box within which to bias
 geocode results.</h2>
-<pre>setBoundsNortheast(float | string $latitude, float | string $longitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<pre>setBoundsNortheast(float|string $latitude, float|string $longitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
@@ -619,13 +637,13 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="setBoundsSouthwest" id="setBoundsSouthwest"></a><div class="element clickable method public setBoundsSouthwest" data-toggle="collapse" data-target=".setBoundsSouthwest .collapse">
+<a id="method_setBoundsSouthwest"></a><div class="element clickable method public method_setBoundsSouthwest" data-toggle="collapse" data-target=".method_setBoundsSouthwest .collapse" title="public">
 <h2>Set the southwest coordinates of the bounding box within which to bias
 geocode results.</h2>
-<pre>setBoundsSouthwest(float | string $latitude, float | string $longitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<pre>setBoundsSouthwest(float|string $latitude, float|string $longitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
@@ -641,12 +659,12 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="setFormat" id="setFormat"></a><div class="element clickable method public setFormat" data-toggle="collapse" data-target=".setFormat .collapse">
+<a id="method_setFormat"></a><div class="element clickable method public method_setFormat" data-toggle="collapse" data-target=".method_setFormat .collapse" title="public">
 <h2>Set the response format.</h2>
 <pre>setFormat(string $format) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses">https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses</a></td>
@@ -659,15 +677,15 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="setLanguage" id="setLanguage"></a><div class="element clickable method public setLanguage" data-toggle="collapse" data-target=".setLanguage .collapse">
+<a id="method_setLanguage"></a><div class="element clickable method public method_setLanguage" data-toggle="collapse" data-target=".method_setLanguage .collapse" title="public">
 <h2>Set the language code in which to return results.</h2>
 <pre>setLanguage(string $language) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1">https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1</a></td>
+<td><a href="https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;amp;gid=1">https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -677,12 +695,12 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="setLatitude" id="setLatitude"></a><div class="element clickable method public setLatitude" data-toggle="collapse" data-target=".setLatitude .collapse">
+<a id="method_setLatitude"></a><div class="element clickable method public method_setLatitude" data-toggle="collapse" data-target=".method_setLatitude .collapse" title="public">
 <h2>Set the latitude to reverse geocode to the closest address.</h2>
-<pre>setLatitude(float | string $latitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<pre>setLatitude(float|string $latitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
@@ -695,12 +713,12 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="setLatitudeLongitude" id="setLatitudeLongitude"></a><div class="element clickable method public setLatitudeLongitude" data-toggle="collapse" data-target=".setLatitudeLongitude .collapse">
+<a id="method_setLatitudeLongitude"></a><div class="element clickable method public method_setLatitudeLongitude" data-toggle="collapse" data-target=".method_setLatitudeLongitude .collapse" title="public">
 <h2>Set the latitude/longitude to reverse geocode to the closest address.</h2>
-<pre>setLatitudeLongitude(float | string $latitude, float | string $longitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<pre>setLatitudeLongitude(float|string $latitude, float|string $longitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
@@ -716,12 +734,12 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="setLongitude" id="setLongitude"></a><div class="element clickable method public setLongitude" data-toggle="collapse" data-target=".setLongitude .collapse">
+<a id="method_setLongitude"></a><div class="element clickable method public method_setLongitude" data-toggle="collapse" data-target=".method_setLongitude .collapse" title="public">
 <h2>Set the longitude to reverse geocode to the closest address.</h2>
-<pre>setLongitude(float | string $longitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<pre>setLongitude(float|string $longitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
@@ -734,13 +752,13 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="setRegion" id="setRegion"></a><div class="element clickable method public setRegion" data-toggle="collapse" data-target=".setRegion .collapse">
+<a id="method_setRegion"></a><div class="element clickable method public method_setRegion" data-toggle="collapse" data-target=".method_setRegion .collapse" title="public">
 <h2>Set the two-character, top-level domain (ccTLD) within which to bias
 geocode results.</h2>
 <pre>setRegion(string $region) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#RegionCodes">https://developers.google.com/maps/documentation/geocoding/#RegionCodes</a></td>
@@ -748,33 +766,31 @@ geocode results.</h2>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$region</h4>
-<code>string</code><p>two-character, top-level domain (ccTLD)</p>
-</div>
+<code>string</code><p>two-character, top-level domain (ccTLD)</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="setSensor" id="setSensor"></a><div class="element clickable method public setSensor" data-toggle="collapse" data-target=".setSensor .collapse">
+<a id="method_setSensor"></a><div class="element clickable method public method_setSensor" data-toggle="collapse" data-target=".method_setSensor .collapse" title="public">
 <h2>Set whether the request is from a device with a location sensor.</h2>
-<pre>setSensor(bool | string $sensor) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<pre>setSensor(bool|string $sensor) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$sensor</h4>
-<code>bool</code><code>string</code><p>boolean or 'true'/'false' string</p>
-</div>
+<code>bool</code><code>string</code><p>boolean or 'true'/'false' string</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
-<a name="geocodeQueryString" id="geocodeQueryString"></a><div class="element clickable method private geocodeQueryString" data-toggle="collapse" data-target=".geocodeQueryString .collapse">
+<a id="method_geocodeQueryString"></a><div class="element clickable method private method_geocodeQueryString" data-toggle="collapse" data-target=".method_geocodeQueryString .collapse" title="private">
 <h2>Build the query string with all set parameters of the geocode request.</h2>
 <pre>geocodeQueryString() : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests">https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests</a></td>
@@ -784,12 +800,12 @@ geocode results.</h2>
 <code>string</code>encoded query string of the geocode request</div>
 </div></div>
 </div>
-<a name="geocodeUrl" id="geocodeUrl"></a><div class="element clickable method private geocodeUrl" data-toggle="collapse" data-target=".geocodeUrl .collapse">
+<a id="method_geocodeUrl"></a><div class="element clickable method private method_geocodeUrl" data-toggle="collapse" data-target=".method_geocodeUrl .collapse" title="private">
 <h2>Build the URL (with query string) of the geocode request.</h2>
-<pre>geocodeUrl(bool $https) : string</pre>
+<pre>geocodeUrl(bool $https<code> = false</code>) : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
-<p class="long_description"></p>
+<div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
 <td><a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests">https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests</a></td>
@@ -804,305 +820,349 @@ geocode results.</h2>
 </div></div>
 </div>
 <h3>
-<i class="icon-custom icon-property"></i> Properties</h3>
-<a name="%24address" id="$address"> </a><div class="element clickable property private $address" data-toggle="collapse" data-target=".$address .collapse">
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_address"> </a><div class="element clickable property private property_address" data-toggle="collapse" data-target=".property_address .collapse" title="private">
 <h2>Address to geocode.</h2>
 <pre>$address : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="%24boundsNortheastLatitude" id="$boundsNortheastLatitude"> </a><div class="element clickable property private $boundsNortheastLatitude" data-toggle="collapse" data-target=".$boundsNortheastLatitude .collapse">
+<a id="property_boundsNortheastLatitude"> </a><div class="element clickable property private property_boundsNortheastLatitude" data-toggle="collapse" data-target=".property_boundsNortheastLatitude .collapse" title="private">
 <h2>Northeast latitude of the bounding box within which to bias geocode
 results.</h2>
 <pre>$boundsNortheastLatitude : float | string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="%24boundsNortheastLongitude" id="$boundsNortheastLongitude"> </a><div class="element clickable property private $boundsNortheastLongitude" data-toggle="collapse" data-target=".$boundsNortheastLongitude .collapse">
+<a id="property_boundsNortheastLongitude"> </a><div class="element clickable property private property_boundsNortheastLongitude" data-toggle="collapse" data-target=".property_boundsNortheastLongitude .collapse" title="private">
 <h2>Northeast longitude of the bounding box within which to bias geocode
 results.</h2>
 <pre>$boundsNortheastLongitude : float | string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="%24boundsSouthwestLatitude" id="$boundsSouthwestLatitude"> </a><div class="element clickable property private $boundsSouthwestLatitude" data-toggle="collapse" data-target=".$boundsSouthwestLatitude .collapse">
+<a id="property_boundsSouthwestLatitude"> </a><div class="element clickable property private property_boundsSouthwestLatitude" data-toggle="collapse" data-target=".property_boundsSouthwestLatitude .collapse" title="private">
 <h2>Southwest latitude of the bounding box within which to bias geocode
 results.</h2>
 <pre>$boundsSouthwestLatitude : float | string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="%24boundsSouthwestLongitude" id="$boundsSouthwestLongitude"> </a><div class="element clickable property private $boundsSouthwestLongitude" data-toggle="collapse" data-target=".$boundsSouthwestLongitude .collapse">
+<a id="property_boundsSouthwestLongitude"> </a><div class="element clickable property private property_boundsSouthwestLongitude" data-toggle="collapse" data-target=".property_boundsSouthwestLongitude .collapse" title="private">
 <h2>Southwest longitude of the bounding box within which to bias geocode
 results.</h2>
 <pre>$boundsSouthwestLongitude : float | string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="%24format" id="$format"> </a><div class="element clickable property private $format" data-toggle="collapse" data-target=".$format .collapse">
+<a id="property_format"> </a><div class="element clickable property private property_format" data-toggle="collapse" data-target=".property_format .collapse" title="private">
 <h2>Response format.</h2>
 <pre>$format : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="%24language" id="$language"> </a><div class="element clickable property private $language" data-toggle="collapse" data-target=".$language .collapse">
+<a id="property_language"> </a><div class="element clickable property private property_language" data-toggle="collapse" data-target=".property_language .collapse" title="private">
 <h2>Language code in which to return results.</h2>
 <pre>$language : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="%24latitude" id="$latitude"> </a><div class="element clickable property private $latitude" data-toggle="collapse" data-target=".$latitude .collapse">
+<a id="property_latitude"> </a><div class="element clickable property private property_latitude" data-toggle="collapse" data-target=".property_latitude .collapse" title="private">
 <h2>Latitude to reverse geocode to the closest address.</h2>
 <pre>$latitude : float | string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="%24longitude" id="$longitude"> </a><div class="element clickable property private $longitude" data-toggle="collapse" data-target=".$longitude .collapse">
+<a id="property_longitude"> </a><div class="element clickable property private property_longitude" data-toggle="collapse" data-target=".property_longitude .collapse" title="private">
 <h2>Longitude to reverse geocode to the closest address.</h2>
 <pre>$longitude : float | string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="%24region" id="$region"> </a><div class="element clickable property private $region" data-toggle="collapse" data-target=".$region .collapse">
+<a id="property_region"> </a><div class="element clickable property private property_region" data-toggle="collapse" data-target=".property_region .collapse" title="private">
 <h2>Two-character, top-level domain (ccTLD) within which to bias geocode
 results.</h2>
 <pre>$region : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="%24sensor" id="$sensor"> </a><div class="element clickable property private $sensor" data-toggle="collapse" data-target=".$sensor .collapse">
+<a id="property_sensor"> </a><div class="element clickable property private property_sensor" data-toggle="collapse" data-target=".property_sensor .collapse" title="private">
 <h2>Whether the request is from a device with a location sensor.</h2>
 <pre>$sensor : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 <h3>
-<i class="icon-custom icon-constant"></i> Constants</h3>
-<a name="EQUATOR_LAT_DEGREE_IN_MILES" id="EQUATOR_LAT_DEGREE_IN_MILES"> </a><div class="element clickable constant  EQUATOR_LAT_DEGREE_IN_MILES" data-toggle="collapse" data-target=".EQUATOR_LAT_DEGREE_IN_MILES .collapse">
+<i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_EQUATOR_LAT_DEGREE_IN_MILES"> </a><div class="element clickable constant  constant_EQUATOR_LAT_DEGREE_IN_MILES" data-toggle="collapse" data-target=".constant_EQUATOR_LAT_DEGREE_IN_MILES .collapse" title="">
 <h2>Helps calculate a more realistic bounding box by taking into account the
 curvature of the earth's surface.</h2>
-<pre>EQUATOR_LAT_DEGREE_IN_MILES </pre>
+<pre>EQUATOR_LAT_DEGREE_IN_MILES = 69.172 </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="FORMAT_JSON" id="FORMAT_JSON"> </a><div class="element clickable constant  FORMAT_JSON" data-toggle="collapse" data-target=".FORMAT_JSON .collapse">
+<a id="constant_FORMAT_JSON"> </a><div class="element clickable constant  constant_FORMAT_JSON" data-toggle="collapse" data-target=".constant_FORMAT_JSON .collapse" title="">
 <h2>JSON response format.</h2>
-<pre>FORMAT_JSON </pre>
+<pre>FORMAT_JSON = "json" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="FORMAT_XML" id="FORMAT_XML"> </a><div class="element clickable constant  FORMAT_XML" data-toggle="collapse" data-target=".FORMAT_XML .collapse">
+<a id="constant_FORMAT_XML"> </a><div class="element clickable constant  constant_FORMAT_XML" data-toggle="collapse" data-target=".constant_FORMAT_XML .collapse" title="">
 <h2>XML response format.</h2>
-<pre>FORMAT_XML </pre>
+<pre>FORMAT_XML = "xml" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="LOCATION_TYPE_APPROXIMATE" id="LOCATION_TYPE_APPROXIMATE"> </a><div class="element clickable constant  LOCATION_TYPE_APPROXIMATE" data-toggle="collapse" data-target=".LOCATION_TYPE_APPROXIMATE .collapse">
+<a id="constant_LOCATION_TYPE_APPROXIMATE"> </a><div class="element clickable constant  constant_LOCATION_TYPE_APPROXIMATE" data-toggle="collapse" data-target=".constant_LOCATION_TYPE_APPROXIMATE .collapse" title="">
 <h2>Returned result is approximate.</h2>
-<pre>LOCATION_TYPE_APPROXIMATE </pre>
+<pre>LOCATION_TYPE_APPROXIMATE = "APPROXIMATE" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="LOCATION_TYPE_CENTER" id="LOCATION_TYPE_CENTER"> </a><div class="element clickable constant  LOCATION_TYPE_CENTER" data-toggle="collapse" data-target=".LOCATION_TYPE_CENTER .collapse">
+<a id="constant_LOCATION_TYPE_CENTER"> </a><div class="element clickable constant  constant_LOCATION_TYPE_CENTER" data-toggle="collapse" data-target=".constant_LOCATION_TYPE_CENTER .collapse" title="">
 <h2>Returned result is the geometric center of a polyline (i.e., a street)
 or polygon (i.e., a region).</h2>
-<pre>LOCATION_TYPE_CENTER </pre>
+<pre>LOCATION_TYPE_CENTER = "GEOMETRIC_CENTER" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="LOCATION_TYPE_RANGE" id="LOCATION_TYPE_RANGE"> </a><div class="element clickable constant  LOCATION_TYPE_RANGE" data-toggle="collapse" data-target=".LOCATION_TYPE_RANGE .collapse">
+<a id="constant_LOCATION_TYPE_RANGE"> </a><div class="element clickable constant  constant_LOCATION_TYPE_RANGE" data-toggle="collapse" data-target=".constant_LOCATION_TYPE_RANGE .collapse" title="">
 <h2>Returned result is between two precise points (usually on a road).</h2>
-<pre>LOCATION_TYPE_RANGE </pre>
+<pre>LOCATION_TYPE_RANGE = "RANGE_INTERPOLATED" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="LOCATION_TYPE_ROOFTOP" id="LOCATION_TYPE_ROOFTOP"> </a><div class="element clickable constant  LOCATION_TYPE_ROOFTOP" data-toggle="collapse" data-target=".LOCATION_TYPE_ROOFTOP .collapse">
+<a id="constant_LOCATION_TYPE_ROOFTOP"> </a><div class="element clickable constant  constant_LOCATION_TYPE_ROOFTOP" data-toggle="collapse" data-target=".constant_LOCATION_TYPE_ROOFTOP .collapse" title="">
 <h2>Returned result is a precise street address.</h2>
-<pre>LOCATION_TYPE_ROOFTOP </pre>
+<pre>LOCATION_TYPE_ROOFTOP = "ROOFTOP" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="STATUS_INVALID_REQUEST" id="STATUS_INVALID_REQUEST"> </a><div class="element clickable constant  STATUS_INVALID_REQUEST" data-toggle="collapse" data-target=".STATUS_INVALID_REQUEST .collapse">
+<a id="constant_STATUS_INVALID_REQUEST"> </a><div class="element clickable constant  constant_STATUS_INVALID_REQUEST" data-toggle="collapse" data-target=".constant_STATUS_INVALID_REQUEST .collapse" title="">
 <h2>Invalid request, usually because of missing parameter that's required.</h2>
-<pre>STATUS_INVALID_REQUEST </pre>
+<pre>STATUS_INVALID_REQUEST = "INVALID_REQUEST" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="STATUS_NO_RESULTS" id="STATUS_NO_RESULTS"> </a><div class="element clickable constant  STATUS_NO_RESULTS" data-toggle="collapse" data-target=".STATUS_NO_RESULTS .collapse">
+<a id="constant_STATUS_NO_RESULTS"> </a><div class="element clickable constant  constant_STATUS_NO_RESULTS" data-toggle="collapse" data-target=".constant_STATUS_NO_RESULTS .collapse" title="">
 <h2>Geocode was successful, but returned no results.</h2>
-<pre>STATUS_NO_RESULTS </pre>
+<pre>STATUS_NO_RESULTS = "ZERO_RESULTS" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="STATUS_OVER_LIMIT" id="STATUS_OVER_LIMIT"> </a><div class="element clickable constant  STATUS_OVER_LIMIT" data-toggle="collapse" data-target=".STATUS_OVER_LIMIT .collapse">
+<a id="constant_STATUS_OVER_LIMIT"> </a><div class="element clickable constant  constant_STATUS_OVER_LIMIT" data-toggle="collapse" data-target=".constant_STATUS_OVER_LIMIT .collapse" title="">
 <h2>Over limit of 2,500 (100,000 if premier) requests per day.</h2>
-<pre>STATUS_OVER_LIMIT </pre>
+<pre>STATUS_OVER_LIMIT = "OVER_QUERY_LIMIT" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="STATUS_REQUEST_DENIED" id="STATUS_REQUEST_DENIED"> </a><div class="element clickable constant  STATUS_REQUEST_DENIED" data-toggle="collapse" data-target=".STATUS_REQUEST_DENIED .collapse">
+<a id="constant_STATUS_REQUEST_DENIED"> </a><div class="element clickable constant  constant_STATUS_REQUEST_DENIED" data-toggle="collapse" data-target=".constant_STATUS_REQUEST_DENIED .collapse" title="">
 <h2>Request denied, usually because of missing sensor parameter.</h2>
-<pre>STATUS_REQUEST_DENIED </pre>
+<pre>STATUS_REQUEST_DENIED = "REQUEST_DENIED" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="STATUS_SUCCESS" id="STATUS_SUCCESS"> </a><div class="element clickable constant  STATUS_SUCCESS" data-toggle="collapse" data-target=".STATUS_SUCCESS .collapse">
+<a id="constant_STATUS_SUCCESS"> </a><div class="element clickable constant  constant_STATUS_SUCCESS" data-toggle="collapse" data-target=".constant_STATUS_SUCCESS .collapse" title="">
 <h2>No errors occurred, the address was successfully parsed and at least one
 geocode was returned.</h2>
-<pre>STATUS_SUCCESS </pre>
+<pre>STATUS_SUCCESS = "OK" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_ADMIN_AREA_1" id="TYPE_ADMIN_AREA_1"> </a><div class="element clickable constant  TYPE_ADMIN_AREA_1" data-toggle="collapse" data-target=".TYPE_ADMIN_AREA_1 .collapse">
+<a id="constant_TYPE_ADMIN_AREA_1"> </a><div class="element clickable constant  constant_TYPE_ADMIN_AREA_1" data-toggle="collapse" data-target=".constant_TYPE_ADMIN_AREA_1 .collapse" title="">
 <h2>A first-order civil entity below country (states within the US).</h2>
-<pre>TYPE_ADMIN_AREA_1 </pre>
+<pre>TYPE_ADMIN_AREA_1 = "administrative_area_level_1" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_ADMIN_AREA_2" id="TYPE_ADMIN_AREA_2"> </a><div class="element clickable constant  TYPE_ADMIN_AREA_2" data-toggle="collapse" data-target=".TYPE_ADMIN_AREA_2 .collapse">
+<a id="constant_TYPE_ADMIN_AREA_2"> </a><div class="element clickable constant  constant_TYPE_ADMIN_AREA_2" data-toggle="collapse" data-target=".constant_TYPE_ADMIN_AREA_2 .collapse" title="">
 <h2>A second-order civil entity below country (counties within the US).</h2>
-<pre>TYPE_ADMIN_AREA_2 </pre>
+<pre>TYPE_ADMIN_AREA_2 = "administrative_area_level_2" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_ADMIN_AREA_3" id="TYPE_ADMIN_AREA_3"> </a><div class="element clickable constant  TYPE_ADMIN_AREA_3" data-toggle="collapse" data-target=".TYPE_ADMIN_AREA_3 .collapse">
+<a id="constant_TYPE_ADMIN_AREA_3"> </a><div class="element clickable constant  constant_TYPE_ADMIN_AREA_3" data-toggle="collapse" data-target=".constant_TYPE_ADMIN_AREA_3 .collapse" title="">
 <h2>A third-order civil entity below country.</h2>
-<pre>TYPE_ADMIN_AREA_3 </pre>
+<pre>TYPE_ADMIN_AREA_3 = "administrative_area_level_3" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_AIRPORT" id="TYPE_AIRPORT"> </a><div class="element clickable constant  TYPE_AIRPORT" data-toggle="collapse" data-target=".TYPE_AIRPORT .collapse">
+<a id="constant_TYPE_AIRPORT"> </a><div class="element clickable constant  constant_TYPE_AIRPORT" data-toggle="collapse" data-target=".constant_TYPE_AIRPORT .collapse" title="">
 <h2>An airport.</h2>
-<pre>TYPE_AIRPORT </pre>
+<pre>TYPE_AIRPORT = "airport" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_COLLOQUIAL_AREA" id="TYPE_COLLOQUIAL_AREA"> </a><div class="element clickable constant  TYPE_COLLOQUIAL_AREA" data-toggle="collapse" data-target=".TYPE_COLLOQUIAL_AREA .collapse">
+<a id="constant_TYPE_COLLOQUIAL_AREA"> </a><div class="element clickable constant  constant_TYPE_COLLOQUIAL_AREA" data-toggle="collapse" data-target=".constant_TYPE_COLLOQUIAL_AREA .collapse" title="">
 <h2>A commonly-used alternative name for the entity.</h2>
-<pre>TYPE_COLLOQUIAL_AREA </pre>
+<pre>TYPE_COLLOQUIAL_AREA = "colloquial_area" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_COUNTRY" id="TYPE_COUNTRY"> </a><div class="element clickable constant  TYPE_COUNTRY" data-toggle="collapse" data-target=".TYPE_COUNTRY .collapse">
-<h2>A national political entity (country).</h2>
-<pre>TYPE_COUNTRY </pre>
+<a id="constant_TYPE_COUNTRY"> </a><div class="element clickable constant  constant_TYPE_COUNTRY" data-toggle="collapse" data-target=".constant_TYPE_COUNTRY .collapse" title="">
+<h2>A national political entity (country). The highest order type returned.</h2>
+<pre>TYPE_COUNTRY = "country" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"><p>The highest order type returned.</p></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_FLOOR" id="TYPE_FLOOR"> </a><div class="element clickable constant  TYPE_FLOOR" data-toggle="collapse" data-target=".TYPE_FLOOR .collapse">
+<a id="constant_TYPE_FLOOR"> </a><div class="element clickable constant  constant_TYPE_FLOOR" data-toggle="collapse" data-target=".constant_TYPE_FLOOR .collapse" title="">
 <h2>A floor of a building address.</h2>
-<pre>TYPE_FLOOR </pre>
+<pre>TYPE_FLOOR = "floor" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_INTERSECTION" id="TYPE_INTERSECTION"> </a><div class="element clickable constant  TYPE_INTERSECTION" data-toggle="collapse" data-target=".TYPE_INTERSECTION .collapse">
+<a id="constant_TYPE_INTERSECTION"> </a><div class="element clickable constant  constant_TYPE_INTERSECTION" data-toggle="collapse" data-target=".constant_TYPE_INTERSECTION .collapse" title="">
 <h2>A major intersection, usually of two major roads.</h2>
-<pre>TYPE_INTERSECTION </pre>
+<pre>TYPE_INTERSECTION = "intersection" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_LOCALITY" id="TYPE_LOCALITY"> </a><div class="element clickable constant  TYPE_LOCALITY" data-toggle="collapse" data-target=".TYPE_LOCALITY .collapse">
+<a id="constant_TYPE_LOCALITY"> </a><div class="element clickable constant  constant_TYPE_LOCALITY" data-toggle="collapse" data-target=".constant_TYPE_LOCALITY .collapse" title="">
 <h2>An incorporated city or town.</h2>
-<pre>TYPE_LOCALITY </pre>
+<pre>TYPE_LOCALITY = "locality" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_NATURAL_FEATURE" id="TYPE_NATURAL_FEATURE"> </a><div class="element clickable constant  TYPE_NATURAL_FEATURE" data-toggle="collapse" data-target=".TYPE_NATURAL_FEATURE .collapse">
+<a id="constant_TYPE_NATURAL_FEATURE"> </a><div class="element clickable constant  constant_TYPE_NATURAL_FEATURE" data-toggle="collapse" data-target=".constant_TYPE_NATURAL_FEATURE .collapse" title="">
 <h2>A prominent natural feature.</h2>
-<pre>TYPE_NATURAL_FEATURE </pre>
+<pre>TYPE_NATURAL_FEATURE = "natural_feature" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_NEIGHBORHOOD" id="TYPE_NEIGHBORHOOD"> </a><div class="element clickable constant  TYPE_NEIGHBORHOOD" data-toggle="collapse" data-target=".TYPE_NEIGHBORHOOD .collapse">
+<a id="constant_TYPE_NEIGHBORHOOD"> </a><div class="element clickable constant  constant_TYPE_NEIGHBORHOOD" data-toggle="collapse" data-target=".constant_TYPE_NEIGHBORHOOD .collapse" title="">
 <h2>A named neighborhood.</h2>
-<pre>TYPE_NEIGHBORHOOD </pre>
+<pre>TYPE_NEIGHBORHOOD = "neighborhood" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_PARK" id="TYPE_PARK"> </a><div class="element clickable constant  TYPE_PARK" data-toggle="collapse" data-target=".TYPE_PARK .collapse">
+<a id="constant_TYPE_PARK"> </a><div class="element clickable constant  constant_TYPE_PARK" data-toggle="collapse" data-target=".constant_TYPE_PARK .collapse" title="">
 <h2>A named park.</h2>
-<pre>TYPE_PARK </pre>
+<pre>TYPE_PARK = "park" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_POINT_OF_INTEREST" id="TYPE_POINT_OF_INTEREST"> </a><div class="element clickable constant  TYPE_POINT_OF_INTEREST" data-toggle="collapse" data-target=".TYPE_POINT_OF_INTEREST .collapse">
+<a id="constant_TYPE_POINT_OF_INTEREST"> </a><div class="element clickable constant  constant_TYPE_POINT_OF_INTEREST" data-toggle="collapse" data-target=".constant_TYPE_POINT_OF_INTEREST .collapse" title="">
 <h2>A named point of interest that doesn't fit within another category.</h2>
-<pre>TYPE_POINT_OF_INTEREST </pre>
+<pre>TYPE_POINT_OF_INTEREST = "point_of_interest" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_POLITICAL" id="TYPE_POLITICAL"> </a><div class="element clickable constant  TYPE_POLITICAL" data-toggle="collapse" data-target=".TYPE_POLITICAL .collapse">
+<a id="constant_TYPE_POLITICAL"> </a><div class="element clickable constant  constant_TYPE_POLITICAL" data-toggle="collapse" data-target=".constant_TYPE_POLITICAL .collapse" title="">
 <h2>A political entity, usually of some civil administration.</h2>
-<pre>TYPE_POLITICAL </pre>
+<pre>TYPE_POLITICAL = "political" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_POSTAL_CODE" id="TYPE_POSTAL_CODE"> </a><div class="element clickable constant  TYPE_POSTAL_CODE" data-toggle="collapse" data-target=".TYPE_POSTAL_CODE .collapse">
+<a id="constant_TYPE_POSTAL_CODE"> </a><div class="element clickable constant  constant_TYPE_POSTAL_CODE" data-toggle="collapse" data-target=".constant_TYPE_POSTAL_CODE .collapse" title="">
 <h2>A postal code as used to address mail within the country.</h2>
-<pre>TYPE_POSTAL_CODE </pre>
+<pre>TYPE_POSTAL_CODE = "postal_code" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_POST_BOX" id="TYPE_POST_BOX"> </a><div class="element clickable constant  TYPE_POST_BOX" data-toggle="collapse" data-target=".TYPE_POST_BOX .collapse">
+<a id="constant_TYPE_POST_BOX"> </a><div class="element clickable constant  constant_TYPE_POST_BOX" data-toggle="collapse" data-target=".constant_TYPE_POST_BOX .collapse" title="">
 <h2>A specific postal box.</h2>
-<pre>TYPE_POST_BOX </pre>
+<pre>TYPE_POST_BOX = "post_box" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_PREMISE" id="TYPE_PREMISE"> </a><div class="element clickable constant  TYPE_PREMISE" data-toggle="collapse" data-target=".TYPE_PREMISE .collapse">
+<a id="constant_TYPE_PREMISE"> </a><div class="element clickable constant  constant_TYPE_PREMISE" data-toggle="collapse" data-target=".constant_TYPE_PREMISE .collapse" title="">
 <h2>A named location, usually a building or collection of buildings.</h2>
-<pre>TYPE_PREMISE </pre>
+<pre>TYPE_PREMISE = "premise" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_ROOM" id="TYPE_ROOM"> </a><div class="element clickable constant  TYPE_ROOM" data-toggle="collapse" data-target=".TYPE_ROOM .collapse">
+<a id="constant_TYPE_ROOM"> </a><div class="element clickable constant  constant_TYPE_ROOM" data-toggle="collapse" data-target=".constant_TYPE_ROOM .collapse" title="">
 <h2>A room of a building address.</h2>
-<pre>TYPE_ROOM </pre>
+<pre>TYPE_ROOM = "room" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_ROUTE" id="TYPE_ROUTE"> </a><div class="element clickable constant  TYPE_ROUTE" data-toggle="collapse" data-target=".TYPE_ROUTE .collapse">
+<a id="constant_TYPE_ROUTE"> </a><div class="element clickable constant  constant_TYPE_ROUTE" data-toggle="collapse" data-target=".constant_TYPE_ROUTE .collapse" title="">
 <h2>A named route (such as "US 101").</h2>
-<pre>TYPE_ROUTE </pre>
+<pre>TYPE_ROUTE = "route" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_STREET_ADDRESS" id="TYPE_STREET_ADDRESS"> </a><div class="element clickable constant  TYPE_STREET_ADDRESS" data-toggle="collapse" data-target=".TYPE_STREET_ADDRESS .collapse">
+<a id="constant_TYPE_STREET_ADDRESS"> </a><div class="element clickable constant  constant_TYPE_STREET_ADDRESS" data-toggle="collapse" data-target=".constant_TYPE_STREET_ADDRESS .collapse" title="">
 <h2>A precise street address.</h2>
-<pre>TYPE_STREET_ADDRESS </pre>
+<pre>TYPE_STREET_ADDRESS = "street_address" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_STREET_NUMBER" id="TYPE_STREET_NUMBER"> </a><div class="element clickable constant  TYPE_STREET_NUMBER" data-toggle="collapse" data-target=".TYPE_STREET_NUMBER .collapse">
+<a id="constant_TYPE_STREET_NUMBER"> </a><div class="element clickable constant  constant_TYPE_STREET_NUMBER" data-toggle="collapse" data-target=".constant_TYPE_STREET_NUMBER .collapse" title="">
 <h2>A precise street number.</h2>
-<pre>TYPE_STREET_NUMBER </pre>
+<pre>TYPE_STREET_NUMBER = "street_number" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_SUB_LOCALITY" id="TYPE_SUB_LOCALITY"> </a><div class="element clickable constant  TYPE_SUB_LOCALITY" data-toggle="collapse" data-target=".TYPE_SUB_LOCALITY .collapse">
+<a id="constant_TYPE_SUB_LOCALITY"> </a><div class="element clickable constant  constant_TYPE_SUB_LOCALITY" data-toggle="collapse" data-target=".constant_TYPE_SUB_LOCALITY .collapse" title="">
 <h2>A first-order civil entity below a locality.</h2>
-<pre>TYPE_SUB_LOCALITY </pre>
+<pre>TYPE_SUB_LOCALITY = "sublocality" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="TYPE_SUB_PREMISE" id="TYPE_SUB_PREMISE"> </a><div class="element clickable constant  TYPE_SUB_PREMISE" data-toggle="collapse" data-target=".TYPE_SUB_PREMISE .collapse">
+<a id="constant_TYPE_SUB_PREMISE"> </a><div class="element clickable constant  constant_TYPE_SUB_PREMISE" data-toggle="collapse" data-target=".constant_TYPE_SUB_PREMISE .collapse" title="">
 <h2>A first-order entity below a named location, usually a single building
 within a collection of building with a common name.</h2>
-<pre>TYPE_SUB_PREMISE </pre>
+<pre>TYPE_SUB_PREMISE = "subpremise" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="URL_HTTP" id="URL_HTTP"> </a><div class="element clickable constant  URL_HTTP" data-toggle="collapse" data-target=".URL_HTTP .collapse">
+<a id="constant_URL_HTTP"> </a><div class="element clickable constant  constant_URL_HTTP" data-toggle="collapse" data-target=".constant_URL_HTTP .collapse" title="">
 <h2>HTTP URL of the Google Geocoding API.</h2>
-<pre>URL_HTTP </pre>
+<pre>URL_HTTP = "http://maps.googleapis.com/maps/api/geocode/" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a name="URL_HTTPS" id="URL_HTTPS"> </a><div class="element clickable constant  URL_HTTPS" data-toggle="collapse" data-target=".URL_HTTPS .collapse">
+<a id="constant_URL_HTTPS"> </a><div class="element clickable constant  constant_URL_HTTPS" data-toggle="collapse" data-target=".constant_URL_HTTPS .collapse" title="">
 <h2>HTTPS URL of the Google Geocoding API.</h2>
-<pre>URL_HTTPS </pre>
+<pre>URL_HTTPS = "https://maps.googleapis.com/maps/api/geocode/" </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 </div>
 </div>
@@ -1110,8 +1170,9 @@ within a collection of building with a common name.</h2>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-09-17T17:36:23-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
+</a> and<br>
+            generated on 2013-12-07T20:03:58-06:00.<br></footer></div>
 </div>
 </body>
 </html>

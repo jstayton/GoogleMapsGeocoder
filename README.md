@@ -1,6 +1,9 @@
 GoogleMapsGeocoder
 ==================
 
+[![Latest Stable Version](https://poser.pugx.org/jstayton/google-maps-geocoder/v/stable.png)](https://packagist.org/packages/jstayton/google-maps-geocoder)
+[![Total Downloads](https://poser.pugx.org/jstayton/google-maps-geocoder/downloads.png)](https://packagist.org/packages/jstayton/google-maps-geocoder)
+
 A PHP wrapper for the Google Maps Geocoding API v3.
 
 Developed by [Justin Stayton](http://twitter.com/jstayton) while at

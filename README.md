@@ -84,7 +84,7 @@ $response = $Geocoder->geocode();
 The `geocode` method converts the response into a JSON associative array
 (default) or `SimpleXMLElement` object depending on the specified `format`. See
 the `geocode`
-[documentation](http://jstayton.github.io/GoogleMapsGeocoder/classes/GoogleMapsGeocoder.html#geocode)
+[documentation](http://jstayton.github.io/GoogleMapsGeocoder/classes/GoogleMapsGeocoder.html#method_geocode)
 for making the request over HTTPS or preventing conversion (instead returning
 the raw plain text response).
 

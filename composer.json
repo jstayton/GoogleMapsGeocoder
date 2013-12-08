@@ -19,5 +19,8 @@
     },
     "require": {
         "php": ">=5.2.0"
+    },
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "*"
     }
 }

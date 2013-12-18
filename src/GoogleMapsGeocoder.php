@@ -284,6 +284,20 @@
     private $sensor;
 
     /**
+     * Google Maps API for Business client id
+     *
+     * @var string
+     */
+    private $client;
+
+    /**
+     * Google Maps API for Business crypto key
+     *
+     * @var string
+     */
+    private $key;
+
+    /**
      * Constructor. The request is not executed until `geocode()` is called.
      *
      * @param  string $address optional address to geocode
@@ -670,6 +684,67 @@
     }
 
     /**
+     * Set the client id with which to sign requests.
+     *
+     * @link   https://developers.google.com/maps/documentation/business/webservices/#client_id
+     * @param  string $client client id
+     * @return GoogleMapsGeocoder
+     */
+    public function setClient($client) {
+      $this->client = $client;
+
+      return $this;
+    }
+
+    /**
+     * Get the client id with which to sign requests.
+     *
+     * @link   https://developers.google.com/maps/documentation/business/webservices/#client_id
+     * @return string client id
+     */
+    public function getClient() {
+      return $this->client;
+    }
+
+    /**
+     * Set the key with which to sign requests.
+     *
+     * @link   https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key
+     * @param  string $client key
+     * @return GoogleMapsGeocoder
+     */
+    public function setKey($key) {
+      $this->key = $key;
+
+      return $this;
+    }
+
+    /**
+     * Get the key with which to sign requests.
+     *
+     * @link   https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key
+     * @return string key
+     */
+    public function getKey() {
+      return $this->key;
+    }
+
+    /**
+     * Build the signature to sign the request with.
+     *
+     * @link   https://developers.google.com/maps/documentation/business/webservices/auth#digital_signatures
+     * @return string query signature
+     */
+    private function getSignature($queryString)
+    {
+        $key = $this->getKey();
+        $data = "/maps/api/geocode/json?".http_build_query($queryString);
+        $signature = hash_hmac("sha1", $data, base64_decode(strtr($key, '-_', '+/')), true);
+        $signature = strtr(base64_encode($signature), '+/', '-_');
+        return $signature;
+    }
+
+    /**
      * Build the query string with all set parameters of the geocode request.
      *
      * @link   https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests
@@ -700,6 +775,12 @@
 
       // Remove any unset parameters.
       $queryString = array_filter($queryString);
+
+      // If we have a client id and key then sign the request
+      if($this->getClient() && $this->getKey()){
+        $queryString['client'] = $this->getClient();
+        $queryString['signature'] = $this->getSignature($queryString);
+      }
 
       // Convert array to proper query string.
       return http_build_query($queryString);

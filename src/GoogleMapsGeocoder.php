@@ -13,6 +13,16 @@
   class GoogleMapsGeocoder {
 
     /**
+     * Domain portion of the Google Geocoding API URL.
+     */
+    const URL_DOMAIN = "maps.googleapis.com";
+
+    /**
+     * Path portion of the Google Geocoding API URL.
+     */
+    const URL_PATH = "/maps/api/geocode/";
+
+    /**
      * HTTP URL of the Google Geocoding API.
      */
     const URL_HTTP = "http://maps.googleapis.com/maps/api/geocode/";
@@ -284,18 +294,18 @@
     private $sensor;
 
     /**
-     * Google Maps API for Business client id
+     * Client ID for Business clients.
      *
      * @var string
      */
-    private $client;
+    private $clientId;
 
     /**
-     * Google Maps API for Business crypto key
+     * Cryptographic signing key for Business clients.
      *
      * @var string
      */
-    private $key;
+    private $signingKey;
 
     /**
      * Constructor. The request is not executed until `geocode()` is called.
@@ -684,64 +694,74 @@
     }
 
     /**
-     * Set the client id with which to sign requests.
+     * Set the client ID for Business clients.
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/#client_id
-     * @param  string $client client id
+     * @param  string $client client ID
      * @return GoogleMapsGeocoder
      */
-    public function setClient($client) {
-      $this->client = $client;
+    public function setClientId($clientId) {
+      $this->clientId = $clientId;
 
       return $this;
     }
 
     /**
-     * Get the client id with which to sign requests.
+     * Get the client ID for Business clients.
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/#client_id
-     * @return string client id
+     * @return string client ID
      */
-    public function getClient() {
-      return $this->client;
+    public function getClientId() {
+      return $this->clientId;
     }
 
     /**
-     * Set the key with which to sign requests.
+     * Set the cryptographic signing key for Business clients.
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key
-     * @param  string $client key
+     * @param  string $signingKey cryptographic signing key
      * @return GoogleMapsGeocoder
      */
-    public function setKey($key) {
-      $this->key = $key;
+    public function setSigningKey($signingKey) {
+      $this->signingKey = $signingKey;
 
       return $this;
     }
 
     /**
-     * Get the key with which to sign requests.
+     * Get the cryptographic signing key for Business clients.
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key
-     * @return string key
+     * @return string cryptographic signing key
      */
-    public function getKey() {
-      return $this->key;
+    public function getSigningKey() {
+      return $this->signingKey;
     }
 
     /**
-     * Build the signature to sign the request with.
+     * Whether the request is for a Business client.
+     *
+     * @return bool whether the request is for a Business client
+     */
+    public function isBusinessClient() {
+      return $this->getClientId() && $this->getSigningKey();
+    }
+
+    /**
+     * Generate the signature for a Business client geocode request.
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/auth#digital_signatures
-     * @return string query signature
+     * @param  string $pathQueryString path and query string of the request
+     * @return string Base64 encoded signature that's URL safe
      */
-    private function getSignature($queryString)
-    {
-        $key = $this->getKey();
-        $data = "/maps/api/geocode/json?".http_build_query($queryString);
-        $signature = hash_hmac("sha1", $data, base64_decode(strtr($key, '-_', '+/')), true);
-        $signature = strtr(base64_encode($signature), '+/', '-_');
-        return $signature;
+    private function generateSignature($pathQueryString) {
+      $decodedSigningKey = self::base64DecodeUrlSafe($this->getSigningKey());
+
+      $signature = hash_hmac('sha1', $pathQueryString, $decodedSigningKey, true);
+      $signature = self::base64EncodeUrlSafe($signature);
+
+      return $signature;
     }
 
     /**
@@ -776,10 +796,9 @@
       // Remove any unset parameters.
       $queryString = array_filter($queryString);
 
-      // If we have a client id and key then sign the request
-      if($this->getClient() && $this->getKey()){
-        $queryString['client'] = $this->getClient();
-        $queryString['signature'] = $this->getSignature($queryString);
+      // The signature is added later using the path + query string.
+      if ($this->isBusinessClient()) {
+        $queryString['client'] = $this->getClientId();
       }
 
       // Convert array to proper query string.
@@ -794,9 +813,14 @@
      * @return string URL of the geocode request
      */
     private function geocodeUrl($https = false) {
-      $url = $https ? self::URL_HTTPS : self::URL_HTTP;
+      $scheme = $https ? "https" : "http";
+      $pathQueryString = self::URL_PATH . $this->getFormat() . "?" . $this->geocodeQueryString();
 
-      return $url . $this->getFormat() . "?" . $this->geocodeQueryString();
+      if ($this->isBusinessClient()) {
+        $pathQueryString .= "&signature=" . $this->generateSignature($pathQueryString);
+      }
+
+      return $scheme . "://" . self::URL_DOMAIN . $pathQueryString;
     }
 
     /**
@@ -851,6 +875,26 @@
                                   'min' => $minLatitude),
                    'lon' => array('max' => $maxLongitude,
                                   'min' => $minLongitude));
+    }
+
+    /**
+     * Encode a string with Base64 using only URL safe characters.
+     *
+     * @param  string $value value to encode
+     * @return string encoded value
+     */
+    private static function base64EncodeUrlSafe($value) {
+      return strtr(base64_encode($value), '+/', '-_');
+    }
+
+    /**
+     * Decode a Base64 string that uses only URL safe characters.
+     *
+     * @param  string $value value to decode
+     * @return string decoded value
+     */
+    private static function base64DecodeUrlSafe($value) {
+      return base64_decode(strtr($value, '-_', '+/'));
     }
 
   }

@@ -697,7 +697,7 @@
      * Set the client ID for Business clients.
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/#client_id
-     * @param  string $client client ID
+     * @param  string $clientId client ID
      * @return GoogleMapsGeocoder
      */
     public function setClientId($clientId) {

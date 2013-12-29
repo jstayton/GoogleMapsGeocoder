@@ -94,6 +94,7 @@ geocode results.</span><pre>getBoundsSouthwestLatitude()</pre></a></li>
 <li class="method public "><a href="#method_getBoundsSouthwestLongitude" title="getBoundsSouthwestLongitude() :: Get the southwest longitude of the bounding box within which to bias
 geocode results."><span class="description">Get the southwest longitude of the bounding box within which to bias
 geocode results.</span><pre>getBoundsSouthwestLongitude()</pre></a></li>
+<li class="method public "><a href="#method_getClientId" title="getClientId() :: Get the client ID for Business clients."><span class="description">Get the client ID for Business clients.</span><pre>getClientId()</pre></a></li>
 <li class="method public "><a href="#method_getFormat" title="getFormat() :: Get the response format."><span class="description">Get the response format.</span><pre>getFormat()</pre></a></li>
 <li class="method public "><a href="#method_getLanguage" title="getLanguage() :: Get the language code in which to return results."><span class="description">Get the language code in which to return results.</span><pre>getLanguage()</pre></a></li>
 <li class="method public "><a href="#method_getLatitude" title="getLatitude() :: Get the latitude to reverse geocode to the closest address."><span class="description">Get the latitude to reverse geocode to the closest address.</span><pre>getLatitude()</pre></a></li>
@@ -105,6 +106,8 @@ in comma-separated format.</span><pre>getLatitudeLongitude()</pre></a></li>
 geocode results."><span class="description">Get the two-character, top-level domain (ccTLD) within which to bias
 geocode results.</span><pre>getRegion()</pre></a></li>
 <li class="method public "><a href="#method_getSensor" title="getSensor() :: Get whether the request is from a device with a location sensor."><span class="description">Get whether the request is from a device with a location sensor.</span><pre>getSensor()</pre></a></li>
+<li class="method public "><a href="#method_getSigningKey" title="getSigningKey() :: Get the cryptographic signing key for Business clients."><span class="description">Get the cryptographic signing key for Business clients.</span><pre>getSigningKey()</pre></a></li>
+<li class="method public "><a href="#method_isBusinessClient" title="isBusinessClient() :: Whether the request is for a Business client."><span class="description">Whether the request is for a Business client.</span><pre>isBusinessClient()</pre></a></li>
 <li class="method public "><a href="#method_isFormatJson" title="isFormatJson() :: Whether the response format is JSON."><span class="description">Whether the response format is JSON.</span><pre>isFormatJson()</pre></a></li>
 <li class="method public "><a href="#method_isFormatXml" title="isFormatXml() :: Whether the response format is XML."><span class="description">Whether the response format is XML.</span><pre>isFormatXml()</pre></a></li>
 <li class="method public "><a href="#method_setAddress" title="setAddress() :: Set the address to geocode."><span class="description">Set the address to geocode.</span><pre>setAddress()</pre></a></li>
@@ -115,6 +118,7 @@ geocode results.</span><pre>setBoundsNortheast()</pre></a></li>
 <li class="method public "><a href="#method_setBoundsSouthwest" title="setBoundsSouthwest() :: Set the southwest coordinates of the bounding box within which to bias
 geocode results."><span class="description">Set the southwest coordinates of the bounding box within which to bias
 geocode results.</span><pre>setBoundsSouthwest()</pre></a></li>
+<li class="method public "><a href="#method_setClientId" title="setClientId() :: Set the client ID for Business clients."><span class="description">Set the client ID for Business clients.</span><pre>setClientId()</pre></a></li>
 <li class="method public "><a href="#method_setFormat" title="setFormat() :: Set the response format."><span class="description">Set the response format.</span><pre>setFormat()</pre></a></li>
 <li class="method public "><a href="#method_setLanguage" title="setLanguage() :: Set the language code in which to return results."><span class="description">Set the language code in which to return results.</span><pre>setLanguage()</pre></a></li>
 <li class="method public "><a href="#method_setLatitude" title="setLatitude() :: Set the latitude to reverse geocode to the closest address."><span class="description">Set the latitude to reverse geocode to the closest address.</span><pre>setLatitude()</pre></a></li>
@@ -124,10 +128,14 @@ geocode results.</span><pre>setBoundsSouthwest()</pre></a></li>
 geocode results."><span class="description">Set the two-character, top-level domain (ccTLD) within which to bias
 geocode results.</span><pre>setRegion()</pre></a></li>
 <li class="method public "><a href="#method_setSensor" title="setSensor() :: Set whether the request is from a device with a location sensor."><span class="description">Set whether the request is from a device with a location sensor.</span><pre>setSensor()</pre></a></li>
+<li class="method public "><a href="#method_setSigningKey" title="setSigningKey() :: Set the cryptographic signing key for Business clients."><span class="description">Set the cryptographic signing key for Business clients.</span><pre>setSigningKey()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header private">» Private
                     <ul>
+<li class="method private "><a href="#method_base64DecodeUrlSafe" title="base64DecodeUrlSafe() :: Decode a Base64 string that uses only URL safe characters."><span class="description">Decode a Base64 string that uses only URL safe characters.</span><pre>base64DecodeUrlSafe()</pre></a></li>
+<li class="method private "><a href="#method_base64EncodeUrlSafe" title="base64EncodeUrlSafe() :: Encode a string with Base64 using only URL safe characters."><span class="description">Encode a string with Base64 using only URL safe characters.</span><pre>base64EncodeUrlSafe()</pre></a></li>
+<li class="method private "><a href="#method_generateSignature" title="generateSignature() :: Generate the signature for a Business client geocode request."><span class="description">Generate the signature for a Business client geocode request.</span><pre>generateSignature()</pre></a></li>
 <li class="method private "><a href="#method_geocodeQueryString" title="geocodeQueryString() :: Build the query string with all set parameters of the geocode request."><span class="description">Build the query string with all set parameters of the geocode request.</span><pre>geocodeQueryString()</pre></a></li>
 <li class="method private "><a href="#method_geocodeUrl" title="geocodeUrl() :: Build the URL (with query string) of the geocode request."><span class="description">Build the URL (with query string) of the geocode request.</span><pre>geocodeUrl()</pre></a></li>
 </ul>
@@ -147,6 +155,7 @@ results."><span class="description"></span><pre>$boundsNortheastLongitude</pre><
 results."><span class="description"></span><pre>$boundsSouthwestLatitude</pre></a></li>
 <li class="property private "><a href="#property_boundsSouthwestLongitude" title="$boundsSouthwestLongitude() :: Southwest longitude of the bounding box within which to bias geocode
 results."><span class="description"></span><pre>$boundsSouthwestLongitude</pre></a></li>
+<li class="property private "><a href="#property_clientId" title="$clientId() :: Client ID for Business clients."><span class="description"></span><pre>$clientId</pre></a></li>
 <li class="property private "><a href="#property_format" title="$format() :: Response format."><span class="description"></span><pre>$format</pre></a></li>
 <li class="property private "><a href="#property_language" title="$language() :: Language code in which to return results."><span class="description"></span><pre>$language</pre></a></li>
 <li class="property private "><a href="#property_latitude" title="$latitude() :: Latitude to reverse geocode to the closest address."><span class="description"></span><pre>$latitude</pre></a></li>
@@ -154,6 +163,7 @@ results."><span class="description"></span><pre>$boundsSouthwestLongitude</pre><
 <li class="property private "><a href="#property_region" title="$region() :: Two-character, top-level domain (ccTLD) within which to bias geocode
 results."><span class="description"></span><pre>$region</pre></a></li>
 <li class="property private "><a href="#property_sensor" title="$sensor() :: Whether the request is from a device with a location sensor."><span class="description"></span><pre>$sensor</pre></a></li>
+<li class="property private "><a href="#property_signingKey" title="$signingKey() :: Cryptographic signing key for Business clients."><span class="description"></span><pre>$signingKey</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -202,8 +212,10 @@ geocode was returned.</span><pre>STATUS_SUCCESS</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_SUB_PREMISE" title="TYPE_SUB_PREMISE() :: A first-order entity below a named location, usually a single building
 within a collection of building with a common name."><span class="description">A first-order entity below a named location, usually a single building
 within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE</pre></a></li>
+<li class="constant  "><a href="#constant_URL_DOMAIN" title="URL_DOMAIN() :: Domain portion of the Google Geocoding API URL."><span class="description">Domain portion of the Google Geocoding API URL.</span><pre>URL_DOMAIN</pre></a></li>
 <li class="constant  "><a href="#constant_URL_HTTP" title="URL_HTTP() :: HTTP URL of the Google Geocoding API."><span class="description">HTTP URL of the Google Geocoding API.</span><pre>URL_HTTP</pre></a></li>
 <li class="constant  "><a href="#constant_URL_HTTPS" title="URL_HTTPS() :: HTTPS URL of the Google Geocoding API."><span class="description">HTTPS URL of the Google Geocoding API.</span><pre>URL_HTTPS</pre></a></li>
+<li class="constant  "><a href="#constant_URL_PATH" title="URL_PATH() :: Path portion of the Google Geocoding API URL."><span class="description">Path portion of the Google Geocoding API URL.</span><pre>URL_PATH</pre></a></li>
 </ul>
 </li>
 </ul>
@@ -244,7 +256,7 @@ within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE<
 </tr>
 <tr>
 <th>version</th>
-<td>2.0.3</td>
+<td>2.1.0</td>
 </tr>
 </table>
 <h3>
@@ -441,6 +453,21 @@ geocode results.</h2>
 <code>float</code><code>string</code>southwest longitude boundary</div>
 </div></div>
 </div>
+<a id="method_getClientId"></a><div class="element clickable method public method_getClientId" data-toggle="collapse" data-target=".method_getClientId .collapse" title="public">
+<h2>Get the client ID for Business clients.</h2>
+<pre>getClientId() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/business/webservices/#client_id">https://developers.google.com/maps/documentation/business/webservices/#client_id</a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>client ID</div>
+</div></div>
+</div>
 <a id="method_getFormat"></a><div class="element clickable method public method_getFormat" data-toggle="collapse" data-target=".method_getFormat .collapse" title="public">
 <h2>Get the response format.</h2>
 <pre>getFormat() : string</pre>
@@ -542,6 +569,32 @@ geocode results.</h2>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>'true' or 'false'</div>
+</div></div>
+</div>
+<a id="method_getSigningKey"></a><div class="element clickable method public method_getSigningKey" data-toggle="collapse" data-target=".method_getSigningKey .collapse" title="public">
+<h2>Get the cryptographic signing key for Business clients.</h2>
+<pre>getSigningKey() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key">https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key</a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>cryptographic signing key</div>
+</div></div>
+</div>
+<a id="method_isBusinessClient"></a><div class="element clickable method public method_isBusinessClient" data-toggle="collapse" data-target=".method_isBusinessClient .collapse" title="public">
+<h2>Whether the request is for a Business client.</h2>
+<pre>isBusinessClient() : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>bool</code>whether the request is for a Business client</div>
 </div></div>
 </div>
 <a id="method_isFormatJson"></a><div class="element clickable method public method_isFormatJson" data-toggle="collapse" data-target=".method_isFormatJson .collapse" title="public">
@@ -655,6 +708,24 @@ geocode results.</h2>
 <div class="subelement argument">
 <h4>$longitude</h4>
 <code>float</code><code>string</code><p>southwest longitude boundary</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
+</div></div>
+</div>
+<a id="method_setClientId"></a><div class="element clickable method public method_setClientId" data-toggle="collapse" data-target=".method_setClientId .collapse" title="public">
+<h2>Set the client ID for Business clients.</h2>
+<pre>setClientId(string $clientId) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/business/webservices/#client_id">https://developers.google.com/maps/documentation/business/webservices/#client_id</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$clientId</h4>
+<code>string</code><p>client ID</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
@@ -785,6 +856,73 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
+<a id="method_setSigningKey"></a><div class="element clickable method public method_setSigningKey" data-toggle="collapse" data-target=".method_setSigningKey .collapse" title="public">
+<h2>Set the cryptographic signing key for Business clients.</h2>
+<pre>setSigningKey(string $signingKey) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key">https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$signingKey</h4>
+<code>string</code><p>cryptographic signing key</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
+</div></div>
+</div>
+<a id="method_base64DecodeUrlSafe"></a><div class="element clickable method private method_base64DecodeUrlSafe" data-toggle="collapse" data-target=".method_base64DecodeUrlSafe .collapse" title="private">
+<h2>Decode a Base64 string that uses only URL safe characters.</h2>
+<pre>base64DecodeUrlSafe(string $value) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>value to decode</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>decoded value</div>
+</div></div>
+</div>
+<a id="method_base64EncodeUrlSafe"></a><div class="element clickable method private method_base64EncodeUrlSafe" data-toggle="collapse" data-target=".method_base64EncodeUrlSafe .collapse" title="private">
+<h2>Encode a string with Base64 using only URL safe characters.</h2>
+<pre>base64EncodeUrlSafe(string $value) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>value to encode</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>encoded value</div>
+</div></div>
+</div>
+<a id="method_generateSignature"></a><div class="element clickable method private method_generateSignature" data-toggle="collapse" data-target=".method_generateSignature .collapse" title="private">
+<h2>Generate the signature for a Business client geocode request.</h2>
+<pre>generateSignature(string $pathQueryString) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/business/webservices/auth#digital_signatures">https://developers.google.com/maps/documentation/business/webservices/auth#digital_signatures</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pathQueryString</h4>
+<code>string</code><p>path and query string of the request</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Base64 encoded signature that's URL safe</div>
+</div></div>
+</div>
 <a id="method_geocodeQueryString"></a><div class="element clickable method private method_geocodeQueryString" data-toggle="collapse" data-target=".method_geocodeQueryString .collapse" title="private">
 <h2>Build the query string with all set parameters of the geocode request.</h2>
 <pre>geocodeQueryString() : string</pre>
@@ -875,6 +1013,16 @@ results.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="property_clientId"> </a><div class="element clickable property private property_clientId" data-toggle="collapse" data-target=".property_clientId .collapse" title="private">
+<h2>Client ID for Business clients.</h2>
+<pre>$clientId : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property_format"> </a><div class="element clickable property private property_format" data-toggle="collapse" data-target=".property_format .collapse" title="private">
 <h2>Response format.</h2>
 <pre>$format : string</pre>
@@ -929,6 +1077,16 @@ results.</h2>
 <a id="property_sensor"> </a><div class="element clickable property private property_sensor" data-toggle="collapse" data-target=".property_sensor .collapse" title="private">
 <h2>Whether the request is from a device with a location sensor.</h2>
 <pre>$sensor : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_signingKey"> </a><div class="element clickable property private property_signingKey" data-toggle="collapse" data-target=".property_signingKey .collapse" title="private">
+<h2>Cryptographic signing key for Business clients.</h2>
+<pre>$signingKey : string</pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"></div>
@@ -1152,6 +1310,12 @@ within a collection of building with a common name.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_URL_DOMAIN"> </a><div class="element clickable constant  constant_URL_DOMAIN" data-toggle="collapse" data-target=".constant_URL_DOMAIN .collapse" title="">
+<h2>Domain portion of the Google Geocoding API URL.</h2>
+<pre>URL_DOMAIN = "maps.googleapis.com" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="constant_URL_HTTP"> </a><div class="element clickable constant  constant_URL_HTTP" data-toggle="collapse" data-target=".constant_URL_HTTP .collapse" title="">
 <h2>HTTP URL of the Google Geocoding API.</h2>
 <pre>URL_HTTP = "http://maps.googleapis.com/maps/api/geocode/" </pre>
@@ -1164,6 +1328,12 @@ within a collection of building with a common name.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_URL_PATH"> </a><div class="element clickable constant  constant_URL_PATH" data-toggle="collapse" data-target=".constant_URL_PATH .collapse" title="">
+<h2>Path portion of the Google Geocoding API URL.</h2>
+<pre>URL_PATH = "/maps/api/geocode/" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 </div>
 </div>
 </div>
@@ -1172,7 +1342,7 @@ within a collection of building with a common name.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
 </a> and<br>
-            generated on 2013-12-07T20:03:58-06:00.<br></footer></div>
+            generated on 2013-12-29T15:31:14-06:00.<br></footer></div>
 </div>
 </body>
 </html>

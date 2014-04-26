@@ -37,12 +37,6 @@ The recommended installation method is through
 [More details](http://packagist.org/packages/jstayton/google-maps-geocoder) can
 be found over at [Packagist](http://packagist.org).
 
-### Manually
-
-1.  Copy `src/GoogleMapsGeocoder.php` to your codebase, perhaps to the `vendor`
-    directory.
-2.  Add the `GoogleMapsGeocoder` class to your autoloader or `require` the file
-    directly.
 
 Getting Started
 ---------------
@@ -54,17 +48,21 @@ example:
 $address = "2707 Congress St., San Diego, CA 92110";
 ```
 
-There are two ways to set the address of a `GoogleMapsGeocoder` object. Either
+There are two ways to set the address of a `Geocoder` object. Either
 the address can be passed to the constructor:
 
 ```php
-$Geocoder = new GoogleMapsGeocoder($address);
+use GoogleMaps\Geocoder\Geocoder;
+
+$Geocoder = new Geocoder($address);
 ```
 
 Or the address can be set after the object is created:
 
 ```php
-$Geocoder = new GoogleMapsGeocoder();
+use GoogleMaps\Geocoder\Geocoder;
+
+$Geocoder = new Geocoder();
 $Geocoder->setAddress($address);
 ```
 

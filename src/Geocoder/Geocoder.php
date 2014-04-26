@@ -1,6 +1,8 @@
 <?php
 namespace GoogleMaps\Geocoder;
 
+use SimpleXMLElement;
+
 /**
  * A PHP wrapper for the Google Maps Geocoding API v3.
  *
@@ -321,13 +323,12 @@ class Geocoder
      * @param  string $address optional address to geocode
      * @param  string $format optional response format (JSON default)
      * @param  bool|string $sensor optional whether device has location sensor
-     * @return GoogleMapsGeocoder
      */
     public function __construct($address = null, $format = self::FORMAT_JSON, $sensor = false)
     {
-        $this->setAddress($address)
-            ->setFormat($format)
-            ->setSensor($sensor);
+        $this->setAddress($address);
+        $this->setFormat($format);
+        $this->setSensor($sensor);
     }
 
     /**
@@ -335,7 +336,7 @@ class Geocoder
      *
      * @link   https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses
      * @param  string $format response format
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setFormat($format)
     {
@@ -381,7 +382,7 @@ class Geocoder
      * Set the address to geocode.
      *
      * @param  string $address address to geocode
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setAddress($address)
     {
@@ -406,7 +407,7 @@ class Geocoder
      * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
      * @param  float|string $latitude latitude to reverse geocode
      * @param  float|string $longitude longitude to reverse geocode
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setLatitudeLongitude($latitude, $longitude)
     {
@@ -440,7 +441,7 @@ class Geocoder
      *
      * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
      * @param  float|string $latitude latitude to reverse geocode
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setLatitude($latitude)
     {
@@ -465,7 +466,7 @@ class Geocoder
      *
      * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
      * @param  float|string $longitude longitude to reverse geocode
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setLongitude($longitude)
     {
@@ -493,7 +494,7 @@ class Geocoder
      * @param  float|string $southwestLongitude southwest longitude boundary
      * @param  float|string $northeastLatitude northeast latitude boundary
      * @param  float|string $northeastLongitude northeasy longitude boundary
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setBounds($southwestLatitude, $southwestLongitude, $northeastLatitude, $northeastLongitude)
     {
@@ -530,7 +531,7 @@ class Geocoder
      * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
      * @param  float|string $latitude southwest latitude boundary
      * @param  float|string $longitude southwest longitude boundary
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setBoundsSouthwest($latitude, $longitude)
     {
@@ -590,7 +591,7 @@ class Geocoder
      * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
      * @param  float|string $latitude northeast latitude boundary
      * @param  float|string $longitude northeast longitude boundary
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setBoundsNortheast($latitude, $longitude)
     {
@@ -649,7 +650,7 @@ class Geocoder
      *
      * @link   https://developers.google.com/maps/documentation/geocoding/#RegionCodes
      * @param  string $region two-character, top-level domain (ccTLD)
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setRegion($region)
     {
@@ -675,7 +676,7 @@ class Geocoder
      *
      * @link   https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&gid=1
      * @param  string $language language code
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setLanguage($language)
     {
@@ -699,7 +700,7 @@ class Geocoder
      * Set whether the request is from a device with a location sensor.
      *
      * @param  bool|string $sensor boolean or 'true'/'false' string
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setSensor($sensor)
     {
@@ -747,7 +748,7 @@ class Geocoder
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/#client_id
      * @param  string $clientId client ID
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setClientId($clientId)
     {
@@ -772,7 +773,7 @@ class Geocoder
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key
      * @param  string $signingKey cryptographic signing key
-     * @return GoogleMapsGeocoder
+     * @return $this
      */
     public function setSigningKey($signingKey)
     {

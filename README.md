@@ -1,6 +1,7 @@
 GoogleMapsGeocoder
 ==================
 
+[![Build Status](https://travis-ci.org/jstayton/GoogleMapsGeocoder.svg)](https://travis-ci.org/jstayton/GoogleMapsGeocoder)
 [![Latest Stable Version](https://poser.pugx.org/jstayton/google-maps-geocoder/v/stable.png)](https://packagist.org/packages/jstayton/google-maps-geocoder)
 [![Total Downloads](https://poser.pugx.org/jstayton/google-maps-geocoder/downloads.png)](https://packagist.org/packages/jstayton/google-maps-geocoder)
 

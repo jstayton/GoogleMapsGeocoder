@@ -1,4 +1,5 @@
 <?php
+namespace GoogleMaps\Geocoder;
 
 /**
  * A PHP wrapper for the Google Maps Geocoding API v3.
@@ -7,10 +8,10 @@
  * @copyright Copyright 2014 by Justin Stayton
  * @license   https://github.com/jstayton/Miner/blob/master/LICENSE-MIT MIT
  * @link      https://developers.google.com/maps/documentation/geocoding/
- * @package   GoogleMapsGeocoder
- * @version   2.1.0
+ * @package   GoogleMaps\Geocoder
+ * @version   3.0.0
  */
-class GoogleMapsGeocoder
+class Geocoder
 {
     /**
      * Domain portion of the Google Geocoding API URL.
@@ -292,6 +293,13 @@ class GoogleMapsGeocoder
      * @var string
      */
     private $sensor;
+
+    /**
+     * API Key.
+     *
+     * @var string
+     */
+    private $apiKey;
 
     /**
      * Client ID for Business clients.
@@ -717,6 +725,24 @@ class GoogleMapsGeocoder
     }
 
     /**
+     * @return string
+     */
+    public function getApiKey()
+    {
+        return $this->apiKey;
+    }
+
+    /**
+     * @param string $apiKey
+     * @return $this
+     */
+    public function setApiKey($apiKey)
+    {
+        $this->apiKey = $apiKey;
+        return $this;
+    }
+
+    /**
      * Set the client ID for Business clients.
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/#client_id
@@ -813,6 +839,8 @@ class GoogleMapsGeocoder
         } elseif ($latitudeLongitude) {
             $queryString['latlng'] = $latitudeLongitude;
         }
+
+        $queryString['key'] = $this->getApiKey();
 
         // Optional parameters.
         $queryString['bounds'] = $this->getBounds();

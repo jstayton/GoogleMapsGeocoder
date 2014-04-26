@@ -16,7 +16,7 @@ Developed by [Justin Stayton](http://twitter.com/jstayton) while at
 Requirements
 ------------
 
-*   PHP >= 5.2.0
+*   PHP >= 5.3.0
 
 Installation
 ------------

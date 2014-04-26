@@ -1,17 +1,17 @@
 <?php
 
-  /**
-   * A PHP wrapper for the Google Maps Geocoding API v3.
-   *
-   * @author    Justin Stayton
-   * @copyright Copyright 2013 by Justin Stayton
-   * @license   https://github.com/jstayton/Miner/blob/master/LICENSE-MIT MIT
-   * @link      https://developers.google.com/maps/documentation/geocoding/
-   * @package   GoogleMapsGeocoder
-   * @version   2.1.0
-   */
-  class GoogleMapsGeocoder {
-
+/**
+ * A PHP wrapper for the Google Maps Geocoding API v3.
+ *
+ * @author    Justin Stayton
+ * @copyright Copyright 2014 by Justin Stayton
+ * @license   https://github.com/jstayton/Miner/blob/master/LICENSE-MIT MIT
+ * @link      https://developers.google.com/maps/documentation/geocoding/
+ * @package   GoogleMapsGeocoder
+ * @version   2.1.0
+ */
+class GoogleMapsGeocoder
+{
     /**
      * Domain portion of the Google Geocoding API URL.
      */
@@ -315,10 +315,11 @@
      * @param  bool|string $sensor optional whether device has location sensor
      * @return GoogleMapsGeocoder
      */
-    public function __construct($address = null, $format = self::FORMAT_JSON, $sensor = false) {
-      $this->setAddress($address)
-           ->setFormat($format)
-           ->setSensor($sensor);
+    public function __construct($address = null, $format = self::FORMAT_JSON, $sensor = false)
+    {
+        $this->setAddress($address)
+            ->setFormat($format)
+            ->setSensor($sensor);
     }
 
     /**
@@ -328,10 +329,11 @@
      * @param  string $format response format
      * @return GoogleMapsGeocoder
      */
-    public function setFormat($format) {
-      $this->format = $format;
+    public function setFormat($format)
+    {
+        $this->format = $format;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -340,8 +342,9 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses
      * @return string response format
      */
-    public function getFormat() {
-      return $this->format;
+    public function getFormat()
+    {
+        return $this->format;
     }
 
     /**
@@ -350,8 +353,9 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#JSON
      * @return bool whether JSON
      */
-    public function isFormatJson() {
-      return $this->getFormat() == self::FORMAT_JSON;
+    public function isFormatJson()
+    {
+        return $this->getFormat() == self::FORMAT_JSON;
     }
 
     /**
@@ -360,8 +364,9 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#XML
      * @return bool whether XML
      */
-    public function isFormatXml() {
-      return $this->getFormat() == self::FORMAT_XML;
+    public function isFormatXml()
+    {
+        return $this->getFormat() == self::FORMAT_XML;
     }
 
     /**
@@ -370,10 +375,11 @@
      * @param  string $address address to geocode
      * @return GoogleMapsGeocoder
      */
-    public function setAddress($address) {
-      $this->address = $address;
+    public function setAddress($address)
+    {
+        $this->address = $address;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -381,8 +387,9 @@
      *
      * @return string
      */
-    public function getAddress() {
-      return $this->address;
+    public function getAddress()
+    {
+        return $this->address;
     }
 
     /**
@@ -393,11 +400,12 @@
      * @param  float|string $longitude longitude to reverse geocode
      * @return GoogleMapsGeocoder
      */
-    public function setLatitudeLongitude($latitude, $longitude) {
-      $this->setLatitude($latitude)
-           ->setLongitude($longitude);
+    public function setLatitudeLongitude($latitude, $longitude)
+    {
+        $this->setLatitude($latitude)
+            ->setLongitude($longitude);
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -407,16 +415,16 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
      * @return string|false comma-separated coordinates, or false if not set
      */
-    public function getLatitudeLongitude() {
-      $latitude = $this->getLatitude();
-      $longitude = $this->getLongitude();
+    public function getLatitudeLongitude()
+    {
+        $latitude = $this->getLatitude();
+        $longitude = $this->getLongitude();
 
-      if ($latitude && $longitude) {
-        return $latitude . "," . $longitude;
-      }
-      else {
-        return false;
-      }
+        if ($latitude && $longitude) {
+            return $latitude . "," . $longitude;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -426,10 +434,11 @@
      * @param  float|string $latitude latitude to reverse geocode
      * @return GoogleMapsGeocoder
      */
-    public function setLatitude($latitude) {
-      $this->latitude = $latitude;
+    public function setLatitude($latitude)
+    {
+        $this->latitude = $latitude;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -438,8 +447,9 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
      * @return float|string latitude to reverse geocode
      */
-    public function getLatitude() {
-      return $this->latitude;
+    public function getLatitude()
+    {
+        return $this->latitude;
     }
 
     /**
@@ -449,10 +459,11 @@
      * @param  float|string $longitude longitude to reverse geocode
      * @return GoogleMapsGeocoder
      */
-    public function setLongitude($longitude) {
-      $this->longitude = $longitude;
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -461,8 +472,9 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
      * @return float|string longitude to reverse geocode
      */
-    public function getLongitude() {
-      return $this->longitude;
+    public function getLongitude()
+    {
+        return $this->longitude;
     }
 
     /**
@@ -475,11 +487,12 @@
      * @param  float|string $northeastLongitude northeasy longitude boundary
      * @return GoogleMapsGeocoder
      */
-    public function setBounds($southwestLatitude, $southwestLongitude, $northeastLatitude, $northeastLongitude) {
-      $this->setBoundsSouthwest($southwestLatitude, $southwestLongitude)
-           ->setBoundsNortheast($northeastLatitude, $northeastLatitude);
+    public function setBounds($southwestLatitude, $southwestLongitude, $northeastLatitude, $northeastLongitude)
+    {
+        $this->setBoundsSouthwest($southwestLatitude, $southwestLongitude)
+            ->setBoundsNortheast($northeastLatitude, $northeastLatitude);
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -490,16 +503,16 @@
      * @return string|false comma-separated, pipe-delimited coordinates, or
      *                      false if not set
      */
-    public function getBounds() {
-      $southwest = $this->getBoundsSouthwest();
-      $northeast = $this->getBoundsNortheast();
+    public function getBounds()
+    {
+        $southwest = $this->getBoundsSouthwest();
+        $northeast = $this->getBoundsNortheast();
 
-      if ($southwest && $northeast) {
-        return $southwest . "|" . $northeast;
-      }
-      else {
-        return false;
-      }
+        if ($southwest && $northeast) {
+            return $southwest . "|" . $northeast;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -511,11 +524,12 @@
      * @param  float|string $longitude southwest longitude boundary
      * @return GoogleMapsGeocoder
      */
-    public function setBoundsSouthwest($latitude, $longitude) {
-      $this->boundsSouthwestLatitude = $latitude;
-      $this->boundsSouthwestLongitude = $longitude;
+    public function setBoundsSouthwest($latitude, $longitude)
+    {
+        $this->boundsSouthwestLatitude = $latitude;
+        $this->boundsSouthwestLongitude = $longitude;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -525,16 +539,16 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
      * @return string|false comma-separated coordinates, or false if not set
      */
-    public function getBoundsSouthwest() {
-      $latitude = $this->getBoundsSouthwestLatitude();
-      $longitude = $this->getBoundsSouthwestLongitude();
+    public function getBoundsSouthwest()
+    {
+        $latitude = $this->getBoundsSouthwestLatitude();
+        $longitude = $this->getBoundsSouthwestLongitude();
 
-      if ($latitude && $longitude) {
-        return $latitude . "," . $longitude;
-      }
-      else {
-        return false;
-      }
+        if ($latitude && $longitude) {
+            return $latitude . "," . $longitude;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -544,8 +558,9 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
      * @return float|string southwest latitude boundary
      */
-    public function getBoundsSouthwestLatitude() {
-      return $this->boundsSouthwestLatitude;
+    public function getBoundsSouthwestLatitude()
+    {
+        return $this->boundsSouthwestLatitude;
     }
 
     /**
@@ -555,8 +570,9 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
      * @return float|string southwest longitude boundary
      */
-    public function getBoundsSouthwestLongitude() {
-      return $this->boundsSouthwestLongitude;
+    public function getBoundsSouthwestLongitude()
+    {
+        return $this->boundsSouthwestLongitude;
     }
 
     /**
@@ -568,11 +584,12 @@
      * @param  float|string $longitude northeast longitude boundary
      * @return GoogleMapsGeocoder
      */
-    public function setBoundsNortheast($latitude, $longitude) {
-      $this->boundsNortheastLatitude = $latitude;
-      $this->boundsNortheastLongitude = $longitude;
+    public function setBoundsNortheast($latitude, $longitude)
+    {
+        $this->boundsNortheastLatitude = $latitude;
+        $this->boundsNortheastLongitude = $longitude;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -582,16 +599,16 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
      * @return string|false comma-separated coordinates, or false if not set
      */
-    public function getBoundsNortheast() {
-      $latitude = $this->getBoundsNortheastLatitude();
-      $longitude = $this->getBoundsNortheastLongitude();
+    public function getBoundsNortheast()
+    {
+        $latitude = $this->getBoundsNortheastLatitude();
+        $longitude = $this->getBoundsNortheastLongitude();
 
-      if ($latitude && $longitude) {
-        return $latitude . "," . $longitude;
-      }
-      else {
-        return false;
-      }
+        if ($latitude && $longitude) {
+            return $latitude . "," . $longitude;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -601,8 +618,9 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
      * @return float|string northeast latitude boundary
      */
-    public function getBoundsNortheastLatitude() {
-      return $this->boundsNortheastLatitude;
+    public function getBoundsNortheastLatitude()
+    {
+        return $this->boundsNortheastLatitude;
     }
 
     /**
@@ -612,8 +630,9 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
      * @return float|string northeast longitude boundary
      */
-    public function getBoundsNortheastLongitude() {
-      return $this->boundsNortheastLongitude;
+    public function getBoundsNortheastLongitude()
+    {
+        return $this->boundsNortheastLongitude;
     }
 
     /**
@@ -624,10 +643,11 @@
      * @param  string $region two-character, top-level domain (ccTLD)
      * @return GoogleMapsGeocoder
      */
-    public function setRegion($region) {
-      $this->region = $region;
+    public function setRegion($region)
+    {
+        $this->region = $region;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -637,8 +657,9 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#RegionCodes
      * @return string two-character, top-level domain (ccTLD)
      */
-    public function getRegion() {
-      return $this->region;
+    public function getRegion()
+    {
+        return $this->region;
     }
 
     /**
@@ -648,10 +669,11 @@
      * @param  string $language language code
      * @return GoogleMapsGeocoder
      */
-    public function setLanguage($language) {
-      $this->language = $language;
+    public function setLanguage($language)
+    {
+        $this->language = $language;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -660,8 +682,9 @@
      * @link   https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&gid=1
      * @return string language code
      */
-    public function getLanguage() {
-      return $this->language;
+    public function getLanguage()
+    {
+        return $this->language;
     }
 
     /**
@@ -670,18 +693,17 @@
      * @param  bool|string $sensor boolean or 'true'/'false' string
      * @return GoogleMapsGeocoder
      */
-    public function setSensor($sensor) {
-      if ($sensor == 'true' || $sensor == 'false') {
-        $this->sensor = $sensor;
-      }
-      elseif ($sensor) {
-        $this->sensor = "true";
-      }
-      else {
-        $this->sensor = "false";
-      }
+    public function setSensor($sensor)
+    {
+        if ($sensor == 'true' || $sensor == 'false') {
+            $this->sensor = $sensor;
+        } elseif ($sensor) {
+            $this->sensor = "true";
+        } else {
+            $this->sensor = "false";
+        }
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -689,8 +711,9 @@
      *
      * @return string 'true' or 'false'
      */
-    public function getSensor() {
-      return $this->sensor;
+    public function getSensor()
+    {
+        return $this->sensor;
     }
 
     /**
@@ -700,10 +723,11 @@
      * @param  string $clientId client ID
      * @return GoogleMapsGeocoder
      */
-    public function setClientId($clientId) {
-      $this->clientId = $clientId;
+    public function setClientId($clientId)
+    {
+        $this->clientId = $clientId;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -712,8 +736,9 @@
      * @link   https://developers.google.com/maps/documentation/business/webservices/#client_id
      * @return string client ID
      */
-    public function getClientId() {
-      return $this->clientId;
+    public function getClientId()
+    {
+        return $this->clientId;
     }
 
     /**
@@ -723,10 +748,11 @@
      * @param  string $signingKey cryptographic signing key
      * @return GoogleMapsGeocoder
      */
-    public function setSigningKey($signingKey) {
-      $this->signingKey = $signingKey;
+    public function setSigningKey($signingKey)
+    {
+        $this->signingKey = $signingKey;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -735,8 +761,9 @@
      * @link   https://developers.google.com/maps/documentation/business/webservices/#cryptographic_signing_key
      * @return string cryptographic signing key
      */
-    public function getSigningKey() {
-      return $this->signingKey;
+    public function getSigningKey()
+    {
+        return $this->signingKey;
     }
 
     /**
@@ -744,8 +771,9 @@
      *
      * @return bool whether the request is for a Business client
      */
-    public function isBusinessClient() {
-      return $this->getClientId() && $this->getSigningKey();
+    public function isBusinessClient()
+    {
+        return $this->getClientId() && $this->getSigningKey();
     }
 
     /**
@@ -755,13 +783,14 @@
      * @param  string $pathQueryString path and query string of the request
      * @return string Base64 encoded signature that's URL safe
      */
-    private function generateSignature($pathQueryString) {
-      $decodedSigningKey = self::base64DecodeUrlSafe($this->getSigningKey());
+    private function generateSignature($pathQueryString)
+    {
+        $decodedSigningKey = self::base64DecodeUrlSafe($this->getSigningKey());
 
-      $signature = hash_hmac('sha1', $pathQueryString, $decodedSigningKey, true);
-      $signature = self::base64EncodeUrlSafe($signature);
+        $signature = hash_hmac('sha1', $pathQueryString, $decodedSigningKey, true);
+        $signature = self::base64EncodeUrlSafe($signature);
 
-      return $signature;
+        return $signature;
     }
 
     /**
@@ -770,39 +799,39 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests
      * @return string encoded query string of the geocode request
      */
-    private function geocodeQueryString() {
-      $queryString = array();
+    private function geocodeQueryString()
+    {
+        $queryString = array();
 
-      // One of the following is required.
-      $address = $this->getAddress();
-      $latitudeLongitude = $this->getLatitudeLongitude();
+        // One of the following is required.
+        $address = $this->getAddress();
+        $latitudeLongitude = $this->getLatitudeLongitude();
 
-      // If both are set for some reason, favor address to geocode.
-      if ($address) {
-        $queryString['address'] = $address;
-      }
-      elseif ($latitudeLongitude) {
-        $queryString['latlng'] = $latitudeLongitude;
-      }
+        // If both are set for some reason, favor address to geocode.
+        if ($address) {
+            $queryString['address'] = $address;
+        } elseif ($latitudeLongitude) {
+            $queryString['latlng'] = $latitudeLongitude;
+        }
 
-      // Optional parameters.
-      $queryString['bounds'] = $this->getBounds();
-      $queryString['region'] = $this->getRegion();
-      $queryString['language'] = $this->getLanguage();
+        // Optional parameters.
+        $queryString['bounds'] = $this->getBounds();
+        $queryString['region'] = $this->getRegion();
+        $queryString['language'] = $this->getLanguage();
 
-      // Required.
-      $queryString['sensor'] = $this->getSensor();
+        // Required.
+        $queryString['sensor'] = $this->getSensor();
 
-      // Remove any unset parameters.
-      $queryString = array_filter($queryString);
+        // Remove any unset parameters.
+        $queryString = array_filter($queryString);
 
-      // The signature is added later using the path + query string.
-      if ($this->isBusinessClient()) {
-        $queryString['client'] = $this->getClientId();
-      }
+        // The signature is added later using the path + query string.
+        if ($this->isBusinessClient()) {
+            $queryString['client'] = $this->getClientId();
+        }
 
-      // Convert array to proper query string.
-      return http_build_query($queryString);
+        // Convert array to proper query string.
+        return http_build_query($queryString);
     }
 
     /**
@@ -812,15 +841,16 @@
      * @param  bool $https whether to make the request over HTTPS
      * @return string URL of the geocode request
      */
-    private function geocodeUrl($https = false) {
-      $scheme = $https ? "https" : "http";
-      $pathQueryString = self::URL_PATH . $this->getFormat() . "?" . $this->geocodeQueryString();
+    private function geocodeUrl($https = false)
+    {
+        $scheme = $https ? "https" : "http";
+        $pathQueryString = self::URL_PATH . $this->getFormat() . "?" . $this->geocodeQueryString();
 
-      if ($this->isBusinessClient()) {
-        $pathQueryString .= "&signature=" . $this->generateSignature($pathQueryString);
-      }
+        if ($this->isBusinessClient()) {
+            $pathQueryString .= "&signature=" . $this->generateSignature($pathQueryString);
+        }
 
-      return $scheme . "://" . self::URL_DOMAIN . $pathQueryString;
+        return $scheme . "://" . self::URL_DOMAIN . $pathQueryString;
     }
 
     /**
@@ -832,21 +862,19 @@
      * @param  bool $raw whether to return the raw (string) response
      * @return string|array|SimpleXMLElement response in requested format
      */
-    public function geocode($https = false, $raw = false) {
-      $response = file_get_contents($this->geocodeUrl($https));
+    public function geocode($https = false, $raw = false)
+    {
+        $response = file_get_contents($this->geocodeUrl($https));
 
-      if ($raw) {
-        return $response;
-      }
-      elseif ($this->isFormatJson()) {
-        return json_decode($response, true);
-      }
-      elseif ($this->isFormatXml()) {
-        return new SimpleXMLElement($response);
-      }
-      else {
-        return $response;
-      }
+        if ($raw) {
+            return $response;
+        } elseif ($this->isFormatJson()) {
+            return json_decode($response, true);
+        } elseif ($this->isFormatXml()) {
+            return new SimpleXMLElement($response);
+        } else {
+            return $response;
+        }
     }
 
     /**
@@ -864,17 +892,18 @@
      * @param  int|float|string $mileRange mile range around point
      * @return array 'lat' and 'lon' 'min' and 'max' points
      */
-    public static function boundingBox($latitude, $longitude, $mileRange) {
-      $maxLatitude = $latitude + $mileRange / self::EQUATOR_LAT_DEGREE_IN_MILES;
-      $minLatitude = $latitude - ($maxLatitude - $latitude);
+    public static function boundingBox($latitude, $longitude, $mileRange)
+    {
+        $maxLatitude = $latitude + $mileRange / self::EQUATOR_LAT_DEGREE_IN_MILES;
+        $minLatitude = $latitude - ($maxLatitude - $latitude);
 
-      $maxLongitude = $longitude + $mileRange / (cos($minLatitude * M_PI / 180) * self::EQUATOR_LAT_DEGREE_IN_MILES);
-      $minLongitude = $longitude - ($maxLongitude - $longitude);
+        $maxLongitude = $longitude + $mileRange / (cos($minLatitude * M_PI / 180) * self::EQUATOR_LAT_DEGREE_IN_MILES);
+        $minLongitude = $longitude - ($maxLongitude - $longitude);
 
-      return array('lat' => array('max' => $maxLatitude,
-                                  'min' => $minLatitude),
-                   'lon' => array('max' => $maxLongitude,
-                                  'min' => $minLongitude));
+        return array('lat' => array('max' => $maxLatitude,
+            'min' => $minLatitude),
+            'lon' => array('max' => $maxLongitude,
+                'min' => $minLongitude));
     }
 
     /**
@@ -883,8 +912,9 @@
      * @param  string $value value to encode
      * @return string encoded value
      */
-    private static function base64EncodeUrlSafe($value) {
-      return strtr(base64_encode($value), '+/', '-_');
+    private static function base64EncodeUrlSafe($value)
+    {
+        return strtr(base64_encode($value), '+/', '-_');
     }
 
     /**
@@ -893,10 +923,8 @@
      * @param  string $value value to decode
      * @return string decoded value
      */
-    private static function base64DecodeUrlSafe($value) {
-      return base64_decode(strtr($value, '-_', '+/'));
+    private static function base64DecodeUrlSafe($value)
+    {
+        return base64_decode(strtr($value, '-_', '+/'));
     }
-
-  }
-
-?>
+}

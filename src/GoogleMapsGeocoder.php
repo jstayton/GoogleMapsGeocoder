@@ -294,6 +294,13 @@
     private $sensor;
 
     /**
+     * API key to authenticate with.
+     *
+     * @var string
+     */
+    private $apiKey;
+
+    /**
      * Client ID for Business clients.
      *
      * @var string
@@ -694,6 +701,29 @@
     }
 
     /**
+     * Set the API key to authenticate with.
+     *
+     * @link   https://developers.google.com/maps/documentation/geocoding/#api_key
+     * @param  string $apiKey API key
+     * @return GoogleMapsGeocoder
+     */
+    public function setApiKey($apiKey) {
+      $this->apiKey = $apiKey;
+
+      return $this;
+    }
+
+    /**
+     * Get the API key to authenticate with.
+     *
+     * @link   https://developers.google.com/maps/documentation/geocoding/#api_key
+     * @return string API key
+     */
+    public function getApiKey() {
+      return $this->apiKey;
+    }
+
+    /**
      * Set the client ID for Business clients.
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/#client_id
@@ -800,6 +830,9 @@
       if ($this->isBusinessClient()) {
         $queryString['client'] = $this->getClientId();
       }
+      elseif ($this->getApiKey()) {
+        $queryString['key'] = $this->getApiKey();
+      }
 
       // Convert array to proper query string.
       return http_build_query($queryString);
@@ -813,7 +846,14 @@
      * @return string URL of the geocode request
      */
     private function geocodeUrl($https = false) {
-      $scheme = $https ? "https" : "http";
+      // HTTPS is required if an API key is set.
+      if ($https || $this->getApiKey()) {
+        $scheme = "https";
+      }
+      else {
+        $scheme = "http";
+      }
+
       $pathQueryString = self::URL_PATH . $this->getFormat() . "?" . $this->geocodeQueryString();
 
       if ($this->isBusinessClient()) {

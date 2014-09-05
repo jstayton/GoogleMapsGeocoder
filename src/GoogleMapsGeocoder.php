@@ -308,6 +308,13 @@
     private $signingKey;
 
     /**
+     * API
+     *
+     * @var string
+     */
+    private $apiKey;
+
+    /**
      * Constructor. The request is not executed until `geocode()` is called.
      *
      * @param  string $address optional address to geocode
@@ -694,6 +701,18 @@
     }
 
     /**
+     * Set the API key
+     *
+     * @return GoogleMapsGeocoder
+     */
+    public function setApiKey($apiKey) {
+        $this->apiKey = $apiKey;
+
+        return $this;
+    }
+
+
+    /**
      * Set the client ID for Business clients.
      *
      * @link   https://developers.google.com/maps/documentation/business/webservices/#client_id
@@ -818,6 +837,10 @@
 
       if ($this->isBusinessClient()) {
         $pathQueryString .= "&signature=" . $this->generateSignature($pathQueryString);
+      }
+
+      if ($this->apiKey) {
+        $pathQueryString .= "&key=" . $this->apiKey;
       }
 
       return $scheme . "://" . self::URL_DOMAIN . $pathQueryString;

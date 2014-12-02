@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1417490513">
+  <project timestamp="1417490513">
+    <file name="/vagrant/GoogleMapsGeocoder/src/GoogleMapsGeocoder.php">
+      <class name="GoogleMapsGeocoder" namespace="global" fullPackage="GoogleMapsGeocoder" package="GoogleMapsGeocoder">
+        <metrics methods="41" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="122" coveredstatements="16" elements="163" coveredelements="22"/>
+      </class>
+      <line num="318" type="method" name="__construct" crap="1" count="2"/>
+      <line num="319" type="stmt" count="2"/>
+      <line num="320" type="stmt" count="2"/>
+      <line num="321" type="stmt" count="2"/>
+      <line num="322" type="stmt" count="2"/>
+      <line num="331" type="method" name="setFormat" crap="1" count="2"/>
+      <line num="332" type="stmt" count="2"/>
+      <line num="334" type="stmt" count="2"/>
+      <line num="343" type="method" name="getFormat" crap="1" count="1"/>
+      <line num="344" type="stmt" count="1"/>
+      <line num="353" type="method" name="isFormatJson" crap="2" count="0"/>
+      <line num="354" type="stmt" count="0"/>
+      <line num="363" type="method" name="isFormatXml" crap="2" count="0"/>
+      <line num="364" type="stmt" count="0"/>
+      <line num="373" type="method" name="setAddress" crap="1" count="2"/>
+      <line num="374" type="stmt" count="2"/>
+      <line num="376" type="stmt" count="2"/>
+      <line num="384" type="method" name="getAddress" crap="2" count="0"/>
+      <line num="385" type="stmt" count="0"/>
+      <line num="396" type="method" name="setLatitudeLongitude" crap="2" count="0"/>
+      <line num="397" type="stmt" count="0"/>
+      <line num="398" type="stmt" count="0"/>
+      <line num="400" type="stmt" count="0"/>
+      <line num="410" type="method" name="getLatitudeLongitude" crap="12" count="0"/>
+      <line num="411" type="stmt" count="0"/>
+      <line num="412" type="stmt" count="0"/>
+      <line num="414" type="stmt" count="0"/>
+      <line num="415" type="stmt" count="0"/>
+      <line num="418" type="stmt" count="0"/>
+      <line num="429" type="method" name="setLatitude" crap="1" count="1"/>
+      <line num="430" type="stmt" count="1"/>
+      <line num="432" type="stmt" count="1"/>
+      <line num="441" type="method" name="getLatitude" crap="1" count="1"/>
+      <line num="442" type="stmt" count="1"/>
+      <line num="452" type="method" name="setLongitude" crap="2" count="0"/>
+      <line num="453" type="stmt" count="0"/>
+      <line num="455" type="stmt" count="0"/>
+      <line num="464" type="method" name="getLongitude" crap="2" count="0"/>
+      <line num="465" type="stmt" count="0"/>
+      <line num="478" type="method" name="setBounds" crap="2" count="0"/>
+      <line num="479" type="stmt" count="0"/>
+      <line num="480" type="stmt" count="0"/>
+      <line num="482" type="stmt" count="0"/>
+      <line num="493" type="method" name="getBounds" crap="12" count="0"/>
+      <line num="494" type="stmt" count="0"/>
+      <line num="495" type="stmt" count="0"/>
+      <line num="497" type="stmt" count="0"/>
+      <line num="498" type="stmt" count="0"/>
+      <line num="501" type="stmt" count="0"/>
+      <line num="514" type="method" name="setBoundsSouthwest" crap="2" count="0"/>
+      <line num="515" type="stmt" count="0"/>
+      <line num="516" type="stmt" count="0"/>
+      <line num="518" type="stmt" count="0"/>
+      <line num="528" type="method" name="getBoundsSouthwest" crap="12" count="0"/>
+      <line num="529" type="stmt" count="0"/>
+      <line num="530" type="stmt" count="0"/>
+      <line num="532" type="stmt" count="0"/>
+      <line num="533" type="stmt" count="0"/>
+      <line num="536" type="stmt" count="0"/>
+      <line num="547" type="method" name="getBoundsSouthwestLatitude" crap="2" count="0"/>
+      <line num="548" type="stmt" count="0"/>
+      <line num="558" type="method" name="getBoundsSouthwestLongitude" crap="2" count="0"/>
+      <line num="559" type="stmt" count="0"/>
+      <line num="571" type="method" name="setBoundsNortheast" crap="2" count="0"/>
+      <line num="572" type="stmt" count="0"/>
+      <line num="573" type="stmt" count="0"/>
+      <line num="575" type="stmt" count="0"/>
+      <line num="585" type="method" name="getBoundsNortheast" crap="12" count="0"/>
+      <line num="586" type="stmt" count="0"/>
+      <line num="587" type="stmt" count="0"/>
+      <line num="589" type="stmt" count="0"/>
+      <line num="590" type="stmt" count="0"/>
+      <line num="593" type="stmt" count="0"/>
+      <line num="604" type="method" name="getBoundsNortheastLatitude" crap="2" count="0"/>
+      <line num="605" type="stmt" count="0"/>
+      <line num="615" type="method" name="getBoundsNortheastLongitude" crap="2" count="0"/>
+      <line num="616" type="stmt" count="0"/>
+      <line num="627" type="method" name="setRegion" crap="2" count="0"/>
+      <line num="628" type="stmt" count="0"/>
+      <line num="630" type="stmt" count="0"/>
+      <line num="640" type="method" name="getRegion" crap="2" count="0"/>
+      <line num="641" type="stmt" count="0"/>
+      <line num="651" type="method" name="setLanguage" crap="2" count="0"/>
+      <line num="652" type="stmt" count="0"/>
+      <line num="654" type="stmt" count="0"/>
+      <line num="663" type="method" name="getLanguage" crap="2" count="0"/>
+      <line num="664" type="stmt" count="0"/>
+      <line num="673" type="method" name="setSensor" crap="6.00" count="2"/>
+      <line num="674" type="stmt" count="2"/>
+      <line num="675" type="stmt" count="0"/>
+      <line num="676" type="stmt" count="0"/>
+      <line num="677" type="stmt" count="2"/>
+      <line num="678" type="stmt" count="0"/>
+      <line num="679" type="stmt" count="0"/>
+      <line num="681" type="stmt" count="2"/>
+      <line num="684" type="stmt" count="2"/>
+      <line num="692" type="method" name="getSensor" crap="2" count="0"/>
+      <line num="693" type="stmt" count="0"/>
+      <line num="703" type="method" name="setClientId" crap="2" count="0"/>
+      <line num="704" type="stmt" count="0"/>
+      <line num="706" type="stmt" count="0"/>
+      <line num="715" type="method" name="getClientId" crap="2" count="0"/>
+      <line num="716" type="stmt" count="0"/>
+      <line num="726" type="method" name="setSigningKey" crap="2" count="0"/>
+      <line num="727" type="stmt" count="0"/>
+      <line num="729" type="stmt" count="0"/>
+      <line num="738" type="method" name="getSigningKey" crap="2" count="0"/>
+      <line num="739" type="stmt" count="0"/>
+      <line num="747" type="method" name="isBusinessClient" crap="6" count="0"/>
+      <line num="748" type="stmt" count="0"/>
+      <line num="758" type="method" name="generateSignature" crap="2" count="0"/>
+      <line num="759" type="stmt" count="0"/>
+      <line num="761" type="stmt" count="0"/>
+      <line num="762" type="stmt" count="0"/>
+      <line num="764" type="stmt" count="0"/>
+      <line num="773" type="method" name="geocodeQueryString" crap="20" count="0"/>
+      <line num="774" type="stmt" count="0"/>
+      <line num="777" type="stmt" count="0"/>
+      <line num="778" type="stmt" count="0"/>
+      <line num="781" type="stmt" count="0"/>
+      <line num="782" type="stmt" count="0"/>
+      <line num="783" type="stmt" count="0"/>
+      <line num="784" type="stmt" count="0"/>
+      <line num="785" type="stmt" count="0"/>
+      <line num="786" type="stmt" count="0"/>
+      <line num="789" type="stmt" count="0"/>
+      <line num="790" type="stmt" count="0"/>
+      <line num="791" type="stmt" count="0"/>
+      <line num="794" type="stmt" count="0"/>
+      <line num="797" type="stmt" count="0"/>
+      <line num="800" type="stmt" count="0"/>
+      <line num="801" type="stmt" count="0"/>
+      <line num="802" type="stmt" count="0"/>
+      <line num="805" type="stmt" count="0"/>
+      <line num="815" type="method" name="geocodeUrl" crap="12" count="0"/>
+      <line num="816" type="stmt" count="0"/>
+      <line num="817" type="stmt" count="0"/>
+      <line num="819" type="stmt" count="0"/>
+      <line num="820" type="stmt" count="0"/>
+      <line num="821" type="stmt" count="0"/>
+      <line num="823" type="stmt" count="0"/>
+      <line num="835" type="method" name="geocode" crap="20" count="0"/>
+      <line num="836" type="stmt" count="0"/>
+      <line num="838" type="stmt" count="0"/>
+      <line num="839" type="stmt" count="0"/>
+      <line num="841" type="stmt" count="0"/>
+      <line num="842" type="stmt" count="0"/>
+      <line num="844" type="stmt" count="0"/>
+      <line num="845" type="stmt" count="0"/>
+      <line num="848" type="stmt" count="0"/>
+      <line num="867" type="method" name="boundingBox" crap="2" count="0"/>
+      <line num="868" type="stmt" count="0"/>
+      <line num="869" type="stmt" count="0"/>
+      <line num="871" type="stmt" count="0"/>
+      <line num="872" type="stmt" count="0"/>
+      <line num="874" type="stmt" count="0"/>
+      <line num="875" type="stmt" count="0"/>
+      <line num="876" type="stmt" count="0"/>
+      <line num="877" type="stmt" count="0"/>
+      <line num="886" type="method" name="base64EncodeUrlSafe" crap="2" count="0"/>
+      <line num="887" type="stmt" count="0"/>
+      <line num="896" type="method" name="base64DecodeUrlSafe" crap="2" count="0"/>
+      <line num="897" type="stmt" count="0"/>
+      <metrics loc="902" ncloc="398" classes="1" methods="41" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="122" coveredstatements="16" elements="163" coveredelements="22"/>
+    </file>
+    <metrics files="1" loc="902" ncloc="398" classes="1" methods="41" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="122" coveredstatements="16" elements="163" coveredelements="22"/>
+  </project>
+</coverage>

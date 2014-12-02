@@ -1,6 +1,6 @@
 <?php
 
-  /**
+/**
    * A PHP wrapper for the Google Maps Geocoding API v3.
    *
    * @author    Justin Stayton

@@ -351,7 +351,7 @@
      * @return bool whether JSON
      */
     public function isFormatJson() {
-      return $this->getFormat() == self::FORMAT_JSON;
+      return $this->getFormat() == FORMAT_JSON;
     }
 
     /**
@@ -412,7 +412,7 @@
       $longitude = $this->getLongitude();
 
       if ($latitude && $longitude) {
-        return $latitude . "," . $longitude;
+        return "$latitude,$longitude";
       }
       else {
         return false;
@@ -427,9 +427,9 @@
      * @return GoogleMapsGeocoder
      */
     public function setLatitude($latitude) {
-      $this->latitude = $latitude;
+        $this->latitude = $latitude;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -477,7 +477,7 @@
      */
     public function setBounds($southwestLatitude, $southwestLongitude, $northeastLatitude, $northeastLongitude) {
       $this->setBoundsSouthwest($southwestLatitude, $southwestLongitude)
-           ->setBoundsNortheast($northeastLatitude, $northeastLatitude);
+           ->setBoundsNortheast($northeastLatitude, $northeastLongitude);
 
       return $this;
     }
@@ -495,7 +495,7 @@
       $northeast = $this->getBoundsNortheast();
 
       if ($southwest && $northeast) {
-        return $southwest . "|" . $northeast;
+        return "$southwest|$northeast";
       }
       else {
         return false;
@@ -530,7 +530,7 @@
       $longitude = $this->getBoundsSouthwestLongitude();
 
       if ($latitude && $longitude) {
-        return $latitude . "," . $longitude;
+        return "$latitude,$longitude";
       }
       else {
         return false;
@@ -587,7 +587,7 @@
       $longitude = $this->getBoundsNortheastLongitude();
 
       if ($latitude && $longitude) {
-        return $latitude . "," . $longitude;
+        return "$latitude,$longitude";
       }
       else {
         return false;
@@ -671,14 +671,18 @@
      * @return GoogleMapsGeocoder
      */
     public function setSensor($sensor) {
-      if ($sensor == 'true' || $sensor == 'false') {
-        $this->sensor = $sensor;
-      }
-      elseif ($sensor) {
-        $this->sensor = "true";
-      }
-      else {
-        $this->sensor = "false";
+        switch ($sensor) {
+            case true:
+            case 'true':
+                $this->sensor = true;
+                break;
+            case false:
+            case 'false':
+                $this->sensor = false;
+                break;
+            default:
+                false;
+                break;
       }
 
       return $this;
@@ -898,5 +902,3 @@
     }
 
   }
-
-?>

@@ -155,4 +155,9 @@ class GoogleMapsGeocoderTest extends \PHPUnit_Framework_TestCase
             $this->object->isBusinessClient()
         );
     }
+
+    public function testGeocodeQueryString()
+    {
+
+    }
 }

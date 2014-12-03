@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1417566950">
-  <project timestamp="1417566950">
+<coverage generated="1417647671">
+  <project timestamp="1417647671">
     <file name="/vagrant/GoogleMapsGeocoder/src/GoogleMapsGeocoder.php">
       <class name="GoogleMapsGeocoder" namespace="global" fullPackage="GoogleMapsGeocoder" package="GoogleMapsGeocoder">
-        <metrics methods="41" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="127" coveredstatements="71" elements="168" coveredelements="98"/>
+        <metrics methods="41" coveredmethods="28" conditionals="0" coveredconditionals="0" statements="127" coveredstatements="72" elements="168" coveredelements="100"/>
       </class>
-      <line num="318" type="method" name="__construct" crap="1" count="11"/>
-      <line num="319" type="stmt" count="11"/>
-      <line num="320" type="stmt" count="11"/>
-      <line num="321" type="stmt" count="11"/>
-      <line num="322" type="stmt" count="11"/>
-      <line num="331" type="method" name="setFormat" crap="1" count="11"/>
-      <line num="332" type="stmt" count="11"/>
-      <line num="334" type="stmt" count="11"/>
+      <line num="318" type="method" name="__construct" crap="1" count="12"/>
+      <line num="319" type="stmt" count="12"/>
+      <line num="320" type="stmt" count="12"/>
+      <line num="321" type="stmt" count="12"/>
+      <line num="322" type="stmt" count="12"/>
+      <line num="331" type="method" name="setFormat" crap="1" count="12"/>
+      <line num="332" type="stmt" count="12"/>
+      <line num="334" type="stmt" count="12"/>
       <line num="343" type="method" name="getFormat" crap="1" count="1"/>
       <line num="344" type="stmt" count="1"/>
       <line num="353" type="method" name="isFormatJson" crap="2" count="0"/>
       <line num="354" type="stmt" count="0"/>
       <line num="363" type="method" name="isFormatXml" crap="2" count="0"/>
       <line num="364" type="stmt" count="0"/>
-      <line num="373" type="method" name="setAddress" crap="1" count="11"/>
-      <line num="374" type="stmt" count="11"/>
-      <line num="376" type="stmt" count="11"/>
-      <line num="384" type="method" name="getAddress" crap="2" count="0"/>
-      <line num="385" type="stmt" count="0"/>
+      <line num="373" type="method" name="setAddress" crap="1" count="12"/>
+      <line num="374" type="stmt" count="12"/>
+      <line num="376" type="stmt" count="12"/>
+      <line num="384" type="method" name="getAddress" crap="1" count="1"/>
+      <line num="385" type="stmt" count="1"/>
       <line num="396" type="method" name="setLatitudeLongitude" crap="1" count="1"/>
       <line num="397" type="stmt" count="1"/>
       <line num="398" type="stmt" count="1"/>
@@ -92,20 +92,20 @@
       <line num="654" type="stmt" count="1"/>
       <line num="663" type="method" name="getLanguage" crap="1" count="1"/>
       <line num="664" type="stmt" count="1"/>
-      <line num="673" type="method" name="setSensor" crap="5.73" count="11"/>
-      <line num="675" type="stmt" count="11"/>
-      <line num="676" type="stmt" count="11"/>
+      <line num="673" type="method" name="setSensor" crap="5.73" count="12"/>
+      <line num="675" type="stmt" count="12"/>
+      <line num="676" type="stmt" count="12"/>
       <line num="677" type="stmt" count="1"/>
       <line num="678" type="stmt" count="1"/>
-      <line num="679" type="stmt" count="11"/>
-      <line num="680" type="stmt" count="11"/>
-      <line num="681" type="stmt" count="11"/>
-      <line num="682" type="stmt" count="11"/>
+      <line num="679" type="stmt" count="12"/>
+      <line num="680" type="stmt" count="12"/>
+      <line num="681" type="stmt" count="12"/>
+      <line num="682" type="stmt" count="12"/>
       <line num="683" type="stmt" count="0"/>
       <line num="684" type="stmt" count="0"/>
       <line num="685" type="stmt" count="0"/>
       <line num="686" type="stmt" count="0"/>
-      <line num="688" type="stmt" count="11"/>
+      <line num="688" type="stmt" count="12"/>
       <line num="696" type="method" name="getSensor" crap="1" count="1"/>
       <line num="697" type="stmt" count="1"/>
       <line num="707" type="method" name="setClientId" crap="1" count="2"/>
@@ -173,8 +173,8 @@
       <line num="891" type="stmt" count="0"/>
       <line num="900" type="method" name="base64DecodeUrlSafe" crap="2" count="0"/>
       <line num="901" type="stmt" count="0"/>
-      <metrics loc="906" ncloc="402" classes="1" methods="41" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="127" coveredstatements="71" elements="168" coveredelements="98"/>
+      <metrics loc="904" ncloc="400" classes="1" methods="41" coveredmethods="28" conditionals="0" coveredconditionals="0" statements="127" coveredstatements="72" elements="168" coveredelements="100"/>
     </file>
-    <metrics files="1" loc="906" ncloc="402" classes="1" methods="41" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="127" coveredstatements="71" elements="168" coveredelements="98"/>
+    <metrics files="1" loc="904" ncloc="400" classes="1" methods="41" coveredmethods="28" conditionals="0" coveredconditionals="0" statements="127" coveredstatements="72" elements="168" coveredelements="100"/>
   </project>
 </coverage>

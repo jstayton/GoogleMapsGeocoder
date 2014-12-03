@@ -351,7 +351,7 @@
      * @return bool whether JSON
      */
     public function isFormatJson() {
-      return $this->getFormat() == FORMAT_JSON;
+      return $this->getFormat() == self::FORMAT_JSON;
     }
 
     /**

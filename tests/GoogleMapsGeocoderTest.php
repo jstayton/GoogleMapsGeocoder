@@ -2,6 +2,7 @@
 
 class GoogleMapsGeocoderTest extends \PHPUnit_Framework_TestCase
 {
+
     /**
      * @var \GoogleMapsGeocoder
      */
@@ -18,6 +19,15 @@ class GoogleMapsGeocoderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(
             "json",
             $this->object->getFormat()
+        );
+    }
+
+    public function testGetSetAddress()
+    {
+        $this->object->setAddress("123 Main Street");
+        $this->assertEquals(
+            "123 Main Street",
+            $this->object->getAddress()
         );
     }
 
@@ -156,8 +166,12 @@ class GoogleMapsGeocoderTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    public function testGeocodeQueryString()
+    public function testGeocode()
     {
-
+        $this->object->setAddress("123 Main Street");
+        $this->assertEquals(
+            $this->object->geocode(),
+            "https://maps.googleapis.com/maps/api/geocode/json?address=123+main+street"
+        );
     }
 }

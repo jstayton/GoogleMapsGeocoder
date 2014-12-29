@@ -2,3 +2,5 @@ composer.lock
 vendor/
 doc/
 phpdoc.xml
+report/
+.idea/

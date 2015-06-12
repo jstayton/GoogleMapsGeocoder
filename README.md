@@ -88,6 +88,19 @@ the `geocode`
 for making the request over HTTPS or preventing conversion (instead returning
 the raw plain text response).
 
+Authenticated Call
+--------
+
+All Geocoding API applications should use an API key. Including a key in your request:
+
+- Allows you to monitor your application's API usage in the Google Developers Console.
+- Enables per-key instead of per-IP-address quota limits.
+- Ensures that Google can contact you about your application if necessary.
+
+```php
+$Geocoder->setApiKey('xxxxxxxxxxxxx');
+```
+
 Feedback
 --------
 

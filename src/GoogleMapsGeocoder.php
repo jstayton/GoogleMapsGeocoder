@@ -479,12 +479,12 @@
      * @param  float|string $southwestLatitude southwest latitude boundary
      * @param  float|string $southwestLongitude southwest longitude boundary
      * @param  float|string $northeastLatitude northeast latitude boundary
-     * @param  float|string $northeastLongitude northeasy longitude boundary
+     * @param  float|string $northeastLongitude northeast longitude boundary
      * @return GoogleMapsGeocoder
      */
     public function setBounds($southwestLatitude, $southwestLongitude, $northeastLatitude, $northeastLongitude) {
       $this->setBoundsSouthwest($southwestLatitude, $southwestLongitude)
-           ->setBoundsNortheast($northeastLatitude, $northeastLatitude);
+           ->setBoundsNortheast($northeastLatitude, $northeastLongitude);
 
       return $this;
     }

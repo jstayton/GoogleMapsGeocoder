@@ -73,6 +73,7 @@ bounding radius.</span><pre>boundingBox()</pre></a></li>
 format: associative array if JSON, SimpleXMLElement object if XML."><span class="description">Execute the geocoding request. The return type is based on the requested
 format: associative array if JSON, SimpleXMLElement object if XML.</span><pre>geocode()</pre></a></li>
 <li class="method public "><a href="#method_getAddress" title="getAddress() :: Get the address to geocode."><span class="description">Get the address to geocode.</span><pre>getAddress()</pre></a></li>
+<li class="method public "><a href="#method_getApiKey" title="getApiKey() :: Get the API key to authenticate with."><span class="description">Get the API key to authenticate with.</span><pre>getApiKey()</pre></a></li>
 <li class="method public "><a href="#method_getBounds" title="getBounds() :: Get the bounding box coordinates within which to bias geocode results
 in comma-separated, pipe-delimited format."><span class="description">Get the bounding box coordinates within which to bias geocode results
 in comma-separated, pipe-delimited format.</span><pre>getBounds()</pre></a></li>
@@ -111,6 +112,7 @@ geocode results.</span><pre>getRegion()</pre></a></li>
 <li class="method public "><a href="#method_isFormatJson" title="isFormatJson() :: Whether the response format is JSON."><span class="description">Whether the response format is JSON.</span><pre>isFormatJson()</pre></a></li>
 <li class="method public "><a href="#method_isFormatXml" title="isFormatXml() :: Whether the response format is XML."><span class="description">Whether the response format is XML.</span><pre>isFormatXml()</pre></a></li>
 <li class="method public "><a href="#method_setAddress" title="setAddress() :: Set the address to geocode."><span class="description">Set the address to geocode.</span><pre>setAddress()</pre></a></li>
+<li class="method public "><a href="#method_setApiKey" title="setApiKey() :: Set the API key to authenticate with."><span class="description">Set the API key to authenticate with.</span><pre>setApiKey()</pre></a></li>
 <li class="method public "><a href="#method_setBounds" title="setBounds() :: Set the bounding box coordinates within which to bias geocode results."><span class="description">Set the bounding box coordinates within which to bias geocode results.</span><pre>setBounds()</pre></a></li>
 <li class="method public "><a href="#method_setBoundsNortheast" title="setBoundsNortheast() :: Set the northeast coordinates of the bounding box within which to bias
 geocode results."><span class="description">Set the northeast coordinates of the bounding box within which to bias
@@ -147,6 +149,7 @@ geocode results.</span><pre>setRegion()</pre></a></li>
 <li class="nav-header private">» Private
                     <ul>
 <li class="property private "><a href="#property_address" title="$address() :: Address to geocode."><span class="description"></span><pre>$address</pre></a></li>
+<li class="property private "><a href="#property_apiKey" title="$apiKey() :: API key to authenticate with."><span class="description"></span><pre>$apiKey</pre></a></li>
 <li class="property private "><a href="#property_boundsNortheastLatitude" title="$boundsNortheastLatitude() :: Northeast latitude of the bounding box within which to bias geocode
 results."><span class="description"></span><pre>$boundsNortheastLatitude</pre></a></li>
 <li class="property private "><a href="#property_boundsNortheastLongitude" title="$boundsNortheastLongitude() :: Northeast longitude of the bounding box within which to bias geocode
@@ -240,7 +243,7 @@ within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE<
 </tr>
 <tr>
 <th>copyright</th>
-<td>Copyright 2013 by Justin Stayton</td>
+<td>Copyright 2015 by Justin Stayton</td>
 </tr>
 <tr>
 <th>license</th>
@@ -256,7 +259,7 @@ within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE<
 </tr>
 <tr>
 <th>version</th>
-<td>2.1.0</td>
+<td>2.2.0</td>
 </tr>
 </table>
 <h3>
@@ -338,6 +341,21 @@ format: associative array if JSON, SimpleXMLElement object if XML.</h2>
 <div class="long_description"></div>
 <h3>Returns</h3>
 <div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getApiKey"></a><div class="element clickable method public method_getApiKey" data-toggle="collapse" data-target=".method_getApiKey .collapse" title="public">
+<h2>Get the API key to authenticate with.</h2>
+<pre>getApiKey() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/#api_key">https://developers.google.com/maps/documentation/geocoding/#api_key</a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>API key</div>
 </div></div>
 </div>
 <a id="method_getBounds"></a><div class="element clickable method public method_getBounds" data-toggle="collapse" data-target=".method_getBounds .collapse" title="public">
@@ -637,6 +655,24 @@ geocode results.</h2>
 <div class="subelement argument">
 <h4>$address</h4>
 <code>string</code><p>address to geocode</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
+</div></div>
+</div>
+<a id="method_setApiKey"></a><div class="element clickable method public method_setApiKey" data-toggle="collapse" data-target=".method_setApiKey .collapse" title="public">
+<h2>Set the API key to authenticate with.</h2>
+<pre>setApiKey(string $apiKey) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/#api_key">https://developers.google.com/maps/documentation/geocoding/#api_key</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$apiKey</h4>
+<code>string</code><p>API key</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
@@ -962,6 +998,16 @@ geocode results.</h2>
 <a id="property_address"> </a><div class="element clickable property private property_address" data-toggle="collapse" data-target=".property_address .collapse" title="private">
 <h2>Address to geocode.</h2>
 <pre>$address : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_apiKey"> </a><div class="element clickable property private property_apiKey" data-toggle="collapse" data-target=".property_apiKey .collapse" title="private">
+<h2>API key to authenticate with.</h2>
+<pre>$apiKey : string</pre>
 <div class="row collapse"><div class="detail-description">
 <h3>Default</h3>
 <div class="subelement argument"></div>
@@ -1342,7 +1388,7 @@ within a collection of building with a common name.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
 </a> and<br>
-            generated on 2013-12-29T15:31:14-06:00.<br></footer></div>
+            generated on 2015-06-24T21:20:21-04:00.<br></footer></div>
 </div>
 </body>
 </html>

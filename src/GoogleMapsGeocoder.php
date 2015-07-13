@@ -287,6 +287,13 @@
     private $language;
 
     /**
+     * Address type(s) to restrict results to.
+     *
+     * @var array
+     */
+    private $resultType = array();
+
+    /**
      * Whether the request is from a device with a location sensor.
      *
      * @var string
@@ -672,6 +679,39 @@
     }
 
     /**
+     * Set the address type(s) to restrict results to.
+     *
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted
+     * @param  string|array $resultType address type(s)
+     * @return GoogleMapsGeocoder
+     */
+    public function setResultType($resultType) {
+      $this->resultType = is_array($resultType) ? $resultType : array($resultType);
+
+      return $this;
+    }
+
+    /**
+     * Get the address type(s) to restrict results to.
+     *
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted
+     * @return array address type(s)
+     */
+    public function getResultType() {
+      return $this->resultType;
+    }
+
+    /**
+     * Get the address type(s) to restrict results to separated by a pipe (|).
+     *
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted
+     * @return string address type(s) separated by a pipe (|)
+     */
+    public function getResultTypeFormatted() {
+      return implode('|', $this->getResultType());
+    }
+
+    /**
      * Set whether the request is from a device with a location sensor.
      *
      * @param  bool|string $sensor boolean or 'true'/'false' string
@@ -722,7 +762,6 @@
     public function getApiKey() {
       return $this->apiKey;
     }
-
     /**
      * Set the client ID for Business clients.
      *
@@ -819,6 +858,7 @@
       $queryString['bounds'] = $this->getBounds();
       $queryString['region'] = $this->getRegion();
       $queryString['language'] = $this->getLanguage();
+      $queryString['result_type'] = $this->getResultTypeFormatted();
 
       // Required.
       $queryString['sensor'] = $this->getSensor();

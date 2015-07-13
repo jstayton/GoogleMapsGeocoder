@@ -315,6 +315,12 @@
     private $signingKey;
 
     /**
+     *
+     * @var string
+     */
+    private $resultType;
+
+    /**
      * Constructor. The request is not executed until `geocode()` is called.
      *
      * @param  string $address optional address to geocode
@@ -722,7 +728,6 @@
     public function getApiKey() {
       return $this->apiKey;
     }
-
     /**
      * Set the client ID for Business clients.
      *
@@ -767,6 +772,20 @@
      */
     public function getSigningKey() {
       return $this->signingKey;
+    }
+
+    public function getResultType() {
+        return $this->resultType;
+    }
+
+    public function setResultType($resultType) {
+        if (is_array($resultType)) {
+            $this->resultType = implode('|', $resultType);
+        } else {
+            $this->resultType = $resultType;
+        }
+
+        return $this;
     }
 
     /**
@@ -823,6 +842,9 @@
       // Required.
       $queryString['sensor'] = $this->getSensor();
 
+      //Result type
+      $queryString['result_type'] = $this->getResultType();
+      
       // Remove any unset parameters.
       $queryString = array_filter($queryString);
 

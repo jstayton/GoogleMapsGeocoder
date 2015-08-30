@@ -294,6 +294,13 @@
     private $resultType = array();
 
     /**
+     * Location type(s) to restrict results to.
+     *
+     * @var array
+     */
+    private $locationType = array();
+
+    /**
      * Whether the request is from a device with a location sensor.
      *
      * @var string
@@ -712,6 +719,39 @@
     }
 
     /**
+     * Set the location type(s) to restrict results to.
+     *
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted
+     * @param  string|array $locationType location type(s)
+     * @return GoogleMapsGeocoder
+     */
+    public function setLocationType($locationType) {
+      $this->locationType = is_array($locationType) ? $locationType : array($locationType);
+
+      return $this;
+    }
+
+    /**
+     * Get the location type(s) to restrict results to.
+     *
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted
+     * @return array location type(s)
+     */
+    public function getLocationType() {
+      return $this->locationType;
+    }
+
+    /**
+     * Get the location type(s) to restrict results to separated by a pipe (|).
+     *
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted
+     * @return string location type(s) separated by a pipe (|)
+     */
+    public function getLocationTypeFormatted() {
+      return implode('|', $this->getLocationType());
+    }
+
+    /**
      * Set whether the request is from a device with a location sensor.
      *
      * @param  bool|string $sensor boolean or 'true'/'false' string
@@ -859,6 +899,7 @@
       $queryString['region'] = $this->getRegion();
       $queryString['language'] = $this->getLanguage();
       $queryString['result_type'] = $this->getResultTypeFormatted();
+      $queryString['location_type'] = $this->getLocationTypeFormatted();
 
       // Required.
       $queryString['sensor'] = $this->getSensor();

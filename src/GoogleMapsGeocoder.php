@@ -135,6 +135,16 @@
     const TYPE_ADMIN_AREA_3 = "administrative_area_level_3";
 
     /**
+     * A fourth-order civil entity below country.
+     */
+    const TYPE_ADMIN_AREA_4 = "administrative_area_level_4";
+
+    /**
+     * A fifth-order civil entity below country.
+     */
+    const TYPE_ADMIN_AREA_5 = "administrative_area_level_5";
+
+    /**
      * A commonly-used alternative name for the entity.
      */
     const TYPE_COLLOQUIAL_AREA = "colloquial_area";
@@ -143,6 +153,11 @@
      * An incorporated city or town.
      */
     const TYPE_LOCALITY = "locality";
+
+    /**
+     * A specific type of Japanese locality.
+     */
+    const TYPE_WARD = "ward";
 
     /**
      * A first-order civil entity below a locality.
@@ -191,9 +206,35 @@
     const TYPE_POINT_OF_INTEREST = "point_of_interest";
 
     /**
+     * A floor of a building address.
+     */
+    const TYPE_FLOOR = "floor";
+
+    /**
+     * A place that has not yet been categorized.
+     */
+    const TYPE_ESTABLISHMENT = "establishment";
+
+    /**
+     * A parking lot or parking structure.
+     */
+    const TYPE_PARKING = "parking";
+
+    /**
      * A specific postal box.
      */
     const TYPE_POST_BOX = "post_box";
+
+    /**
+     * A grouping of geographic areas used for mailing addresses in some
+     * countries.
+     */
+    const TYPE_POSTAL_TOWN = "postal_town";
+
+    /**
+     * A room of a building address.
+     */
+    const TYPE_ROOM = "room";
 
     /**
      * A precise street number.
@@ -201,14 +242,19 @@
     const TYPE_STREET_NUMBER = "street_number";
 
     /**
-     * A floor of a building address.
+     * A bus stop.
      */
-    const TYPE_FLOOR = "floor";
+    const TYPE_BUS_STATION = "bus_station";
 
     /**
-     * A room of a building address.
+     * A train stop.
      */
-    const TYPE_ROOM = "room";
+    const TYPE_TRAIN_STATION = "train_station";
+
+    /**
+     * A public transit stop.
+     */
+    const TYPE_TRANSIT_STATION = "transit_station";
 
     /**
      * Helps calculate a more realistic bounding box by taking into account the

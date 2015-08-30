@@ -69,6 +69,11 @@
     const STATUS_INVALID_REQUEST = "INVALID_REQUEST";
 
     /**
+     * Unnown server error. May succeed if tried again.
+     */
+    const STATUS_UNKNOWN_ERROR = "UNKNOWN_ERROR";
+
+    /**
      * Returned result is a precise street address.
      */
     const LOCATION_TYPE_ROOFTOP = "ROOFTOP";

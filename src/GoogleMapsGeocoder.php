@@ -381,6 +381,14 @@
     private $signingKey;
 
     /**
+     * Throttle api calls to prevent hammering (calls per second quota)
+     *
+     * @var bool
+     * @link https://developers.google.com/maps/documentation/business/articles/usage_limits
+     */
+    private $throttle;
+
+    /**
      * Constructor. The request is not executed until `geocode()` is called.
      *
      * @param  string $address optional address to geocode
@@ -388,10 +396,11 @@
      * @param  bool|string $sensor deprecated as of v2.3.0
      * @return GoogleMapsGeocoder
      */
-    public function __construct($address = null, $format = self::FORMAT_JSON, $sensor = false) {
+    public function __construct($address = null, $format = self::FORMAT_JSON, $sensor = false, $throttle = true) {
       $this->setAddress($address)
            ->setFormat($format)
-           ->setSensor($sensor);
+           ->setSensor($sensor)
+           ->setThrottle($throttle);
     }
 
     /**
@@ -907,6 +916,27 @@
     }
 
     /**
+     * Set the throtteling of api calls.
+     *
+     * @param  bool
+     * @return GoogleMapsGeocoder
+     */
+    public function setThrottle($throttle) {
+      $this->throttle = $throttle;
+
+      return $this;
+    }
+
+    /**
+     * Get the throtteling of api calls.
+     *
+     * @return bool
+     */
+    public function isCallThrottled() {
+      return $this->throttle;
+    }
+
+    /**
      * Whether the request is for a Business client.
      *
      * @return bool whether the request is for a Business client
@@ -1012,20 +1042,32 @@
      * @return string|array|SimpleXMLElement response in requested format
      */
     public function geocode($https = false, $raw = false) {
-      $response = file_get_contents($this->geocodeUrl($https));
 
-      if ($raw) {
-        return $response;
-      }
-      elseif ($this->isFormatJson()) {
-        return json_decode($response, true);
-      }
-      elseif ($this->isFormatXml()) {
-        return new SimpleXMLElement($response);
-      }
-      else {
-        return $response;
-      }
+	  // throttle api call
+      $attempts = 0;
+      do {
+        $response = file_get_contents($this->geocodeUrl($https));
+        $attempts++;
+
+        if ($this->isFormatJson()) {
+          $parsedResponse = json_decode($response, true);
+		}
+		elseif ($this->isFormatXml()) {
+		  $parsedResponse = new SimpleXMLElement($response);
+		}
+        
+		$overQueryLimitCondition = $this->isCallThrottled()
+									&& (
+										($this->isFormatJson() && $parsedResponse['status'] == 'OVER_QUERY_LIMIT')
+										|| ($this->isFormatXml() && $parsedResponse->status == 'OVER_QUERY_LIMIT')
+										);
+
+        if($overQueryLimitCondition) {
+          sleep(2);
+        }
+      } while ($overQueryLimitCondition && $attempts < 3);
+
+      return $raw ? $response : $parsedResponse;
     }
 
     /**

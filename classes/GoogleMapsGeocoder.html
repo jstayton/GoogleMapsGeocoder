@@ -35,7 +35,7 @@
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">3</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -102,10 +102,14 @@ geocode results.</span><pre>getBoundsSouthwestLongitude()</pre></a></li>
 <li class="method public "><a href="#method_getLatitudeLongitude" title="getLatitudeLongitude() :: Get the latitude/longitude to reverse geocode to the closest address
 in comma-separated format."><span class="description">Get the latitude/longitude to reverse geocode to the closest address
 in comma-separated format.</span><pre>getLatitudeLongitude()</pre></a></li>
+<li class="method public "><a href="#method_getLocationType" title="getLocationType() :: Get the location type(s) to restrict results to."><span class="description">Get the location type(s) to restrict results to.</span><pre>getLocationType()</pre></a></li>
+<li class="method public "><a href="#method_getLocationTypeFormatted" title="getLocationTypeFormatted() :: Get the location type(s) to restrict results to separated by a pipe (|)."><span class="description">Get the location type(s) to restrict results to separated by a pipe (|).</span><pre>getLocationTypeFormatted()</pre></a></li>
 <li class="method public "><a href="#method_getLongitude" title="getLongitude() :: Get the longitude to reverse geocode to the closest address."><span class="description">Get the longitude to reverse geocode to the closest address.</span><pre>getLongitude()</pre></a></li>
 <li class="method public "><a href="#method_getRegion" title="getRegion() :: Get the two-character, top-level domain (ccTLD) within which to bias
 geocode results."><span class="description">Get the two-character, top-level domain (ccTLD) within which to bias
 geocode results.</span><pre>getRegion()</pre></a></li>
+<li class="method public "><a href="#method_getResultType" title="getResultType() :: Get the address type(s) to restrict results to."><span class="description">Get the address type(s) to restrict results to.</span><pre>getResultType()</pre></a></li>
+<li class="method public "><a href="#method_getResultTypeFormatted" title="getResultTypeFormatted() :: Get the address type(s) to restrict results to separated by a pipe (|)."><span class="description">Get the address type(s) to restrict results to separated by a pipe (|).</span><pre>getResultTypeFormatted()</pre></a></li>
 <li class="method public "><a href="#method_getSensor" title="getSensor() :: Get whether the request is from a device with a location sensor."><span class="description">Get whether the request is from a device with a location sensor.</span><pre>getSensor()</pre></a></li>
 <li class="method public "><a href="#method_getSigningKey" title="getSigningKey() :: Get the cryptographic signing key for Business clients."><span class="description">Get the cryptographic signing key for Business clients.</span><pre>getSigningKey()</pre></a></li>
 <li class="method public "><a href="#method_isBusinessClient" title="isBusinessClient() :: Whether the request is for a Business client."><span class="description">Whether the request is for a Business client.</span><pre>isBusinessClient()</pre></a></li>
@@ -125,10 +129,12 @@ geocode results.</span><pre>setBoundsSouthwest()</pre></a></li>
 <li class="method public "><a href="#method_setLanguage" title="setLanguage() :: Set the language code in which to return results."><span class="description">Set the language code in which to return results.</span><pre>setLanguage()</pre></a></li>
 <li class="method public "><a href="#method_setLatitude" title="setLatitude() :: Set the latitude to reverse geocode to the closest address."><span class="description">Set the latitude to reverse geocode to the closest address.</span><pre>setLatitude()</pre></a></li>
 <li class="method public "><a href="#method_setLatitudeLongitude" title="setLatitudeLongitude() :: Set the latitude/longitude to reverse geocode to the closest address."><span class="description">Set the latitude/longitude to reverse geocode to the closest address.</span><pre>setLatitudeLongitude()</pre></a></li>
+<li class="method public "><a href="#method_setLocationType" title="setLocationType() :: Set the location type(s) to restrict results to."><span class="description">Set the location type(s) to restrict results to.</span><pre>setLocationType()</pre></a></li>
 <li class="method public "><a href="#method_setLongitude" title="setLongitude() :: Set the longitude to reverse geocode to the closest address."><span class="description">Set the longitude to reverse geocode to the closest address.</span><pre>setLongitude()</pre></a></li>
 <li class="method public "><a href="#method_setRegion" title="setRegion() :: Set the two-character, top-level domain (ccTLD) within which to bias
 geocode results."><span class="description">Set the two-character, top-level domain (ccTLD) within which to bias
 geocode results.</span><pre>setRegion()</pre></a></li>
+<li class="method public "><a href="#method_setResultType" title="setResultType() :: Set the address type(s) to restrict results to."><span class="description">Set the address type(s) to restrict results to.</span><pre>setResultType()</pre></a></li>
 <li class="method public "><a href="#method_setSensor" title="setSensor() :: Set whether the request is from a device with a location sensor."><span class="description">Set whether the request is from a device with a location sensor.</span><pre>setSensor()</pre></a></li>
 <li class="method public "><a href="#method_setSigningKey" title="setSigningKey() :: Set the cryptographic signing key for Business clients."><span class="description">Set the cryptographic signing key for Business clients.</span><pre>setSigningKey()</pre></a></li>
 </ul>
@@ -162,9 +168,11 @@ results."><span class="description"></span><pre>$boundsSouthwestLongitude</pre><
 <li class="property private "><a href="#property_format" title="$format() :: Response format."><span class="description"></span><pre>$format</pre></a></li>
 <li class="property private "><a href="#property_language" title="$language() :: Language code in which to return results."><span class="description"></span><pre>$language</pre></a></li>
 <li class="property private "><a href="#property_latitude" title="$latitude() :: Latitude to reverse geocode to the closest address."><span class="description"></span><pre>$latitude</pre></a></li>
+<li class="property private "><a href="#property_locationType" title="$locationType() :: Location type(s) to restrict results to."><span class="description"></span><pre>$locationType</pre></a></li>
 <li class="property private "><a href="#property_longitude" title="$longitude() :: Longitude to reverse geocode to the closest address."><span class="description"></span><pre>$longitude</pre></a></li>
 <li class="property private "><a href="#property_region" title="$region() :: Two-character, top-level domain (ccTLD) within which to bias geocode
 results."><span class="description"></span><pre>$region</pre></a></li>
+<li class="property private "><a href="#property_resultType" title="$resultType() :: Address type(s) to restrict results to."><span class="description"></span><pre>$resultType</pre></a></li>
 <li class="property private "><a href="#property_sensor" title="$sensor() :: Whether the request is from a device with a location sensor."><span class="description"></span><pre>$sensor</pre></a></li>
 <li class="property private "><a href="#property_signingKey" title="$signingKey() :: Cryptographic signing key for Business clients."><span class="description"></span><pre>$signingKey</pre></a></li>
 </ul>
@@ -190,21 +198,30 @@ or polygon (i.e., a region).</span><pre>LOCATION_TYPE_CENTER</pre></a></li>
 <li class="constant  "><a href="#constant_STATUS_SUCCESS" title="STATUS_SUCCESS() :: No errors occurred, the address was successfully parsed and at least one
 geocode was returned."><span class="description">No errors occurred, the address was successfully parsed and at least one
 geocode was returned.</span><pre>STATUS_SUCCESS</pre></a></li>
+<li class="constant  "><a href="#constant_STATUS_UNKNOWN_ERROR" title="STATUS_UNKNOWN_ERROR() :: Unnown server error. May succeed if tried again."><span class="description">Unnown server error. May succeed if tried again.</span><pre>STATUS_UNKNOWN_ERROR</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_ADMIN_AREA_1" title="TYPE_ADMIN_AREA_1() :: A first-order civil entity below country (states within the US)."><span class="description">A first-order civil entity below country (states within the US).</span><pre>TYPE_ADMIN_AREA_1</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_ADMIN_AREA_2" title="TYPE_ADMIN_AREA_2() :: A second-order civil entity below country (counties within the US)."><span class="description">A second-order civil entity below country (counties within the US).</span><pre>TYPE_ADMIN_AREA_2</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_ADMIN_AREA_3" title="TYPE_ADMIN_AREA_3() :: A third-order civil entity below country."><span class="description">A third-order civil entity below country.</span><pre>TYPE_ADMIN_AREA_3</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_ADMIN_AREA_4" title="TYPE_ADMIN_AREA_4() :: A fourth-order civil entity below country."><span class="description">A fourth-order civil entity below country.</span><pre>TYPE_ADMIN_AREA_4</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_ADMIN_AREA_5" title="TYPE_ADMIN_AREA_5() :: A fifth-order civil entity below country."><span class="description">A fifth-order civil entity below country.</span><pre>TYPE_ADMIN_AREA_5</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_AIRPORT" title="TYPE_AIRPORT() :: An airport."><span class="description">An airport.</span><pre>TYPE_AIRPORT</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_BUS_STATION" title="TYPE_BUS_STATION() :: A bus stop."><span class="description">A bus stop.</span><pre>TYPE_BUS_STATION</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_COLLOQUIAL_AREA" title="TYPE_COLLOQUIAL_AREA() :: A commonly-used alternative name for the entity."><span class="description">A commonly-used alternative name for the entity.</span><pre>TYPE_COLLOQUIAL_AREA</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_COUNTRY" title="TYPE_COUNTRY() :: A national political entity (country). The highest order type returned."><span class="description">A national political entity (country). The highest order type returned.</span><pre>TYPE_COUNTRY</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_ESTABLISHMENT" title="TYPE_ESTABLISHMENT() :: A place that has not yet been categorized."><span class="description">A place that has not yet been categorized.</span><pre>TYPE_ESTABLISHMENT</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_FLOOR" title="TYPE_FLOOR() :: A floor of a building address."><span class="description">A floor of a building address.</span><pre>TYPE_FLOOR</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_INTERSECTION" title="TYPE_INTERSECTION() :: A major intersection, usually of two major roads."><span class="description">A major intersection, usually of two major roads.</span><pre>TYPE_INTERSECTION</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_LOCALITY" title="TYPE_LOCALITY() :: An incorporated city or town."><span class="description">An incorporated city or town.</span><pre>TYPE_LOCALITY</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_NATURAL_FEATURE" title="TYPE_NATURAL_FEATURE() :: A prominent natural feature."><span class="description">A prominent natural feature.</span><pre>TYPE_NATURAL_FEATURE</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_NEIGHBORHOOD" title="TYPE_NEIGHBORHOOD() :: A named neighborhood."><span class="description">A named neighborhood.</span><pre>TYPE_NEIGHBORHOOD</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_PARK" title="TYPE_PARK() :: A named park."><span class="description">A named park.</span><pre>TYPE_PARK</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_PARKING" title="TYPE_PARKING() :: A parking lot or parking structure."><span class="description">A parking lot or parking structure.</span><pre>TYPE_PARKING</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_POINT_OF_INTEREST" title="TYPE_POINT_OF_INTEREST() :: A named point of interest that doesn't fit within another category."><span class="description">A named point of interest that doesn't fit within another category.</span><pre>TYPE_POINT_OF_INTEREST</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_POLITICAL" title="TYPE_POLITICAL() :: A political entity, usually of some civil administration."><span class="description">A political entity, usually of some civil administration.</span><pre>TYPE_POLITICAL</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_POSTAL_CODE" title="TYPE_POSTAL_CODE() :: A postal code as used to address mail within the country."><span class="description">A postal code as used to address mail within the country.</span><pre>TYPE_POSTAL_CODE</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_POSTAL_TOWN" title="TYPE_POSTAL_TOWN() :: A grouping of geographic areas used for mailing addresses in some
+countries."><span class="description">A grouping of geographic areas used for mailing addresses in some
+countries.</span><pre>TYPE_POSTAL_TOWN</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_POST_BOX" title="TYPE_POST_BOX() :: A specific postal box."><span class="description">A specific postal box.</span><pre>TYPE_POST_BOX</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_PREMISE" title="TYPE_PREMISE() :: A named location, usually a building or collection of buildings."><span class="description">A named location, usually a building or collection of buildings.</span><pre>TYPE_PREMISE</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_ROOM" title="TYPE_ROOM() :: A room of a building address."><span class="description">A room of a building address.</span><pre>TYPE_ROOM</pre></a></li>
@@ -215,6 +232,9 @@ geocode was returned.</span><pre>STATUS_SUCCESS</pre></a></li>
 <li class="constant  "><a href="#constant_TYPE_SUB_PREMISE" title="TYPE_SUB_PREMISE() :: A first-order entity below a named location, usually a single building
 within a collection of building with a common name."><span class="description">A first-order entity below a named location, usually a single building
 within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_TRAIN_STATION" title="TYPE_TRAIN_STATION() :: A train stop."><span class="description">A train stop.</span><pre>TYPE_TRAIN_STATION</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_TRANSIT_STATION" title="TYPE_TRANSIT_STATION() :: A public transit stop."><span class="description">A public transit stop.</span><pre>TYPE_TRANSIT_STATION</pre></a></li>
+<li class="constant  "><a href="#constant_TYPE_WARD" title="TYPE_WARD() :: A specific type of Japanese locality."><span class="description">A specific type of Japanese locality.</span><pre>TYPE_WARD</pre></a></li>
 <li class="constant  "><a href="#constant_URL_DOMAIN" title="URL_DOMAIN() :: Domain portion of the Google Geocoding API URL."><span class="description">Domain portion of the Google Geocoding API URL.</span><pre>URL_DOMAIN</pre></a></li>
 <li class="constant  "><a href="#constant_URL_HTTP" title="URL_HTTP() :: HTTP URL of the Google Geocoding API."><span class="description">HTTP URL of the Google Geocoding API.</span><pre>URL_HTTP</pre></a></li>
 <li class="constant  "><a href="#constant_URL_HTTPS" title="URL_HTTPS() :: HTTPS URL of the Google Geocoding API."><span class="description">HTTPS URL of the Google Geocoding API.</span><pre>URL_HTTPS</pre></a></li>
@@ -251,7 +271,7 @@ within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE<
 </tr>
 <tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/">https://developers.google.com/maps/documentation/geocoding/</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro">https://developers.google.com/maps/documentation/geocoding/intro</a></td>
 </tr>
 <tr>
 <th>package</th>
@@ -259,7 +279,7 @@ within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE<
 </tr>
 <tr>
 <th>version</th>
-<td>2.2.1</td>
+<td>2.3.0</td>
 </tr>
 </table>
 <h3>
@@ -279,7 +299,7 @@ within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE<
 <code>string</code><p>optional response format (JSON default)</p></div>
 <div class="subelement argument">
 <h4>$sensor</h4>
-<code>bool</code><code>string</code><p>optional whether device has location sensor</p></div>
+<code>bool</code><code>string</code><p>deprecated as of v2.3.0</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
@@ -319,7 +339,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses">https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses">https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -339,6 +359,10 @@ format: associative array if JSON, SimpleXMLElement object if XML.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#geocoding">https://developers.google.com/maps/documentation/geocoding/intro#geocoding</a></td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code>string</code></div>
 </div></div>
@@ -351,7 +375,7 @@ format: associative array if JSON, SimpleXMLElement object if XML.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#api_key">https://developers.google.com/maps/documentation/geocoding/#api_key</a></td>
+<td><a href="https://developers.google.com/console/help/new/#UsingKeys">https://developers.google.com/console/help/new/#UsingKeys</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -367,7 +391,7 @@ in comma-separated, pipe-delimited format.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Viewports">https://developers.google.com/maps/documentation/geocoding/intro#Viewports</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -384,7 +408,7 @@ geocode results in comma-separated format.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Viewports">https://developers.google.com/maps/documentation/geocoding/intro#Viewports</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -400,7 +424,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Viewports">https://developers.google.com/maps/documentation/geocoding/intro#Viewports</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -416,7 +440,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Viewports">https://developers.google.com/maps/documentation/geocoding/intro#Viewports</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -432,7 +456,7 @@ geocode results in comma-separated format.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Viewports">https://developers.google.com/maps/documentation/geocoding/intro#Viewports</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -448,7 +472,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Viewports">https://developers.google.com/maps/documentation/geocoding/intro#Viewports</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -464,7 +488,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Viewports">https://developers.google.com/maps/documentation/geocoding/intro#Viewports</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -494,7 +518,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses">https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses">https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -509,7 +533,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;amp;gid=1">https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1</a></td>
+<td><a href="https://developers.google.com/maps/faq#languagesupport">https://developers.google.com/maps/faq#languagesupport</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -524,7 +548,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -540,11 +564,41 @@ in comma-separated format.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code><code>false</code>comma-separated coordinates, or false if not set</div>
+</div></div>
+</div>
+<a id="method_getLocationType"></a><div class="element clickable method public method_getLocationType" data-toggle="collapse" data-target=".method_getLocationType .collapse" title="public">
+<h2>Get the location type(s) to restrict results to.</h2>
+<pre>getLocationType() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted">https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted</a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>location type(s)</div>
+</div></div>
+</div>
+<a id="method_getLocationTypeFormatted"></a><div class="element clickable method public method_getLocationTypeFormatted" data-toggle="collapse" data-target=".method_getLocationTypeFormatted .collapse" title="public">
+<h2>Get the location type(s) to restrict results to separated by a pipe (|).</h2>
+<pre>getLocationTypeFormatted() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted">https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted</a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>location type(s) separated by a pipe (|)</div>
 </div></div>
 </div>
 <a id="method_getLongitude"></a><div class="element clickable method public method_getLongitude" data-toggle="collapse" data-target=".method_getLongitude .collapse" title="public">
@@ -555,7 +609,7 @@ in comma-separated format.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -571,11 +625,41 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#RegionCodes">https://developers.google.com/maps/documentation/geocoding/#RegionCodes</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#RegionCodes">https://developers.google.com/maps/documentation/geocoding/intro#RegionCodes</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>two-character, top-level domain (ccTLD)</div>
+</div></div>
+</div>
+<a id="method_getResultType"></a><div class="element clickable method public method_getResultType" data-toggle="collapse" data-target=".method_getResultType .collapse" title="public">
+<h2>Get the address type(s) to restrict results to.</h2>
+<pre>getResultType() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted">https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted</a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>address type(s)</div>
+</div></div>
+</div>
+<a id="method_getResultTypeFormatted"></a><div class="element clickable method public method_getResultTypeFormatted" data-toggle="collapse" data-target=".method_getResultTypeFormatted .collapse" title="public">
+<h2>Get the address type(s) to restrict results to separated by a pipe (|).</h2>
+<pre>getResultTypeFormatted() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted">https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted</a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>address type(s) separated by a pipe (|)</div>
 </div></div>
 </div>
 <a id="method_getSensor"></a><div class="element clickable method public method_getSensor" data-toggle="collapse" data-target=".method_getSensor .collapse" title="public">
@@ -584,6 +668,16 @@ geocode results.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>deprecated</th>
+<td>2.3.0 no longer required by the Google Maps API</td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Sensor">https://developers.google.com/maps/documentation/geocoding/intro#Sensor</a></td>
+</tr>
+</table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>'true' or 'false'</div>
@@ -623,7 +717,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#JSON">https://developers.google.com/maps/documentation/geocoding/#JSON</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#JSON">https://developers.google.com/maps/documentation/geocoding/intro#JSON</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -638,7 +732,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#XML">https://developers.google.com/maps/documentation/geocoding/#XML</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#XML">https://developers.google.com/maps/documentation/geocoding/intro#XML</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -651,6 +745,10 @@ geocode results.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#geocoding">https://developers.google.com/maps/documentation/geocoding/intro#geocoding</a></td>
+</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$address</h4>
@@ -667,7 +765,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#api_key">https://developers.google.com/maps/documentation/geocoding/#api_key</a></td>
+<td><a href="https://developers.google.com/console/help/new/#UsingKeys">https://developers.google.com/console/help/new/#UsingKeys</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -685,7 +783,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Viewports">https://developers.google.com/maps/documentation/geocoding/intro#Viewports</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -713,7 +811,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Viewports">https://developers.google.com/maps/documentation/geocoding/intro#Viewports</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -735,7 +833,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#Viewports">https://developers.google.com/maps/documentation/geocoding/#Viewports</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Viewports">https://developers.google.com/maps/documentation/geocoding/intro#Viewports</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -774,7 +872,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses">https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses">https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -792,7 +890,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;amp;gid=1">https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&amp;gid=1</a></td>
+<td><a href="https://developers.google.com/maps/faq#languagesupport">https://developers.google.com/maps/faq#languagesupport</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -810,7 +908,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -828,7 +926,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -841,6 +939,24 @@ geocode results.</h2>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
 </div>
+<a id="method_setLocationType"></a><div class="element clickable method public method_setLocationType" data-toggle="collapse" data-target=".method_setLocationType .collapse" title="public">
+<h2>Set the location type(s) to restrict results to.</h2>
+<pre>setLocationType(string|array $locationType) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted">https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$locationType</h4>
+<code>string</code><code>array</code><p>location type(s)</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
+</div></div>
+</div>
 <a id="method_setLongitude"></a><div class="element clickable method public method_setLongitude" data-toggle="collapse" data-target=".method_setLongitude .collapse" title="public">
 <h2>Set the longitude to reverse geocode to the closest address.</h2>
 <pre>setLongitude(float|string $longitude) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
@@ -849,7 +965,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding">https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -868,12 +984,30 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#RegionCodes">https://developers.google.com/maps/documentation/geocoding/#RegionCodes</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#RegionCodes">https://developers.google.com/maps/documentation/geocoding/intro#RegionCodes</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$region</h4>
 <code>string</code><p>two-character, top-level domain (ccTLD)</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
+</div></div>
+</div>
+<a id="method_setResultType"></a><div class="element clickable method public method_setResultType" data-toggle="collapse" data-target=".method_setResultType .collapse" title="public">
+<h2>Set the address type(s) to restrict results to.</h2>
+<pre>setResultType(string|array $resultType) : <a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted">https://developers.google.com/maps/documentation/geocoding/intro#reverse-restricted</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$resultType</h4>
+<code>string</code><code>array</code><p>address type(s)</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/GoogleMapsGeocoder.html">\GoogleMapsGeocoder</a></code></div>
 </div></div>
@@ -884,6 +1018,16 @@ geocode results.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>deprecated</th>
+<td>2.3.0 no longer required by the Google Maps API</td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#Sensor">https://developers.google.com/maps/documentation/geocoding/intro#Sensor</a></td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$sensor</h4>
@@ -967,7 +1111,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests">https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#GeocodingRequests">https://developers.google.com/maps/documentation/geocoding/intro#GeocodingRequests</a></td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -982,7 +1126,7 @@ geocode results.</h2>
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>link</th>
-<td><a href="https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests">https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests</a></td>
+<td><a href="https://developers.google.com/maps/documentation/geocoding/intro#GeocodingRequests">https://developers.google.com/maps/documentation/geocoding/intro#GeocodingRequests</a></td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1099,6 +1243,16 @@ results.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="property_locationType"> </a><div class="element clickable property private property_locationType" data-toggle="collapse" data-target=".property_locationType .collapse" title="private">
+<h2>Location type(s) to restrict results to.</h2>
+<pre>$locationType : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property_longitude"> </a><div class="element clickable property private property_longitude" data-toggle="collapse" data-target=".property_longitude .collapse" title="private">
 <h2>Longitude to reverse geocode to the closest address.</h2>
 <pre>$longitude : float | string</pre>
@@ -1120,6 +1274,16 @@ results.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="property_resultType"> </a><div class="element clickable property private property_resultType" data-toggle="collapse" data-target=".property_resultType .collapse" title="private">
+<h2>Address type(s) to restrict results to.</h2>
+<pre>$resultType : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property_sensor"> </a><div class="element clickable property private property_sensor" data-toggle="collapse" data-target=".property_sensor .collapse" title="private">
 <h2>Whether the request is from a device with a location sensor.</h2>
 <pre>$sensor : string</pre>
@@ -1128,7 +1292,13 @@ results.</h2>
 <div class="subelement argument"></div>
 </div></div>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>deprecated</th>
+<td>2.3.0 no longer required by the Google Maps API</td>
+</tr></table>
+</div></div>
 </div>
 <a id="property_signingKey"> </a><div class="element clickable property private property_signingKey" data-toggle="collapse" data-target=".property_signingKey .collapse" title="private">
 <h2>Cryptographic signing key for Business clients.</h2>
@@ -1217,6 +1387,12 @@ geocode was returned.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_STATUS_UNKNOWN_ERROR"> </a><div class="element clickable constant  constant_STATUS_UNKNOWN_ERROR" data-toggle="collapse" data-target=".constant_STATUS_UNKNOWN_ERROR .collapse" title="">
+<h2>Unnown server error. May succeed if tried again.</h2>
+<pre>STATUS_UNKNOWN_ERROR = "UNKNOWN_ERROR" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="constant_TYPE_ADMIN_AREA_1"> </a><div class="element clickable constant  constant_TYPE_ADMIN_AREA_1" data-toggle="collapse" data-target=".constant_TYPE_ADMIN_AREA_1 .collapse" title="">
 <h2>A first-order civil entity below country (states within the US).</h2>
 <pre>TYPE_ADMIN_AREA_1 = "administrative_area_level_1" </pre>
@@ -1235,9 +1411,27 @@ geocode was returned.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_TYPE_ADMIN_AREA_4"> </a><div class="element clickable constant  constant_TYPE_ADMIN_AREA_4" data-toggle="collapse" data-target=".constant_TYPE_ADMIN_AREA_4 .collapse" title="">
+<h2>A fourth-order civil entity below country.</h2>
+<pre>TYPE_ADMIN_AREA_4 = "administrative_area_level_4" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_TYPE_ADMIN_AREA_5"> </a><div class="element clickable constant  constant_TYPE_ADMIN_AREA_5" data-toggle="collapse" data-target=".constant_TYPE_ADMIN_AREA_5 .collapse" title="">
+<h2>A fifth-order civil entity below country.</h2>
+<pre>TYPE_ADMIN_AREA_5 = "administrative_area_level_5" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="constant_TYPE_AIRPORT"> </a><div class="element clickable constant  constant_TYPE_AIRPORT" data-toggle="collapse" data-target=".constant_TYPE_AIRPORT .collapse" title="">
 <h2>An airport.</h2>
 <pre>TYPE_AIRPORT = "airport" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_TYPE_BUS_STATION"> </a><div class="element clickable constant  constant_TYPE_BUS_STATION" data-toggle="collapse" data-target=".constant_TYPE_BUS_STATION .collapse" title="">
+<h2>A bus stop.</h2>
+<pre>TYPE_BUS_STATION = "bus_station" </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -1250,6 +1444,12 @@ geocode was returned.</h2>
 <a id="constant_TYPE_COUNTRY"> </a><div class="element clickable constant  constant_TYPE_COUNTRY" data-toggle="collapse" data-target=".constant_TYPE_COUNTRY .collapse" title="">
 <h2>A national political entity (country). The highest order type returned.</h2>
 <pre>TYPE_COUNTRY = "country" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_TYPE_ESTABLISHMENT"> </a><div class="element clickable constant  constant_TYPE_ESTABLISHMENT" data-toggle="collapse" data-target=".constant_TYPE_ESTABLISHMENT .collapse" title="">
+<h2>A place that has not yet been categorized.</h2>
+<pre>TYPE_ESTABLISHMENT = "establishment" </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -1289,6 +1489,12 @@ geocode was returned.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_TYPE_PARKING"> </a><div class="element clickable constant  constant_TYPE_PARKING" data-toggle="collapse" data-target=".constant_TYPE_PARKING .collapse" title="">
+<h2>A parking lot or parking structure.</h2>
+<pre>TYPE_PARKING = "parking" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="constant_TYPE_POINT_OF_INTEREST"> </a><div class="element clickable constant  constant_TYPE_POINT_OF_INTEREST" data-toggle="collapse" data-target=".constant_TYPE_POINT_OF_INTEREST .collapse" title="">
 <h2>A named point of interest that doesn't fit within another category.</h2>
 <pre>TYPE_POINT_OF_INTEREST = "point_of_interest" </pre>
@@ -1304,6 +1510,13 @@ geocode was returned.</h2>
 <a id="constant_TYPE_POSTAL_CODE"> </a><div class="element clickable constant  constant_TYPE_POSTAL_CODE" data-toggle="collapse" data-target=".constant_TYPE_POSTAL_CODE .collapse" title="">
 <h2>A postal code as used to address mail within the country.</h2>
 <pre>TYPE_POSTAL_CODE = "postal_code" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_TYPE_POSTAL_TOWN"> </a><div class="element clickable constant  constant_TYPE_POSTAL_TOWN" data-toggle="collapse" data-target=".constant_TYPE_POSTAL_TOWN .collapse" title="">
+<h2>A grouping of geographic areas used for mailing addresses in some
+countries.</h2>
+<pre>TYPE_POSTAL_TOWN = "postal_town" </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -1356,6 +1569,24 @@ within a collection of building with a common name.</h2>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_TYPE_TRAIN_STATION"> </a><div class="element clickable constant  constant_TYPE_TRAIN_STATION" data-toggle="collapse" data-target=".constant_TYPE_TRAIN_STATION .collapse" title="">
+<h2>A train stop.</h2>
+<pre>TYPE_TRAIN_STATION = "train_station" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_TYPE_TRANSIT_STATION"> </a><div class="element clickable constant  constant_TYPE_TRANSIT_STATION" data-toggle="collapse" data-target=".constant_TYPE_TRANSIT_STATION .collapse" title="">
+<h2>A public transit stop.</h2>
+<pre>TYPE_TRANSIT_STATION = "transit_station" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_TYPE_WARD"> </a><div class="element clickable constant  constant_TYPE_WARD" data-toggle="collapse" data-target=".constant_TYPE_WARD .collapse" title="">
+<h2>A specific type of Japanese locality.</h2>
+<pre>TYPE_WARD = "ward" </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="constant_URL_DOMAIN"> </a><div class="element clickable constant  constant_URL_DOMAIN" data-toggle="collapse" data-target=".constant_URL_DOMAIN .collapse" title="">
 <h2>Domain portion of the Google Geocoding API URL.</h2>
 <pre>URL_DOMAIN = "maps.googleapis.com" </pre>
@@ -1388,7 +1619,7 @@ within a collection of building with a common name.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
 </a> and<br>
-            generated on 2015-06-25T05:47:18-04:00.<br></footer></div>
+            generated on 2015-09-03T19:42:01-04:00.<br></footer></div>
 </div>
 </body>
 </html>

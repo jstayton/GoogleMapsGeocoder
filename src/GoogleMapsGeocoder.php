@@ -354,7 +354,8 @@
     /**
      * Whether the request is from a device with a location sensor.
      *
-     * @var string
+     * @deprecated 2.3.0 no longer required by the Google Maps API
+     * @var        string
      */
     private $sensor;
 
@@ -384,7 +385,7 @@
      *
      * @param  string $address optional address to geocode
      * @param  string $format optional response format (JSON default)
-     * @param  bool|string $sensor optional whether device has location sensor
+     * @param  bool|string $sensor deprecated as of v2.3.0
      * @return GoogleMapsGeocoder
      */
     public function __construct($address = null, $format = self::FORMAT_JSON, $sensor = false) {
@@ -807,8 +808,10 @@
     /**
      * Set whether the request is from a device with a location sensor.
      *
-     * @param  bool|string $sensor boolean or 'true'/'false' string
-     * @return GoogleMapsGeocoder
+     * @deprecated 2.3.0 no longer required by the Google Maps API
+     * @link       https://developers.google.com/maps/documentation/geocoding/intro#Sensor
+     * @param      bool|string $sensor boolean or 'true'/'false' string
+     * @return     GoogleMapsGeocoder
      */
     public function setSensor($sensor) {
       if ($sensor == 'true' || $sensor == 'false') {
@@ -827,7 +830,9 @@
     /**
      * Get whether the request is from a device with a location sensor.
      *
-     * @return string 'true' or 'false'
+     * @deprecated 2.3.0 no longer required by the Google Maps API
+     * @link       https://developers.google.com/maps/documentation/geocoding/intro#Sensor
+     * @return     string 'true' or 'false'
      */
     public function getSensor() {
       return $this->sensor;

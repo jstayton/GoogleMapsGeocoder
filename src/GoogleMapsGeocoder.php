@@ -6,7 +6,7 @@
    * @author    Justin Stayton
    * @copyright Copyright 2015 by Justin Stayton
    * @license   https://github.com/jstayton/Miner/blob/master/LICENSE-MIT MIT
-   * @link      https://developers.google.com/maps/documentation/geocoding/
+   * @link      https://developers.google.com/maps/documentation/geocoding/intro
    * @package   GoogleMapsGeocoder
    * @version   2.2.1
    */
@@ -396,7 +396,7 @@
     /**
      * Set the response format.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses
      * @param  string $format response format
      * @return GoogleMapsGeocoder
      */
@@ -409,7 +409,7 @@
     /**
      * Get the response format.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses
      * @return string response format
      */
     public function getFormat() {
@@ -419,7 +419,7 @@
     /**
      * Whether the response format is JSON.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#JSON
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#JSON
      * @return bool whether JSON
      */
     public function isFormatJson() {
@@ -429,7 +429,7 @@
     /**
      * Whether the response format is XML.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#XML
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#XML
      * @return bool whether XML
      */
     public function isFormatXml() {
@@ -439,6 +439,7 @@
     /**
      * Set the address to geocode.
      *
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#geocoding
      * @param  string $address address to geocode
      * @return GoogleMapsGeocoder
      */
@@ -451,6 +452,7 @@
     /**
      * Get the address to geocode.
      *
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#geocoding
      * @return string
      */
     public function getAddress() {
@@ -460,7 +462,7 @@
     /**
      * Set the latitude/longitude to reverse geocode to the closest address.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding
      * @param  float|string $latitude latitude to reverse geocode
      * @param  float|string $longitude longitude to reverse geocode
      * @return GoogleMapsGeocoder
@@ -476,7 +478,7 @@
      * Get the latitude/longitude to reverse geocode to the closest address
      * in comma-separated format.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding
      * @return string|false comma-separated coordinates, or false if not set
      */
     public function getLatitudeLongitude() {
@@ -494,7 +496,7 @@
     /**
      * Set the latitude to reverse geocode to the closest address.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding
      * @param  float|string $latitude latitude to reverse geocode
      * @return GoogleMapsGeocoder
      */
@@ -507,7 +509,7 @@
     /**
      * Get the latitude to reverse geocode to the closest address.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding
      * @return float|string latitude to reverse geocode
      */
     public function getLatitude() {
@@ -517,7 +519,7 @@
     /**
      * Set the longitude to reverse geocode to the closest address.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding
      * @param  float|string $longitude longitude to reverse geocode
      * @return GoogleMapsGeocoder
      */
@@ -530,7 +532,7 @@
     /**
      * Get the longitude to reverse geocode to the closest address.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding
      * @return float|string longitude to reverse geocode
      */
     public function getLongitude() {
@@ -540,7 +542,7 @@
     /**
      * Set the bounding box coordinates within which to bias geocode results.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#Viewports
      * @param  float|string $southwestLatitude southwest latitude boundary
      * @param  float|string $southwestLongitude southwest longitude boundary
      * @param  float|string $northeastLatitude northeast latitude boundary
@@ -558,7 +560,7 @@
      * Get the bounding box coordinates within which to bias geocode results
      * in comma-separated, pipe-delimited format.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#Viewports
      * @return string|false comma-separated, pipe-delimited coordinates, or
      *                      false if not set
      */
@@ -578,7 +580,7 @@
      * Set the southwest coordinates of the bounding box within which to bias
      * geocode results.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#Viewports
      * @param  float|string $latitude southwest latitude boundary
      * @param  float|string $longitude southwest longitude boundary
      * @return GoogleMapsGeocoder
@@ -594,7 +596,7 @@
      * Get the southwest coordinates of the bounding box within which to bias
      * geocode results in comma-separated format.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#Viewports
      * @return string|false comma-separated coordinates, or false if not set
      */
     public function getBoundsSouthwest() {
@@ -613,7 +615,7 @@
      * Get the southwest latitude of the bounding box within which to bias
      * geocode results.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#Viewports
      * @return float|string southwest latitude boundary
      */
     public function getBoundsSouthwestLatitude() {
@@ -624,7 +626,7 @@
      * Get the southwest longitude of the bounding box within which to bias
      * geocode results.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#Viewports
      * @return float|string southwest longitude boundary
      */
     public function getBoundsSouthwestLongitude() {
@@ -635,7 +637,7 @@
      * Set the northeast coordinates of the bounding box within which to bias
      * geocode results.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#Viewports
      * @param  float|string $latitude northeast latitude boundary
      * @param  float|string $longitude northeast longitude boundary
      * @return GoogleMapsGeocoder
@@ -651,7 +653,7 @@
      * Get the northeast coordinates of the bounding box within which to bias
      * geocode results in comma-separated format.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#Viewports
      * @return string|false comma-separated coordinates, or false if not set
      */
     public function getBoundsNortheast() {
@@ -670,7 +672,7 @@
      * Get the northeast latitude of the bounding box within which to bias
      * geocode results.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#Viewports
      * @return float|string northeast latitude boundary
      */
     public function getBoundsNortheastLatitude() {
@@ -681,7 +683,7 @@
      * Get the northeast longitude of the bounding box within which to bias
      * geocode results.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#Viewports
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#Viewports
      * @return float|string northeast longitude boundary
      */
     public function getBoundsNortheastLongitude() {
@@ -692,7 +694,7 @@
      * Set the two-character, top-level domain (ccTLD) within which to bias
      * geocode results.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#RegionCodes
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#RegionCodes
      * @param  string $region two-character, top-level domain (ccTLD)
      * @return GoogleMapsGeocoder
      */
@@ -706,7 +708,7 @@
      * Get the two-character, top-level domain (ccTLD) within which to bias
      * geocode results.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#RegionCodes
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#RegionCodes
      * @return string two-character, top-level domain (ccTLD)
      */
     public function getRegion() {
@@ -716,7 +718,7 @@
     /**
      * Set the language code in which to return results.
      *
-     * @link   https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&gid=1
+     * @link   https://developers.google.com/maps/faq#languagesupport
      * @param  string $language language code
      * @return GoogleMapsGeocoder
      */
@@ -729,7 +731,7 @@
     /**
      * Get the language code in which to return results.
      *
-     * @link   https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&gid=1
+     * @link   https://developers.google.com/maps/faq#languagesupport
      * @return string language code
      */
     public function getLanguage() {
@@ -834,7 +836,7 @@
     /**
      * Set the API key to authenticate with.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#api_key
+     * @link   https://developers.google.com/console/help/new/#UsingKeys
      * @param  string $apiKey API key
      * @return GoogleMapsGeocoder
      */
@@ -847,7 +849,7 @@
     /**
      * Get the API key to authenticate with.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#api_key
+     * @link   https://developers.google.com/console/help/new/#UsingKeys
      * @return string API key
      */
     public function getApiKey() {
@@ -927,7 +929,7 @@
     /**
      * Build the query string with all set parameters of the geocode request.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#GeocodingRequests
      * @return string encoded query string of the geocode request
      */
     private function geocodeQueryString() {
@@ -973,7 +975,7 @@
     /**
      * Build the URL (with query string) of the geocode request.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#GeocodingRequests
      * @param  bool $https whether to make the request over HTTPS
      * @return string URL of the geocode request
      */
@@ -999,7 +1001,7 @@
      * Execute the geocoding request. The return type is based on the requested
      * format: associative array if JSON, SimpleXMLElement object if XML.
      *
-     * @link   https://developers.google.com/maps/documentation/geocoding/#GeocodingResponses
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses
      * @param  bool $https whether to make the request over HTTPS
      * @param  bool $raw whether to return the raw (string) response
      * @return string|array|SimpleXMLElement response in requested format

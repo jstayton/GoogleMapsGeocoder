@@ -1164,9 +1164,10 @@
     }
     
     /**
+     * Returns the proxy configuration for a stream context.
      * 
-     * @param string $https
-     * @return multitype:boolean multitype:string  string
+     * @param string $https whether to return the HTTPS configuration
+     * @return array proxy configuration
      */
     private function getProxyConfiguration($https = true) {
       $config = array(

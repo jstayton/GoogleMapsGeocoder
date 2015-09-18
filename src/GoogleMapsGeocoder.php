@@ -379,6 +379,34 @@
      * @var string
      */
     private $signingKey;
+    
+    /**
+     * HTTP proxy URL
+     *
+     * @var string
+     */
+    private $proxyHttpUrl;
+    
+    /**
+     * HTTPS proxy URL
+     *
+     * @var string
+     */
+    private $proxyHttpsUrl;
+    
+    /**
+     * Proxy user
+     * 
+     * @var string
+     */
+    private $proxyUser;
+    
+    /**
+     * Proxy password
+     * 
+     * @var string
+     */
+    private $proxyPassword;
 
     /**
      * Constructor. The request is not executed until `geocode()` is called.
@@ -905,6 +933,90 @@
     public function getSigningKey() {
       return $this->signingKey;
     }
+    
+    /**
+     * Sets the HTTP proxy URL.
+     * 
+     * @param string $url proxy url
+     * @return GoogleMapsGeocoder
+     */
+    public function setHttpProxyUrl($url) {
+      $this->proxyHttpUrl = $url;
+
+      return $this;
+    }
+    
+    /**
+     * Get the HTTP proxy URL to send geocoding requests through.
+     *
+     * @return string HTTP proxy URL
+     */
+    public function getHttpProxyUrl() {
+    	return $this->proxyHttpUrl;
+    }
+    
+    /**
+     * Sets the HTTPS proxy URL.
+     * 
+     * @param string $url proxy url
+     * @return GoogleMapsGeocoder
+     */
+    public function setHttpsProxyUrl($url) {
+      $this->proxyHttpsUrl = $url;
+    	
+      return $this;
+    }
+    
+    /**
+     * Get the HTTPS proxy URL to send geocoding requests through.
+     *
+     * @return string HTTP proxy URL
+     */
+    public function getHttpsProxyUrl() {
+      return $this->proxyHttpsUrl;
+    }
+    
+    /**
+     * Sets the username to authenticate with in the proxy.
+     * 
+     * @param string $user proxy username
+     * @return GoogleMapsGeocoder
+     */
+    public function setProxyUser($user) {
+      $this->proxyUser = $user;
+    	
+      return $this;
+    }
+    
+    /**
+     * Get the username to authenticate in the proxy with.
+     *
+     * @return string proxy username
+     */
+    public function getProxyUser() {
+      return $this->proxyUser;
+    }
+    
+    /**
+     * Sets the password to authenticate with in the proxy.
+     *
+     * @param string $password proxy password
+     * @return GoogleMapsGeocoder
+     */
+    public function setProxyPassword($password) {
+      $this->proxyPassword = $password;
+    	
+      return $this;
+    }
+    
+    /**
+     * Get the password to authenticate in the proxy with.
+     *
+     * @return string proxy password
+     */
+    public function getProxyPassword() {
+      return $this->proxyPassword;
+    }
 
     /**
      * Whether the request is for a Business client.
@@ -1012,7 +1124,7 @@
      * @return string|array|SimpleXMLElement response in requested format
      */
     public function geocode($https = false, $raw = false) {
-      $response = file_get_contents($this->geocodeUrl($https));
+      $response = $this->getGeocodingRequestContents($https);
 
       if ($raw) {
         return $response;
@@ -1026,6 +1138,49 @@
       else {
         return $response;
       }
+    }
+    
+    /**
+     * Returns the contents of the geocoding request. The request
+     * will go through a proxy, if such was defined.
+     * 
+     * @param bool $https whether to make the request over HTTPS
+     * @return string response contents
+     */
+    private function getGeocodingRequestContents($https) {
+      $options = array();
+    	
+      if ($this->proxyHttpUrl) {
+        $options['http'] = $this->getProxyConfiguration(false);
+      }
+    	
+      if ($this->proxyHttpUrl || $this->proxyHttpsUrl) {
+        $options['https'] = $this->getProxyConfiguration(true);
+      }
+    	
+      $context = stream_context_create($options);
+    	
+      return file_get_contents($this->geocodeUrl($https), false, $context);
+    }
+    
+    /**
+     * 
+     * @param string $https
+     * @return multitype:boolean multitype:string  string
+     */
+    private function getProxyConfiguration($https = true) {
+      $config = array(
+        'request_fulluri' => true,
+        'proxy' => $https ? $this->proxyHttpsUrl : $this->proxyHttpUrl
+      );
+
+      if ($this->proxyUser) {
+        $config['header'] = array(
+    	  'Proxy-Authorization: Basic '.base64_encode($this->proxyUser.':'.$this->proxyPassword)
+    	);
+      }
+
+      return $config;
     }
 
     /**

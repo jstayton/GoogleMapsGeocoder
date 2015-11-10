@@ -1009,10 +1009,11 @@
      * @link   https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses
      * @param  bool $https whether to make the request over HTTPS
      * @param  bool $raw whether to return the raw (string) response
+     * @param  resource $context stream context from `stream_context_create()`
      * @return string|array|SimpleXMLElement response in requested format
      */
-    public function geocode($https = false, $raw = false) {
-      $response = file_get_contents($this->geocodeUrl($https));
+    public function geocode($https = false, $raw = false, $context = null) {
+      $response = file_get_contents($this->geocodeUrl($https), false, $context);
 
       if ($raw) {
         return $response;

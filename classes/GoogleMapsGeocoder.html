@@ -279,7 +279,7 @@ within a collection of building with a common name.</span><pre>TYPE_SUB_PREMISE<
 </tr>
 <tr>
 <th>version</th>
-<td>2.3.0</td>
+<td>2.4.0</td>
 </tr>
 </table>
 <h3>
@@ -333,7 +333,7 @@ returned in total.</div>
 <a id="method_geocode"></a><div class="element clickable method public method_geocode" data-toggle="collapse" data-target=".method_geocode .collapse" title="public">
 <h2>Execute the geocoding request. The return type is based on the requested
 format: associative array if JSON, SimpleXMLElement object if XML.</h2>
-<pre>geocode(bool $https<code> = false</code>, bool $raw<code> = false</code>) : string | array | <a href="SimpleXMLElement.html">\SimpleXMLElement</a></pre>
+<pre>geocode(bool $https<code> = false</code>, bool $raw<code> = false</code>, resource $context<code> = null</code>) : string | array | <a href="SimpleXMLElement.html">\SimpleXMLElement</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -348,6 +348,9 @@ format: associative array if JSON, SimpleXMLElement object if XML.</h2>
 <div class="subelement argument">
 <h4>$raw</h4>
 <code>bool</code><p>whether to return the raw (string) response</p></div>
+<div class="subelement argument">
+<h4>$context</h4>
+<code>resource</code><p>stream context from <code>stream_context_create()</code></p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code><code>array</code><code><a href="SimpleXMLElement.html">\SimpleXMLElement</a></code>response in requested format</div>
@@ -1619,7 +1622,7 @@ within a collection of building with a common name.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.2.0
 </a> and<br>
-            generated on 2015-09-03T19:42:01-04:00.<br></footer></div>
+            generated on 2015-11-10T14:25:09-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -8,7 +8,7 @@
    * @license   https://github.com/jstayton/Miner/blob/master/LICENSE-MIT MIT
    * @link      https://developers.google.com/maps/documentation/geocoding/intro
    * @package   GoogleMapsGeocoder
-   * @version   2.3.0
+   * @version   2.4.0
    */
   class GoogleMapsGeocoder {
 

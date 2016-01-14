@@ -974,7 +974,7 @@
       }
 
       // Convert array to proper query string.
-      return http_build_query($queryString);
+      return http_build_query($queryString, null, '&');
     }
 
     /**

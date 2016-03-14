@@ -331,6 +331,12 @@
     private $region;
 
     /**
+     * Key-Value array, stored as: component name => value
+     * @var array
+     */
+    private $components = array();
+
+    /**
      * Language code in which to return results.
      *
      * @var string
@@ -828,6 +834,45 @@
     }
 
     /**
+     * Cater for Component Filtering.
+     * e.g.
+     *      Restrict results to Texas, America:
+     *      setComponent('administrative_area', 'TX');
+     *      setComponent('country', 'US');
+     *
+     * Note: at present it does not appear to be possible to "stack" filters (e.g. filtering on more than one
+     * country). See: https://code.google.com/p/gmaps-api-issues/issues/detail?id=4233
+     *
+     * @link       https://developers.google.com/maps/documentation/geocoding/intro#ComponentFiltering
+     * @param      string $componentName
+     * @param      string|number $componentValue
+     */
+    public function setComponent($componentName, $componentValue) {
+        $this->components[$componentName] = $componentValue;
+    }
+
+    /**
+     * @return      array
+     */
+    public function getComponents() {
+        return $this->components;
+    }
+
+    /**
+     * Get the component filters (|).
+     *
+     * @link   https://developers.google.com/maps/documentation/geocoding/intro#ComponentFiltering
+     * @return string components separated by a pipe (|)
+     */
+    public function getComponentsFormatted() {
+        $formatted = '';
+        foreach ($this->components as $componentName => $componentValue) {
+            $formatted = ($formatted ? "|" : "")."$componentName:$componentValue";
+        }
+        return $formatted;
+    }
+
+      /**
      * Get whether the request is from a device with a location sensor.
      *
      * @deprecated 2.3.0 no longer required by the Google Maps API
@@ -958,6 +1003,7 @@
       $queryString['language'] = $this->getLanguage();
       $queryString['result_type'] = $this->getResultTypeFormatted();
       $queryString['location_type'] = $this->getLocationTypeFormatted();
+      $queryString['components'] = $this->getComponentsFormatted();
 
       // Required.
       $queryString['sensor'] = $this->getSensor();

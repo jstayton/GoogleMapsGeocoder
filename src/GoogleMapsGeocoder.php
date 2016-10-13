@@ -1002,32 +1002,58 @@
       return $scheme . "://" . self::URL_DOMAIN . $pathQueryString;
     }
 
-    /**
-     * Execute the geocoding request. The return type is based on the requested
-     * format: associative array if JSON, SimpleXMLElement object if XML.
-     *
-     * @link   https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses
-     * @param  bool $https whether to make the request over HTTPS
-     * @param  bool $raw whether to return the raw (string) response
-     * @param  resource $context stream context from `stream_context_create()`
-     * @return string|array|SimpleXMLElement response in requested format
-     */
-    public function geocode($https = false, $raw = false, $context = null) {
-      $response = file_get_contents($this->geocodeUrl($https), false, $context);
+      /**
+       * Execute the geocoding request. The return type is based on the requested
+       * format: associative array if JSON, SimpleXMLElement object if XML.
+       *
+       * @link   https://developers.google.com/maps/documentation/geocoding/intro#GeocodingResponses
+       * @param  bool $https whether to make the request over HTTPS
+       * @param  bool $raw whether to return the raw (string) response
+       * @param  resource $context stream context from `stream_context_create()`
+       * @param  array $curlOptions cURL options for curl_setopt()
+       * @return string|array|SimpleXMLElement response in requested format
+       */
+      public function geocode($https = false, $raw = false, $context = null, array $curlOptions = null)
+      {
+          $response = $this->fetch($this->geocodeUrl($https), $context, $curlOptions);
 
-      if ($raw) {
-        return $response;
+          if ($raw) {
+              return $response;
+          } elseif ($this->isFormatJson()) {
+              return json_decode($response, true);
+          } elseif ($this->isFormatXml()) {
+              return new SimpleXMLElement($response);
+          } else {
+              return $response;
+          }
       }
-      elseif ($this->isFormatJson()) {
-        return json_decode($response, true);
+
+      /**
+       * Fetch URL using either cURL or file_get_contents
+       *
+       * @param $url
+       * @param null $streamContext
+       * @param array $curlOptions
+       * @return mixed
+       */
+      protected function fetch($url, $streamContext = null, array $curlOptions = null)
+      {
+          if (in_array('curl', get_loaded_extensions())) {
+              $curl = curl_init();
+              curl_setopt($curl, CURLOPT_URL, $url);
+              curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+              if ($curlOptions) {
+                  curl_setopt_array($curl, $curlOptions);
+              }
+
+              $result = curl_exec($curl);
+              curl_close($curl);
+
+              return $result;
+          }
+
+          file_get_contents($url, false, $streamContext);
       }
-      elseif ($this->isFormatXml()) {
-        return new SimpleXMLElement($response);
-      }
-      else {
-        return $response;
-      }
-    }
 
     /**
      * Computes a four point bounding box around the specified location. This

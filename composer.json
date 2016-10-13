@@ -1,5 +1,5 @@
 {
-    "name": "jstayton/google-maps-geocoder",
+    "name": "mindgruve/google-maps-geocoder",
     "type": "library",
     "description": "A PHP wrapper for the Google Maps Geocoding API v3.",
     "keywords": ["google", "map", "maps", "gmap", "gmaps", "geocode", "geocoder", "geocoding"],

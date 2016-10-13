@@ -1052,7 +1052,7 @@
               return $result;
           }
 
-          file_get_contents($url, false, $streamContext);
+          return file_get_contents($url, false, $streamContext);
       }
 
     /**

@@ -9,8 +9,10 @@ A PHP wrapper for the Google Maps Geocoding API v3.
 Developed by [Justin Stayton](http://twitter.com/jstayton) while at
 [Monk Development](http://monkdev.com).
 
+Extended by [Stephan Watermeyer](http://twitter.com/phreakadelle) to also serve the DirectionService.
+
 *   [Documentation](http://jstayton.github.io/GoogleMapsGeocoder/classes/GoogleMapsGeocoder.html)
-*   [Release Notes](https://github.com/jstayton/GoogleMapsGeocoder/wiki/Release-Notes)
+*   [Release Notes](https://github.com/phreakadelle/GoogleMapsGeocoder/wiki/Release-Notes)
 
 Requirements
 ------------
